@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(253, 207, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* lp : landing page */
+.lp-header div{
+    float: left;
+}
+
+.lp-navigation ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.lp-navigation ul li{
+    background-color: aqua;
+    display: inline;
+    list-style-type: none;
+    padding: 20px;
+    margin: 0 20px;
+}
+
+.header-logo{
+    background-color: aqua;
+}
+
+.header-logo img{
+    height: 60px;
+}
