@@ -30,7 +30,17 @@
     </div>
     <script>
         function enroll() {
-            
+            var enrolkey = prompt("masukkan enrolment key");
+            <?php foreach ($enrol as $value) { ?>
+                var x = "<?php echo $value['enrol']; ?>"
+            <?php } ?>
+
+            if(enrolkey == x){
+                document.location.href='<?php base_url() ?>/index.php/Welcome/page_prodi';
+            }else{
+                window.alert("enrolment key salah !!")
+            }
+             
         }
     </script>
 </body>
