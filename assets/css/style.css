@@ -4,8 +4,10 @@ body{
 }
 
 /* lp : landing page */
-.lp-header div{
-    float: left;
+
+.lp-header{
+    padding: 20px;
+    /* background-color: darkgreen; */
 }
 
 .lp-navigation ul li a{
@@ -14,17 +16,48 @@ body{
 }
 
 .lp-navigation ul li{
-    background-color: aqua;
     display: inline;
     list-style-type: none;
     padding: 20px;
     margin: 0 20px;
 }
 
+.lp-navigation{
+    float: right;
+}
+
 .header-logo{
-    background-color: aqua;
+    display: inline-block;
 }
 
 .header-logo img{
     height: 60px;
+}
+
+#lp-1-container{
+    display: inline-block;
+    text-align: center;
+    line-height: 100%;
+    padding: 30px;
+    /* background-color: aquamarine; */
+}
+
+#lp-1-container h1{
+    position: relative;
+}
+
+#lp-1-container a{
+    text-decoration: none;
+    display: inline-block;
+    background-color: rgb(37, 37, 245);
+    color: white;
+    margin: 10px;
+    height: 50px;
+    width: 300px;
+    line-height: 50px;
+    border-radius: 50px;
+}
+
+#lp-1 img{
+    height: 400px;
 }
