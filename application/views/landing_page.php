@@ -36,7 +36,7 @@
             <?php } ?>
 
             if(enrolkey == x){
-                document.location.href='<?php base_url() ?>/index.php/Welcome/page_prodi';
+                document.location.href='<?php echo base_url(); ?>/index.php/Welcome/page_prodi';
             }else{
                 window.alert("enrolment key salah !!")
             }
