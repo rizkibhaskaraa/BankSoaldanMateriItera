@@ -22,11 +22,16 @@
     </div>
     <div class="lp-page" id="lp-1">
         <div id="lp-1-container">
-            <h1>Selamat Datang di Website Bank Soal dan Materi ITERA</h1>
+            <h1>Selamat Datang di Website<br>Bank Soal dan Materi ITERA</h1>
             <h3>Dapatkan soal dan materi program studimu agar bisa menjadi referensi ketika ujian nanti</h3>
-            <a href="#">Mulai cari referensimu</a>
+            <button onclick="enroll()">Mulai cari referensimu</button>
         </div>
         <img src="<?php echo base_url('assets/img/lp_lampu.png') ?>" alt="Welcome"><!-- Diisi dengan gambar lampu pijar -->
     </div>
+    <script>
+        function enroll() {
+            
+        }
+    </script>
 </body>
 </html>
