@@ -17,7 +17,10 @@ class Welcome extends CI_Controller {
 
 
 	public function page_prodi(){
+		$data['sains'] = $this->BSMI_model->getsains();
+		$data['jtik'] = $this->BSMI_model->getjtik();
+		$data['jtpi'] = $this->BSMI_model->getjtpi();
 		$this->load->helper('url');
-		$this->load->view('halaman_prodi');
+		$this->load->view('halaman_prodi',$data);
 	}
 }

@@ -30,24 +30,24 @@
     <div id="lp-1-sains">
     	<h3>JURUSAN SAINS</h3>
     	<div id="lp-1-prodi-sains">
-        	<?php for($i=0;$i<15;$i++){ ?>
-        		<h2><?php echo $i; ?></h2>
+        	<?php foreach ($sains as $value) { ?>
+        		<h2><?php echo $value['nama_prodi']; ?></h2>
         	<?php } ?>
         </div>
     </div>
     <div id="lp-1-jtpi">
     	<h3>JURUSAN TEKNOLOGI PRODUKSI DAN INDUSTRI</h3>
     	<div id="lp-1-prodi-jtpi">
-        	<?php for($i=0;$i<15;$i++){ ?>
-        		<h2><?php echo $i; ?></h2>
+           	<?php foreach ($jtpi as $value) { ?>
+        		<h2><?php echo $value['nama_prodi']; ?></h2>
         	<?php } ?>
         </div>
     </div>
     <div id="lp-1-jtik">
     	<h3>JURUSAN TEKNOLOGI INFRASTRUKTUR DAN KEWILAYAHAN</h3>
     	<div id="lp-1-prodi-jtik">
-        	<?php for($i=0;$i<15;$i++){ ?>
-        		<h2><?php echo $i; ?></h2>
+            <?php foreach ($jtik as $value) { ?>
+        		<h2><?php echo $value['nama_prodi']; ?></h2>
         	<?php } ?>
         </div>
     </div>
