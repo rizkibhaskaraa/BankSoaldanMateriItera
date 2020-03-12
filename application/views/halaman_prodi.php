@@ -7,7 +7,7 @@
     <title>Bank Soal dan Materi ITERA</title>
 </head>
 <body>
-    <div class="lp-header">
+    <div class="lp-header" id="home">
         <div class="header-logo">
             <!-- Diisi dengan logo ITERA dan Tulisan BSMI -->
             <img src="<?php echo base_url('assets/img/header_logo.png') ?>" alt="Bank Soal dan Materi Itera"> 
@@ -50,6 +50,11 @@
         		<h2><?php echo $value['nama_prodi']; ?></h2>
         	<?php } ?>
         </div>
+    </div>
+    <div id="up">
+    	<a href="#home">
+	    	<img src="<?php echo base_url('assets/img/up.png') ?>		"> 
+    	</a>
     </div>
 </body>
 </html>

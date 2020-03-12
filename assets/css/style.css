@@ -131,3 +131,16 @@ body{
     line-height: 100px;
     border-radius: 10px;
     }
+
+#up{
+    position: fixed;
+    bottom: 1%;
+    left: 92%; 
+}
+
+#up img{
+    height: 100px;
+    width: 100px;
+    background-color: lavender;
+    border-radius: 50%;
+}
