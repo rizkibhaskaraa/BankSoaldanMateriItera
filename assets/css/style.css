@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: rgb(253, 207, 0);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -74,3 +78,56 @@ body{
     float: right;
     margin: 50px 85px;
 }
+
+#lp-1-jurusan{
+    display: flex;
+    justify-content: center;
+    height: 550px;
+
+}
+
+#lp-1-jurusan #a-sains{
+    height: 150px;
+    line-height: 150px;
+}
+
+#lp-1-jurusan a{
+    position: relative;
+    top: 50%;
+    left: 4%;
+    transform: translate(-10%,-50%);
+    text-decoration: none;
+    font-size: 38px;
+    color: #fff;
+    background-color: #000;
+    border-radius: 10px;
+    margin-right: 25px;
+    padding: 10px;
+    width: 100%;
+    height: 150px;  
+    text-align: center;
+}
+
+#lp-1-prodi-sains, #lp-1-prodi-jtpi, #lp-1-prodi-jtik{
+    margin-top: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 10px;    
+}
+
+#lp-1-sains h3, #lp-1-jtpi h3, #lp-1-jtik h3{
+    text-align: center;
+    font-size: 36px;
+}
+#lp-1-prodi-sains h2, #lp-1-prodi-jtpi h2, #lp-1-prodi-jtik h2{
+    margin-right: 5%;
+    margin-left: 5%;
+    width: 23%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 10px;
+    }

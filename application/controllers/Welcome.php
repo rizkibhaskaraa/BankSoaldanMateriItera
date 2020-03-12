@@ -17,6 +17,7 @@ class Welcome extends CI_Controller {
 
 
 	public function page_prodi(){
+		$this->load->helper('url');
 		$this->load->view('halaman_prodi');
 	}
 }
