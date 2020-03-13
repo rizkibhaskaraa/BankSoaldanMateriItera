@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 class BSMI_model extends CI_model
 {
 	public function getenroll(){
@@ -15,6 +15,19 @@ class BSMI_model extends CI_model
 	public function getjtpi(){
 		return $this->db->get_where('prodi', array('jurusan'=>'jtpi'))->result_array();
 	}
+
+	public function getprodi($id){
+		return $this->db->get_where('prodi', array('kode_prodi'=>$id))->result_array();	
+	}
+
+	public function getmatkul($kode_prodi){
+		return $this->db->get_where('matakuliah', array('kode_prodi'=>$kode_prodi))->result_array();		
+	}
+
+	public function getmatkulcari($kode_matkul){
+		$this->db->like('nama_matkul', $kode_matkul);
+		return $this->db->get('matakuliah')->result_array();		
+	}	
 }
 
 

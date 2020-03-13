@@ -79,6 +79,7 @@ body{
     margin: 50px 85px;
 }
 
+/* edit by Aldi */
 #lp-1-jurusan{
     display: flex;
     justify-content: center;
@@ -145,4 +146,45 @@ body{
     width: 100px;
     background-color: lavender;
     border-radius: 50%;
+}
+
+#lp-1-prodi{
+    margin-left: 5%;
+    font-size: 36px;
+    width: 50%;
+    border-radius: 10px;
+    float: left;
+}
+
+#lp-1-cari input{
+    font-size: 20px;
+    border-radius: 10px;
+    float: right;
+    margin-top: 4%;
+    width: 25%;
+    background-color: rgb(253, 207, 0);
+    border-color: #000;
+    padding: 0.5%;
+    margin-right: 5%;
+}
+
+#lp-1-prodi-carimatkul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 10px;       
+}
+
+#lp-1-prodi-carimatkul a{
+    text-decoration: none;
+    margin-top: 1%;
+    margin-right: 1%;
+    margin-left: 2%;
+    width: 30%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    height: 150px;
+    line-height: 100px;
+    border-radius: 10px;
 }
