@@ -31,9 +31,9 @@ class Welcome extends CI_Controller {
 		$this->load->view('halaman_matakuliah',$data);
 	}
 
-	public function hasilcarimatkul($kode_matkul){
+	public function hasilcarimatkul($kode_prodi,$kode_matkul){
 		$this->load->helper('url');
-		$data["matkul"] = $this->BSMI_model->getmatkulcari($kode_matkul);
+		$data["matkul"] = $this->BSMI_model->getmatkulcari($kode_prodi,$kode_matkul);
 		$this->load->view('hasilcarimatkul',$data);	
 	}
 }

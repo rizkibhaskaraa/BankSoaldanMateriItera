@@ -172,7 +172,14 @@ body{
     border-radius: 10px;       
 }
 
-#lp-1-prodi-carimatkul a{
+#lp-1-prodi-matkul{
+    margin-top: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 10px;    
+}
+#lp-1-prodi-carimatkul a,#lp-1-prodi-matkul a{
     text-decoration: none;
     margin-top: 1%;
     margin-right: 1%;

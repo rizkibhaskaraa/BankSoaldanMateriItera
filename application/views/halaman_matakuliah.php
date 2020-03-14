@@ -30,15 +30,17 @@
         	<input type="text" name="cari" id="cari" placeholder="ketik kata kunci pencarian">   </input>
         </div>
         <div style="clear: both;"></div>
-    	<div id="lp-1-prodi-jtpi">
+    	<div id="lp-1-prodi-matkul">
            	<?php foreach ($matkul as $value) { ?>
         		<a href=""><h2><?php echo $value["nama_matkul"] ?></h2></a>
         	<?php } ?>
         </div>
     </div>
 
+    <input id="kode_prodi" value="<?php foreach ($prodi as $value){ echo $value["kode_prodi"]; }?>" hidden>
 
 	<input id="alamat" value="<?php echo base_url() ?>index.php/welcome/hasilcarimatkul/" hidden>
+    
 	<script src="<?php echo base_url() ?>/assets/ajax/ajaxcarimatkul.js"></script>
 </body>
 </html>

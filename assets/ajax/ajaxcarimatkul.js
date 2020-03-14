@@ -1,7 +1,8 @@
 console.log('ok');
 //ambil elemen
 var cari = document.getElementById('cari');
-var konten = document.getElementById('lp-1-prodi-jtpi');
+var kode_prodi = document.getElementById('kode_prodi')
+var konten = document.getElementById('lp-1-prodi-matkul');
 var alamat = document.getElementById('alamat');
 
 cari.addEventListener('keyup', function(){
@@ -14,8 +15,7 @@ cari.addEventListener('keyup', function(){
 			konten.innerHTML = ajaxCari.responseText;
 		}
 	}
-
-	ajaxCari.open('GET', alamat.value+cari.value , true);
+	ajaxCari.open('GET', alamat.value+kode_prodi.value+"/"+cari.value , true);
 	ajaxCari.send();
 
 });
