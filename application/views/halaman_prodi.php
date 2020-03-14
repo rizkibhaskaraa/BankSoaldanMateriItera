@@ -22,7 +22,7 @@
     </div>
     <div class="lp-page" id="lp-1">
         <div id="lp-1-jurusan">
-        	<a href="#lp-1-sains" id="a-sains">JURUSAN SAINS</a>
+        	<a href="#lp-1-sains">JURUSAN SAINS</a>
         	<a href="#lp-1-jtpi">JURUSAN TEKNOLOGI PRODUKSI DAN INDUSTRI </a>
         	<a href="#lp-1-jtik">JURUSAN TEKNOLOGI INFRASTRUKTUR DAN KEWILAYAHAN</a>
         </div>
