@@ -171,6 +171,7 @@ body{
 #lp-1-prodi-carimatkul{
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     justify-content: center;
     border-radius: 10px;       
 }
