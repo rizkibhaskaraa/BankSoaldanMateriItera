@@ -21,26 +21,23 @@
         </div>
     </div>
     <div class="lp-page" id="lp-1	">
-        <div id="lp-1-prodi">
-        	<?php foreach ($prodi as $value) { ?>
-        	<h4><?php echo $value['nama_prodi']?></h4>
+        <div id="lp-1-berkas">
+        	<?php foreach ($matkul as $value) { ?>
+        	<h4><?php echo $value['nama_matkul']?></h4>
         	<?php } ?>
         </div>
-        <div id="lp-1-cari">
-        	<input type="text" name="cari" id="cari" placeholder="ketik kata kunci pencarian">   </input>
+        <div id="lp-1-deskripsi">
+        	<?php foreach ($matkul as $value) { ?>
+	        <h2>Dosen</h2>
+	        <h2><?php echo $value['nama_dosen']?></h2>
+	        <?php } ?>
         </div>
-        <div style="clear: both;"></div>
-    	<div id="lp-1-prodi-matkul">
-           	<?php foreach ($matkul as $value) { ?>
-        		<a href="<?php echo base_url()?>/index.php/welcome/konten/<?php echo $value["kode_matkul"]?>"><h2><?php echo $value["nama_matkul"] ?></h2></a>
-        	<?php } ?>
+    	<div id="lp-1-prodi-pilihberkas">
+           	<a href=""><h2>Materi</h2></a>
+           	<a href=""><h2>Soal</h2></a>
+           	<a href=""><h2>Video</h2></a>
         </div>
     </div>
 
-    <input id="kode_prodi" value="<?php foreach ($prodi as $value){ echo $value["kode_prodi"]; }?>" hidden>
-
-	<input id="alamat" value="<?php echo base_url() ?>index.php/welcome/hasilcarimatkul/" hidden>
-    
-	<script src="<?php echo base_url() ?>/assets/ajax/ajaxcarimatkul.js"></script>
 </body>
 </html>

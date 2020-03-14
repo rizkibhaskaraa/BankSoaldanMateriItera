@@ -28,6 +28,10 @@ class BSMI_model extends CI_model
 		$this->db->like('nama_matkul', $kode_matkul);
 		return $this->db->get_where('matakuliah', array('kode_prodi'=>$kode_prodi))->result_array();		
 	}	
+
+	public function getmatkulkhusus($kode_matkul){
+		return $this->db->get_where('matakuliah', array('kode_matkul'=>$kode_matkul))->result_array();		
+	}
 }
 
 

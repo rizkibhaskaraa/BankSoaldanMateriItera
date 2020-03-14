@@ -172,13 +172,14 @@ body{
     border-radius: 10px;       
 }
 
-#lp-1-prodi-matkul{
+#lp-1-prodi-matkul,#lp-1-prodi-pilihberkas{
     margin-top: 1%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     border-radius: 10px;    
 }
+
 #lp-1-prodi-carimatkul a,#lp-1-prodi-matkul a{
     text-decoration: none;
     margin-top: 1%;
@@ -192,4 +193,40 @@ body{
     line-height: 100px;
     border-radius: 10px;
     font-size: 2vh;
+}
+
+#lp-1-berkas{
+    margin-left: 5%;
+    font-size: 2vw;
+    width: 50%;
+    border-radius: 10px;
+}
+
+#lp-1-deskripsi{
+    margin-top: 5%;
+    margin-left: 5%;
+    font-size: 0.7vw;
+    width: 30%;
+    background-color: #fff;
+    border-radius: 10px;   
+    margin-bottom: 5%;
+}
+
+#lp-1-deskripsi h2{
+    padding: 3%;
+    margin-top: -5%;
+}
+
+#lp-1-prodi-pilihberkas a{
+    text-decoration: none;
+    margin-top: 1%;
+    margin-right: 1%;
+    margin-left: 2%;
+    width: 25%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    height: 10%;
+    border-radius: 10px;
+    font-size: 2vh;   
 }
