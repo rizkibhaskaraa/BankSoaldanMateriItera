@@ -24,14 +24,19 @@
         <div id="lp-1-container">
             <h1>Selamat Datang di Website<br>Bank Soal dan Materi ITERA</h1>
             <h3>Dapatkan soal dan materi program studimu agar bisa menjadi referensi ketika ujian nanti</h3>
-            <button onclick="enroll()">Mulai cari referensimu</button>
+            <div id="start">Mulai cari referensimu</div>
         </div>
         <img src="<?php echo base_url('assets/img/lp_lampu.png') ?>" alt="Welcome"><!-- Diisi dengan gambar lampu pijar -->
     </div>
-    <script>
-        function enroll() {
-            
-        }
-    </script>
+    <div class="form-popup" id="formPopup">
+        <form action="#" class="form-container" id="formContainer">
+            <h1>Masukkan Enrollment Key</h1>
+            <input type="text" name="enrolment-form" id="enrolment-form">
+            <input type="submit" value="Masuk">
+            <input type="button" id="cancelPopup" value="Batal">
+        </form>
+    </div>
+
+    <script src="<?php echo base_url('assets/js/landing-page.js')?>"></script>
 </body>
 </html>
