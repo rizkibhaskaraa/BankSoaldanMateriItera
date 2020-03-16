@@ -21,23 +21,24 @@
         </div>
     </div>
     <div class="lp-page" id="lp-1	">
-        <div id="lp-1-berkas">
+        <div id="lp-1-prodi">
         	<?php foreach ($matkul as $value) { ?>
-        	<h4><?php echo $value['nama_matkul']?></h4>
+        	<h4>Video referensi <?php echo $value['nama_matkul']?></h4>
         	<?php } ?>
         </div>
-        <div id="lp-1-deskripsi">
-        	<?php foreach ($matkul as $value) { ?>
-	        <h2>Dosen</h2>
-	        <h2><?php echo $value['nama_dosen']?></h2>
-	        <?php } ?>
-        </div>
-    	<div id="lp-1-prodi-pilihberkas">
-           	<a href="<?php echo base_url()?>/index.php/welcome/materi/<?php echo $value["kode_matkul"]?>"><h2>Materi</h2></a>
-           	<a href="<?php echo base_url()?>/index.php/welcome/soal/<?php echo $value["kode_matkul"]?>"><h2>Soal</h2></a>
-           	<a href="<?php echo base_url()?>/index.php/welcome/video/<?php echo $value["kode_matkul"]?>""><h2>Video</h2></a>
+        <div style="clear: both;"></div>
+    	<div id="lp-1-prodi-matkul">    
+            <?php foreach($video as $value) {?>
+            <div id="video">
+                <div id="v-video">
+                <iframe src="https://www.youtube.com/embed/<?php echo $value['link'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 10%;" allowfullscreen></iframe>
+                <h3><?php echo $value['judul'] ?></h3>
+                </div>
+            </div>
+            <?php } ?>
         </div>
     </div>
+
 
 </body>
 </html>

@@ -153,18 +153,29 @@ body{
 }
 
 #lp-1-cari input{
-    font-size: 20px;
+    font-size: 3vh;
     border-radius: 10px;
     float: right;
     margin-top: 4%;
-    width: 25%;
+    width: 15%;
     background-color: rgb(253, 207, 0);
     border-color: #000;
     padding: 0.5%;
     margin-right: 5%;
 }
+#lp-1-cari select{
+    font-size: 3vh;
+    border-radius: 10px;
+    float: right;
+    margin-top: 4%;
+    width: 8%;
+    background-color: rgb(253, 207, 0);
+    border-color: #000;
+    padding: 0.5%;
+    margin-right: 3%;   
+}
 
-#lp-1-prodi-carimatkul{
+#lp-1-prodi-carimatkul,#lp-1-prodi-carisoal{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -229,4 +240,10 @@ body{
     height: 10%;
     border-radius: 10px;
     font-size: 2vh;   
+}
+
+#lp-1-prodi-matkul #video{
+    width: 30%;
+    left: 1%;
+    right: 1%;
 }

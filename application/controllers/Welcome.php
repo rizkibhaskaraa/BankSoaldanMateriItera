@@ -37,9 +37,58 @@ class Welcome extends CI_Controller {
 		$this->load->view('hasilcarimatkul',$data);	
 	}
 
+	public function hasilcarimateri($kode_matkul,$kode_materi){
+		$this->load->helper('url');
+		$data["materi"] = $this->BSMI_model->getmatericari($kode_matkul,$kode_materi);
+		$this->load->view('hasilcarimateri',$data);	
+	}
+
+	public function hasilcarisoal($kode_matkul,$kode_soal,$tahun){
+		$this->load->helper('url');
+		$data["soal"] = $this->BSMI_model->getsoalcari($kode_matkul,$kode_soal);
+		$data["tahun2"] = $tahun;
+		$this->load->view('hasilcarisoal',$data);	
+	}
+
+	public function tipesoal($kode_matkul,$tipe){
+		$this->load->helper('url');
+		$data["soal"] = $this->BSMI_model->gettipe($kode_matkul,$tipe);
+		$data["tipe"] = $tipe;
+		$this->load->view('hasilcarisoal',$data);	
+	}
+
+	public function tahunsoal($kode_matkul,$tahun){
+		$this->load->helper('url');
+		$data["soal"] = $this->BSMI_model->gettahun($kode_matkul,$tahun);
+		$data["tahun"] = $tahun;
+		$this->load->view('hasilcarisoal',$data);	
+	}
+
 	public function konten($kode_matkul){
 		$this->load->helper('url');
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->load->view('halaman_berkas',$data);		
 	}
+
+	public function materi($kode_matkul){
+		$this->load->helper('url');
+		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$data["materi"] = $this->BSMI_model->getmateri($kode_matkul); 
+		$this->load->view('halaman_materi',$data);			
+	}
+
+	public function soal($kode_matkul){
+		$this->load->helper('url');
+		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$data["soal"] = $this->BSMI_model->getsoal($kode_matkul); 
+		$this->load->view('halaman_soal',$data);			
+	}
+
+	public function video($kode_matkul){
+		$this->load->helper('url');
+		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$data["video"] = $this->BSMI_model->getvideo($kode_matkul); 
+		$this->load->view('halaman_video',$data);			
+	}
 }
+

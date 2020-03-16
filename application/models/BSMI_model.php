@@ -29,8 +29,40 @@ class BSMI_model extends CI_model
 		return $this->db->get_where('matakuliah', array('kode_prodi'=>$kode_prodi))->result_array();		
 	}	
 
+	public function getmatericari($kode_matkul,$kode_materi){
+		$this->db->like('judul', $kode_materi);
+		return $this->db->get_where('materi', array('kode_matkul'=>$kode_matkul))->result_array();		
+	}
+
+	public function gettipe($kode_matkul,$tipe){
+	$this->db->like('tipe', $tipe);
+		return $this->db->get_where('soal', array('kode_matkul'=>$kode_matkul))->result_array();		
+	}	
+
+	public function gettahun($kode_matkul,$tahun){
+	$this->db->like('tahun', $tahun);
+		return $this->db->get_where('soal', array('kode_matkul'=>$kode_matkul))->result_array();		
+	}
+
+	public function getsoalcari($kode_matkul,$kode_soal){
+		$this->db->like('judul', $kode_soal);
+		return $this->db->get_where('soal', array('kode_matkul'=>$kode_matkul))->result_array();		
+	}	
+
 	public function getmatkulkhusus($kode_matkul){
 		return $this->db->get_where('matakuliah', array('kode_matkul'=>$kode_matkul))->result_array();		
+	}
+
+	public function getmateri($kode_matkul){
+		return $this->db->get_where('materi', array('kode_matkul'=>$kode_matkul))->result_array();
+	}
+
+	public function getsoal($kode_matkul){
+		return $this->db->get_where('soal', array('kode_matkul'=>$kode_matkul))->result_array();
+	}
+
+	public function getvideo($kode_matkul){
+		return $this->db->get_where('video',array('kode_matkul' => $kode_matkul))->result_array();
 	}
 }
 
