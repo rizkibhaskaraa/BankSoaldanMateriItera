@@ -31,7 +31,7 @@
     	<h3>JURUSAN SAINS</h3>
     	<div id="lp-1-prodi-sains">
         	<?php foreach ($sains as $value) { ?>
-        		<a href="<?php echo base_url(); ?>/index.php/welcome/page_matkul/<?php echo $value["kode_prodi"] ?>"><h2><?php echo $value['nama_prodi']; ?></h2></a>
+        		<a href="<?php echo base_url(); ?>/welcome/page_matkul/<?php echo $value["kode_prodi"] ?>"><h2><?php echo $value['nama_prodi']; ?></h2></a>
         	<?php } ?>
         </div>
     </div>
@@ -39,7 +39,7 @@
     	<h3>JURUSAN TEKNOLOGI PRODUKSI DAN INDUSTRI</h3>
     	<div id="lp-1-prodi-jtpi">
            	<?php foreach ($jtpi as $value) { ?>
-        		<a href="<?php echo base_url(); ?>/index.php/welcome/page_matkul/<?php echo $value["kode_prodi"] ?>"><h2><?php echo $value['nama_prodi']; ?></h2></a>
+        		<a href="<?php echo base_url(); ?>/welcome/page_matkul/<?php echo $value["kode_prodi"] ?>"><h2><?php echo $value['nama_prodi']; ?></h2></a>
         	<?php } ?>
         </div>
     </div>
@@ -47,7 +47,7 @@
     	<h3>JURUSAN TEKNOLOGI INFRASTRUKTUR DAN KEWILAYAHAN</h3>
     	<div id="lp-1-prodi-jtik">
             <?php foreach ($jtik as $value) { ?>
-        		<a href="<?php echo base_url(); ?>/index.php/welcome/page_matkul/<?php echo $value["kode_prodi"] ?>"><h2><?php echo $value['nama_prodi']; ?></h2></a>
+        		<a href="<?php echo base_url(); ?>/welcome/page_matkul/<?php echo $value["kode_prodi"] ?>"><h2><?php echo $value['nama_prodi']; ?></h2></a>
         	<?php } ?>
         </div>
     </div>
