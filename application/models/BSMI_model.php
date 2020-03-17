@@ -65,7 +65,4 @@ class BSMI_model extends CI_model
 		return $this->db->get_where('video',array('kode_matkul' => $kode_matkul))->result_array();
 	}
 }
-
-
-
 ?>
