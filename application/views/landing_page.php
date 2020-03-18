@@ -29,7 +29,7 @@
         <img src="<?php echo base_url('assets/img/lp_lampu.png') ?>" alt="Welcome"><!-- Diisi dengan gambar lampu pijar -->
     </div>
     <div class="form-popup" id="formPopup">
-        <form class="form-container" id="formContainer" method="POST" action="<?php echo base_url('welcome'); ?>">
+        <form class="form-container" id="formContainer" method="POST" action="<?php echo base_url(''); ?>">
             <h1>Masukkan Enrollment Key</h1>
             <input type="text" name="enrolment_form" id="enrolment-form">
             <input type="submit" value="Masuk">

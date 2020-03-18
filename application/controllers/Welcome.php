@@ -19,7 +19,6 @@ class Welcome extends CI_Controller {
 		} else {
 			$this->checkEnrollmentKey();
 		}
-		
 	}
 
 	private function checkEnrollmentKey(){
@@ -28,7 +27,7 @@ class Welcome extends CI_Controller {
 		if($enrollmentKey){
 			redirect('browse');
 		} else {
-			redirect('welcome');
+			redirect('');
 		}
 	}
 
