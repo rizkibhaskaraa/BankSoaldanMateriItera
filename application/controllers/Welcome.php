@@ -105,6 +105,11 @@ class Welcome extends CI_Controller {
 		$this->load->view('halaman_tambahsoal',$data);
 	}
 
+	public function tampilanvideo($kode_matkul){
+		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$this->load->view('halaman_tambahvideo',$data);
+	}
+
 	public function addmateri(){
 		$kode_matkul = $this->input->post('kode_matkul');
 		if($this->BSMI_model->tambahmateri()==true){
@@ -142,5 +147,26 @@ class Welcome extends CI_Controller {
 				";
 			}
 	}
+
+		public function addvideo(){
+		$kode_matkul = $this->input->post('kode_matkul');
+		if($this->BSMI_model->tambahvideo()==true){
+			echo "
+				<script>
+					alert('berhasil menambah video');
+					document.location.href='../welcome/video/$kode_matkul';
+				</script>
+				";
+			}else{
+				echo "
+					<script>
+						alert('gagal menamabah materi');
+						document.location.href='../welcome/tampilanvideo/$kode_matkul';
+					</script>
+				";
+			}
+	}
+
+
 }
 

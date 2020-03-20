@@ -23,25 +23,23 @@
     <div class="lp-page" id="lp-1	">
         <div id="lp-1-prodi">
         	<?php foreach ($matkul as $value) { ?>
-        	<h4>Video referensi <?php echo $value['nama_matkul']?></h4>
+        	<h4>Upload Soal <?php echo $value['nama_matkul']?></h4>
         	<?php } ?>
         </div>
         <div style="clear: both;"></div>
-         <div id="lp-1-tambahmateri">
-            <a href="<?php echo base_url()?>/index.php/welcome/tampilanvideo/<?php echo $value["kode_matkul"]?>"><h3>Tambah Video</h3></a>
-        </div>
-    	<div id="lp-1-prodi-matkul">    
-            <?php foreach($video as $value) {?>
-            <div id="video">
-                <div id="v-video">
-                <iframe src="https://www.youtube.com/embed/<?php echo $value['link'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 10%;" allowfullscreen></iframe>
-                <h3><?php echo $value['judul'] ?></h3>
-                </div>
-            </div>
-            <?php } ?>
-        </div>
+        <div id="form-addmateri">
+            <?php echo  form_open_multipart('welcome/addvideo');?>
+                <input type="text" name="kode_matkul" value="<?php echo $value['kode_matkul']?>" hidden>
+                <h3>Judul Video <?php echo $value["nama_matkul"];?></h3>
+                <input type="text" name="judul_video" id="judul_video" placeholder="isi judul video"></br>
+                <h3>Link Video dari youtube</h3>
+                <input type="text" name="link_video" placeholder="isi link video"></br>
+                <input type="reset" value="reset">
+                <input type="submit" value="simpan">
+            <?php echo form_close(); ?>
+        </div>    
     </div>
-
 
 </body>
 </html>
+

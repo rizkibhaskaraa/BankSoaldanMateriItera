@@ -343,7 +343,8 @@ body{
 }
 
 #form-addmateri input[name="judul_materi"],#form-addmateri input[name="judul_soal"]
-,#form-addmateri input[name="tahun_soal"]{
+,#form-addmateri input[name="tahun_soal"],#form-addmateri input[name="judul_video"],
+#form-addmateri input[name="link_video"]{
     width: 100%;
     font-size: 2.5vh;
     margin-bottom: 1%;

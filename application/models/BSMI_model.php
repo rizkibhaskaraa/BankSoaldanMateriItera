@@ -116,6 +116,26 @@ class BSMI_model extends CI_model
 			return true;
 		}
 	}
+
+	public function tambahvideo(){	
+		//https://www.youtube.com/watch?v=
+		$linkasli = $this->input->post('link_video');
+		$link = substr($linkasli,32);
+		$data = [
+			"judul" => $this->input->post('judul_video'),
+			"link" => $link,
+			"kode_matkul" => $this->input->post('kode_matkul')
+		];
+		if($link == ""){
+			return false;
+		}else{
+			$this->db->insert('video', $data);
+			return true;
+		}
+	}
+
+
+
 }
 
 
