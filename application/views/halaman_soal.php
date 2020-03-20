@@ -49,6 +49,9 @@
             </div>
         </div>
         <div style="clear: both;"></div>
+        <div id="lp-1-tambahmateri">
+            <a href="<?php echo base_url()?>/index.php/welcome/tampilansoal/<?php echo $value["kode_matkul"]?>"><h3>Tambah soal</h3></a>
+        </div>
     	<div id="lp-1-prodi-matkul">
            	<?php foreach ($soal as $value) { ?>
         		<a href="<?php echo base_url()?>/assets/soal/<?php echo $value["file"]?>"><h2><?php echo $value["judul"] ?></h2></a>

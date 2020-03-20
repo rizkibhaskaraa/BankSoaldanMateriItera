@@ -64,6 +64,58 @@ class BSMI_model extends CI_model
 	public function getvideo($kode_matkul){
 		return $this->db->get_where('video',array('kode_matkul' => $kode_matkul))->result_array();
 	}
+
+	public function tambahmateri(){
+		$file = $_FILES['File'];
+		if($file = ''){}else{
+			$config['upload_path'] = './assets/materi';
+			$config['allowed_types'] = 'pdf|doc|docx|jpg|jpeg|ppt|pptx|png';
+			$this->load->library('upload',$config);
+			if(!$this->upload->do_upload('File')){
+			}else{
+				$file = $this->upload->data('file_name');
+			}
+		}
+		
+		$data = [
+			"judul" => $this->input->post('judul_materi'),
+			"file" => $file,
+			"kode_matkul" => $this->input->post('kode_matkul')
+		];
+		if($file == ""){
+			return false;
+		}else{
+			$this->db->insert('materi', $data);
+			return true;
+		}
+	}
+
+	public function tambahsoal(){
+		$file = $_FILES['File'];
+		if($file = ''){}else{
+			$config['upload_path'] = './assets/soal';
+			$config['allowed_types'] = 'pdf|doc|docx|jpg|jpeg|ppt|pptx|png';
+			$this->load->library('upload',$config);
+			if(!$this->upload->do_upload('File')){
+			}else{
+				$file = $this->upload->data('file_name');
+			}
+		}
+		
+		$data = [
+			"judul" => $this->input->post('judul_soal'),
+			"tahun" => $this->input->post('tahun_soal'),
+			"tipe" => $this->input->post('tipe_soal'),
+			"file" => $file,
+			"kode_matkul" => $this->input->post('kode_matkul')
+		];
+		if($file == ""){
+			return false;
+		}else{
+			$this->db->insert('soal', $data);
+			return true;
+		}
+	}
 }
 
 

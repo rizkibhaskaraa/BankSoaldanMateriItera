@@ -6,12 +6,12 @@ class Welcome extends CI_Controller {
 		parent::__construct();
 		$this->load->model('BSMI_model'); //ngambil model model_lapor dari folder models
 		$this->load->helper('url');
+		$this->load->library('form_validation');
 	}
 
 	public function index()
 	{
 		$this->load->helper('form');
-		$this->load->library('form_validation');
 		$this->form_validation->set_rules('enrolment_form', 'Enrollment key', 'trim|required');
 
 		if($this->form_validation->run() == false){
@@ -93,6 +93,54 @@ class Welcome extends CI_Controller {
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$data["video"] = $this->BSMI_model->getvideo($kode_matkul); 
 		$this->load->view('halaman_video',$data);			
+	}
+
+	public function tampilanmateri($kode_matkul){
+		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$this->load->view('halaman_tambahmateri',$data);
+	}
+
+	public function tampilansoal($kode_matkul){
+		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$this->load->view('halaman_tambahsoal',$data);
+	}
+
+	public function addmateri(){
+		$kode_matkul = $this->input->post('kode_matkul');
+		if($this->BSMI_model->tambahmateri()==true){
+			echo "
+				<script>
+					alert('berhasil menambah materi');
+					document.location.href='../welcome/materi/$kode_matkul';
+				</script>
+				";
+			}else{
+				echo "
+					<script>
+						alert('gagal menamabah materi');
+						document.location.href='../welcome/tampilanmateri/$kode_matkul';
+					</script>
+				";
+			}
+	}
+
+	public function addsoal(){
+		$kode_matkul = $this->input->post('kode_matkul');
+		if($this->BSMI_model->tambahsoal()==true){
+			echo "
+				<script>
+					alert('berhasil menambah soal');
+					document.location.href='../welcome/soal/$kode_matkul';
+				</script>
+				";
+			}else{
+				echo "
+					<script>
+						alert('gagal menamabah soal');
+						document.location.href='../welcome/tampilansoal/$kode_matkul';
+					</script>
+				";
+			}
 	}
 }
 
