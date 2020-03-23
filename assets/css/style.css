@@ -385,10 +385,16 @@ body{
   width: 100%;
   height: 150px;
   cursor: pointer;
-  text-align: center;
-  opacity: 0;
+  color: #000;
 }
 .dropzone-wrapper:hover,
 .dropzone-wrapper.dragover {
   background: #ecf0f5;
+}
+
+#alert {
+    color: red;
+    width: auto;
+    font-size: 2vh; 
+    border-radius: 10px;
 }

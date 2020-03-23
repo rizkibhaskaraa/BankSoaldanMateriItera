@@ -31,6 +31,11 @@
             <?php echo  form_open_multipart('welcome/addmateri');?>
                 <input type="text" name="kode_matkul" value="<?php echo $value['kode_matkul']?>" hidden>
                 <h3>Judul materi <?php echo $value["nama_matkul"];?></h3>
+                <div id="alert">
+                <?php if(validation_errors()): ?>
+                    <h4><?php echo validation_errors(); ?></h4>
+                <?php endif; ?>
+                </div>
                 <input type="text" name="judul_materi" id="judul_materi" placeholder="isi judul materi"></br>
                 <div class="dropzone-wrapper">
                     <div class="dropzone-desc">

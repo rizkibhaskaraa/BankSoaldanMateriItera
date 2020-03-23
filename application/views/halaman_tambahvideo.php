@@ -23,12 +23,17 @@
     <div class="lp-page" id="lp-1	">
         <div id="lp-1-prodi">
         	<?php foreach ($matkul as $value) { ?>
-        	<h4>Upload Soal <?php echo $value['nama_matkul']?></h4>
+        	<h4>Upload video <?php echo $value['nama_matkul']?></h4>
         	<?php } ?>
         </div>
         <div style="clear: both;"></div>
         <div id="form-addmateri">
             <?php echo  form_open_multipart('welcome/addvideo');?>
+                <div id="alert">
+                <?php if(validation_errors()): ?>
+                    <h4><?php echo validation_errors(); ?></h4>
+                <?php endif; ?>
+                </div>
                 <input type="text" name="kode_matkul" value="<?php echo $value['kode_matkul']?>" hidden>
                 <h3>Judul Video <?php echo $value["nama_matkul"];?></h3>
                 <input type="text" name="judul_video" id="judul_video" placeholder="isi judul video"></br>

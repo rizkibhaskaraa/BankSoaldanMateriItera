@@ -112,59 +112,79 @@ class Welcome extends CI_Controller {
 
 	public function addmateri(){
 		$kode_matkul = $this->input->post('kode_matkul');
-		if($this->BSMI_model->tambahmateri()==true){
-			echo "
-				<script>
-					alert('berhasil menambah materi');
-					document.location.href='../welcome/materi/$kode_matkul';
-				</script>
-				";
-			}else{
+		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$this->form_validation->set_rules('judul_materi','Judul Materi','required');
+		if($this->form_validation->run() == false) {
+			$this->load->view('halaman_tambahmateri',$data);
+		}else{
+			if($this->BSMI_model->tambahmateri()==true){
 				echo "
 					<script>
-						alert('gagal menamabah materi');
-						document.location.href='../welcome/tampilanmateri/$kode_matkul';
+						alert('berhasil menambah materi');
+						document.location.href='../welcome/materi/$kode_matkul';
 					</script>
-				";
-			}
+					";
+				}else{
+					echo "
+						<script>
+							alert('gagal menamabah materi,file tidak boleh kosong');
+							document.location.href='../welcome/tampilanmateri/$kode_matkul';
+						</script>
+					";
+				}
+		}
 	}
 
 	public function addsoal(){
 		$kode_matkul = $this->input->post('kode_matkul');
-		if($this->BSMI_model->tambahsoal()==true){
-			echo "
-				<script>
-					alert('berhasil menambah soal');
-					document.location.href='../welcome/soal/$kode_matkul';
-				</script>
-				";
+		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$this->form_validation->set_rules('judul_soal','Judul Soal','required');
+		$this->form_validation->set_rules('tahun_soal','Tahun Soal','required|max_length[4]|integer');
+
+		if($this->form_validation->run() == false) {
+			$this->load->view('halaman_tambahsoal',$data);
+		}else{
+			if($this->BSMI_model->tambahsoal()==true){
+				echo "
+					<script>
+						alert('berhasil menambah soal');
+						document.location.href='../welcome/soal/$kode_matkul';
+					</script>
+					";
 			}else{
 				echo "
 					<script>
-						alert('gagal menamabah soal');
+						alert('gagal menamabah soal,file tidak boleh kosong');
 						document.location.href='../welcome/tampilansoal/$kode_matkul';
 					</script>
 				";
 			}
+		}
 	}
 
 		public function addvideo(){
 		$kode_matkul = $this->input->post('kode_matkul');
-		if($this->BSMI_model->tambahvideo()==true){
-			echo "
-				<script>
-					alert('berhasil menambah video');
-					document.location.href='../welcome/video/$kode_matkul';
-				</script>
-				";
+		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$this->form_validation->set_rules('judul_video','Judul Video','required');
+		if($this->form_validation->run() == false) {
+			$this->load->view('halaman_tambahvideo',$data);
+		}else{
+			if($this->BSMI_model->tambahvideo()==true){
+				echo "
+					<script>
+						alert('berhasil menambah video');
+						document.location.href='../welcome/video/$kode_matkul';
+					</script>
+					";
 			}else{
 				echo "
 					<script>
-						alert('gagal menamabah materi');
+						alert('gagal menamabah video,link video harus diisi atau link tidak sesuai');
 						document.location.href='../welcome/tampilanvideo/$kode_matkul';
 					</script>
 				";
 			}
+		}
 	}
 
 

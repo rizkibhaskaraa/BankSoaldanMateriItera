@@ -29,6 +29,11 @@
         <div style="clear: both;"></div>
         <div id="form-addmateri">
             <?php echo  form_open_multipart('welcome/addsoal');?>
+                <div id="alert">
+                <?php if(validation_errors()): ?>
+                    <h4><?php echo validation_errors(); ?></h4>
+                <?php endif; ?>
+                </div>
                 <input type="text" name="kode_matkul" value="<?php echo $value['kode_matkul']?>" hidden>
                 <h3>Judul Soal <?php echo $value["nama_matkul"];?></h3>
                 <input type="text" name="judul_soal" id="judul_materi" placeholder="isi judul soal"></br>
@@ -36,7 +41,6 @@
                 <input type="text" name="tahun_soal" placeholder="isi tahun"></br>
                 <h3>Tipe soal</h3>
                 <select name="tipe_soal">
-                    <option>pilih tipe soal</option>
                     <option value="UTS">UTS</option>
                     <option value="UAS">UAS</option>
                     <option value="KUIS">KUIS</option>

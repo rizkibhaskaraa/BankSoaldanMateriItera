@@ -121,12 +121,13 @@ class BSMI_model extends CI_model
 		//https://www.youtube.com/watch?v=
 		$linkasli = $this->input->post('link_video');
 		$link = substr($linkasli,32);
+		$validlink = substr($linkasli,0,32);
 		$data = [
 			"judul" => $this->input->post('judul_video'),
 			"link" => $link,
 			"kode_matkul" => $this->input->post('kode_matkul')
 		];
-		if($link == ""){
+		if($link == "" || $validlink != "https://www.youtube.com/watch?v="){
 			return false;
 		}else{
 			$this->db->insert('video', $data);
