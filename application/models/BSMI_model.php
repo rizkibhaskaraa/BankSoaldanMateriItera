@@ -35,12 +35,20 @@ class BSMI_model extends CI_model
 	}
 
 	public function gettipe($kode_matkul,$tipe){
-	$this->db->like('tipe', $tipe);
+		if ($tipe == "Tipe") {
+
+		}else{
+			$this->db->like('tipe', $tipe);
+		}
 		return $this->db->get_where('soal', array('kode_matkul'=>$kode_matkul))->result_array();		
 	}	
 
 	public function gettahun($kode_matkul,$tahun){
-	$this->db->like('tahun', $tahun);
+		if ($tahun == "Tahun") {
+
+		}else{
+			$this->db->like('tahun', $tahun);
+		}
 		return $this->db->get_where('soal', array('kode_matkul'=>$kode_matkul))->result_array();		
 	}
 
