@@ -31,6 +31,10 @@ class Welcome extends CI_Controller {
 		}
 	}
 
+	public function login(){
+		$this->load->view('login_page');
+	}
+
 	public function page_prodi(){
 		$data['sains'] = $this->BSMI_model->getsains();
 		$data['jtik'] = $this->BSMI_model->getjtik();
@@ -162,7 +166,7 @@ class Welcome extends CI_Controller {
 		}
 	}
 
-		public function addvideo(){
+	public function addvideo(){
 		$kode_matkul = $this->input->post('kode_matkul');
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->form_validation->set_rules('judul_video','Judul Video','required');

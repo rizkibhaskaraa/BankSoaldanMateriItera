@@ -52,5 +52,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['browse'] = 'welcome/page_prodi';
 $route['enroll'] = 'welcome/checkEnrollmentKey';
+$route['admin-bsmi'] = 'welcome/login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
