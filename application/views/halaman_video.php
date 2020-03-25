@@ -20,16 +20,23 @@
             </ul>
         </div>
     </div>
-    <div class="lp-page" id="lp-1	">
+    <div class="lp-page" id="lp-1">
         <div id="lp-1-prodi">
         	<?php foreach ($matkul as $value) { ?>
         	<h4>Video referensi <?php echo $value['nama_matkul']?></h4>
         	<?php } ?>
         </div>
+
         <div style="clear: both;"></div>
          <div id="lp-1-tambahmateri">
             <a href="<?php echo base_url()?>/index.php/welcome/tampilanvideo/<?php echo $value["kode_matkul"]?>"><h3>Tambah Video</h3></a>
         </div>
+
+         <!-- tombol hapus -->
+        <div id="lp-1-hapusmateri">
+            <input type="submit" name="hapus" id="hapus" value="Hapus Video">
+        </div>
+        <div style="clear: both;"></div>
     	<div id="lp-1-prodi-matkul">    
             <?php foreach($video as $value) {?>
             <div id="video">
@@ -42,6 +49,11 @@
         </div>
     </div>
 
+    <input id="kode_matkul" value="<?php foreach ($matkul as $value){ echo $value['kode_matkul']; }?>" hidden>
+
+    <input id="alamathapus" value="<?php echo base_url() ?>index.php/welcome/hasiltombolhapusvideo/" hidden>
+    
+    <script src="<?php echo base_url() ?>/assets/ajax/ajaxhapusvideo.js"></script>
 
 </body>
 </html>

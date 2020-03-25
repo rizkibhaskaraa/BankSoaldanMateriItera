@@ -5,6 +5,11 @@ var kode_prodi = document.getElementById('kode_prodi')
 var konten = document.getElementById('lp-1-prodi-matkul');
 var alamat = document.getElementById('alamat');
 
+/*for (var i = cari.length - 1; i >= 0; i--) {
+	if (cari[i] == " ") {
+		cari[i] = "1";
+	}
+}*/
 cari.addEventListener('keyup', function(){
 	//buat objeck
 	

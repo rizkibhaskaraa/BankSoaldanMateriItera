@@ -8,6 +8,9 @@ var konten = document.getElementById('lp-1-prodi-matkul');
 var alamat = document.getElementById('alamat');
 var alamat1 = document.getElementById('alamat1');
 var alamat2 = document.getElementById('alamat2');
+var alamathapus = document.getElementById('alamathapus');
+var kontenhapus = document.getElementById('lp-1');
+var tombolhapus = document.getElementById('hapus');
 
 cari.addEventListener('keyup', function(){
 	//buat objeck
@@ -54,3 +57,15 @@ tipe.addEventListener('click', function(){
 
 });
 
+tombolhapus.addEventListener('click',function(){
+	var ajaxhapus = new XMLHttpRequest();
+	ajaxhapus.onreadystatechange = function(){
+		if(ajaxhapus.readyState == 4 && ajaxhapus.status == 200){
+			kontenhapus.innerHTML = ajaxhapus.responseText;
+		}
+	}
+	ajaxhapus.open('GET', alamathapus.value+kode_matkul.value , true);
+	ajaxhapus.send();	
+
+
+});

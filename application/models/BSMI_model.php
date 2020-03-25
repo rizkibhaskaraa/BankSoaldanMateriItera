@@ -39,12 +39,20 @@ class BSMI_model extends CI_model
 	}
 
 	public function gettipe($kode_matkul,$tipe){
-	$this->db->like('tipe', $tipe);
+		if ($tipe == "Tipe") {
+
+		}else{
+			$this->db->like('tipe', $tipe);
+		}
 		return $this->db->get_where('soal', array('kode_matkul'=>$kode_matkul))->result_array();		
 	}	
 
 	public function gettahun($kode_matkul,$tahun){
-	$this->db->like('tahun', $tahun);
+		if ($tahun == "Tahun") {
+
+		}else{
+			$this->db->like('tahun', $tahun);
+		}
 		return $this->db->get_where('soal', array('kode_matkul'=>$kode_matkul))->result_array();		
 	}
 
@@ -139,7 +147,32 @@ class BSMI_model extends CI_model
 		}
 	}
 
+	public function hapusmateri($datahapus,$kode_matkul){
+		$n = count($datahapus);
+		for ($i=0; $i < $n; $i++) { 
+			$this->db->where('kode_materi',$datahapus[$i]);
+			$this->db->delete('materi');
+		}
+		redirect('welcome/materi/'.$kode_matkul);
+	}
 
+	public function hapussoal($datahapus,$kode_matkul){
+		$n = count($datahapus);
+		for ($i=0; $i < $n; $i++) { 
+			$this->db->where('kode_soal',$datahapus[$i]);
+			$this->db->delete('soal');
+		}
+		redirect('welcome/soal/'.$kode_matkul);
+	}
+
+		public function hapusvideo($datahapus,$kode_matkul){
+		$n = count($datahapus);
+		for ($i=0; $i < $n; $i++) { 
+			$this->db->where('kode_video',$datahapus[$i]);
+			$this->db->delete('video');
+		}
+		redirect('welcome/video/'.$kode_matkul);
+	}
 
 }
 
