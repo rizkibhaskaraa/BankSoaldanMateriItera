@@ -6,6 +6,7 @@ class Welcome extends CI_Controller {
 		parent::__construct();
 		$this->load->model('BSMI_model'); //ngambil model model_lapor dari folder models
 		$this->load->helper('url');
+		$this->load->helper('form');
 		$this->load->library('form_validation');
 	}
 
@@ -32,7 +33,30 @@ class Welcome extends CI_Controller {
 	}
 
 	public function login(){
-		$this->load->view('login_page');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required');
+		if ($this->form_validation->run() == false) {
+			$this->load->view('login_page');
+		} else {
+			$this->checkLogin();
+		}
+	}
+
+	public function checkLogin(){
+		$email = $this->input->post('email');
+		$password = $this->input->post('password');
+
+		$user = $this->BSMI_model->get_user($email);
+		if ($user) {
+			$saved_password = password_hash($user['password'], PASSWORD_DEFAULT);
+			if(password_verify($password, $saved_password)){
+				redirect('browse');
+			} else {
+				$this->load->view('login_page');
+			}
+		} else {
+			$this->load->view('login_page');
+		}
 	}
 
 	public function page_prodi(){

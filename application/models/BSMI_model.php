@@ -6,6 +6,10 @@ class BSMI_model extends CI_model
 		return $this->db->get_where('enrolkey', array('enrol'=>$input))->result_array(); //ambil seluruh data dari tabel lapor
 	}
 
+	public function get_user($username){
+		return $this->db->get_where('user', ['username'=>$username])->row_array();
+	}
+
 	public function getsains(){
 		return $this->db->get_where('prodi', array('jurusan'=>'sains'))->result_array();
 	}
