@@ -143,7 +143,32 @@ class BSMI_model extends CI_model
 		}
 	}
 
+	public function hapusmateri($datahapus,$kode_matkul){
+		$n = count($datahapus);
+		for ($i=0; $i < $n; $i++) { 
+			$this->db->where('kode_materi',$datahapus[$i]);
+			$this->db->delete('materi');
+		}
+		redirect('welcome/materi/'.$kode_matkul);
+	}
 
+	public function hapussoal($datahapus,$kode_matkul){
+		$n = count($datahapus);
+		for ($i=0; $i < $n; $i++) { 
+			$this->db->where('kode_soal',$datahapus[$i]);
+			$this->db->delete('soal');
+		}
+		redirect('welcome/soal/'.$kode_matkul);
+	}
+
+		public function hapusvideo($datahapus,$kode_matkul){
+		$n = count($datahapus);
+		for ($i=0; $i < $n; $i++) { 
+			$this->db->where('kode_video',$datahapus[$i]);
+			$this->db->delete('video');
+		}
+		redirect('welcome/video/'.$kode_matkul);
+	}
 
 }
 

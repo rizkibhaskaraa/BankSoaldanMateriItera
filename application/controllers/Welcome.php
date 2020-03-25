@@ -193,5 +193,41 @@ class Welcome extends CI_Controller {
 	}
 
 
+	public function hasiltombolhapusmateri($kode_matkul){
+		$data["materi"] = $this->BSMI_model->getmateri($kode_matkul); 
+		$data["kode_matkul"] = $kode_matkul;
+		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$this->load->view('hasilhapusmateri',$data);	
+	}
+
+	public function hasiltombolhapussoal($kode_matkul){
+		$data["soal"] = $this->BSMI_model->getsoal($kode_matkul); 
+		$data["kode_matkul"] = $kode_matkul;
+		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$this->load->view('hasilhapussoal',$data);	
+	}
+
+	public function hasiltombolhapusvideo($kode_matkul){
+		$data["video"] = $this->BSMI_model->getvideo($kode_matkul); 
+		$data["kode_matkul"] = $kode_matkul;
+		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$this->load->view('hasilhapusvideo',$data);	
+	}
+
+	public function hapusmateri($kode_matkul){
+		$datahapus =$_POST['pilih'];
+		$this->BSMI_model->hapusmateri($datahapus,$kode_matkul);
+	}
+
+	public function hapussoal($kode_matkul){
+		$datahapus =$_POST['pilih'];
+		$this->BSMI_model->hapussoal($datahapus,$kode_matkul);
+	}
+
+	public function hapusvideo($kode_matkul){
+		$datahapus =$_POST['pilih'];
+		$this->BSMI_model->hapusvideo($datahapus,$kode_matkul);
+	}
+
 }
 

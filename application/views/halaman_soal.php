@@ -20,7 +20,7 @@
             </ul>
         </div>
     </div>
-    <div class="lp-page" id="lp-1	">
+    <div class="lp-page" id="lp-1">
         <div id="lp-1-prodi">
         	<?php foreach ($matkul as $value) { ?>
         	<h4>Soal latihan <?php echo $value['nama_matkul']?></h4>
@@ -52,6 +52,11 @@
         <div id="lp-1-tambahmateri">
             <a href="<?php echo base_url()?>/index.php/welcome/tampilansoal/<?php echo $value["kode_matkul"]?>"><h3>Tambah soal</h3></a>
         </div>
+        <div id="lp-1-hapusmateri">
+            <input type="submit" name="hapus" id="hapus" value="Hapus Soal">
+        </div>
+
+        <div style="clear: both;"></div>
     	<div id="lp-1-prodi-matkul">
            	<?php foreach ($soal as $value) { ?>
         		<a href="<?php echo base_url()?>/assets/soal/<?php echo $value["file"]?>"><h2><?php echo $value["judul"] ?></h2></a>
@@ -65,6 +70,8 @@
     
     <input id="alamat2" value="<?php echo base_url() ?>index.php/welcome/tahunsoal/" hidden>
 
+    <input id="alamathapus" value="<?php echo base_url() ?>index.php/welcome/hasiltombolhapussoal/" hidden>
+    
     <input id="alamat" value="<?php echo base_url() ?>index.php/welcome/hasilcarisoal/" hidden>
 	<script src="<?php echo base_url() ?>/assets/ajax/ajaxcarisoal.js"></script>
 </body>
