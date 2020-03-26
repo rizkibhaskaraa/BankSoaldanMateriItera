@@ -21,7 +21,11 @@ class BSMI_model extends CI_model
 	}
 
 	public function getprodi($id){
-		return $this->db->get_where('prodi', array('kode_prodi'=>$id))->result_array();	
+		return $this->db->get_where('prodi', array('kode_prodi'=>$id))->row_array();	
+	}
+
+	public function getprodioperator($kode_user){
+		return $this->db->get_where('prodi', array('kode_user'=>$kode_user))->row_array();	
 	}
 
 	public function getmatkul($kode_prodi){

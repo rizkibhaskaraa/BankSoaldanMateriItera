@@ -22,9 +22,9 @@
     </div>
     <div class="lp-page" id="lp-1	">
         <div id="lp-1-prodi">
-        	<?php foreach ($prodi as $value) { ?>
-        	<h4><?php echo $value['nama_prodi']?></h4>
-        	<?php } ?>
+        	
+        	<h4><?php echo $prodi['nama_prodi']?></h4>
+        	
         </div>
         <div id="lp-1-cari">
         	<input type="text" name="cari" id="cari" placeholder="ketik kata kunci pencarian">   </input>
@@ -37,7 +37,7 @@
         </div>
     </div>
 
-    <input id="kode_prodi" value="<?php foreach ($prodi as $value){ echo $value["kode_prodi"]; }?>" hidden>
+    <input id="kode_prodi" value="<?php echo $prodi["kode_prodi"]; ?>" hidden>
 
 	<input id="alamat" value="<?php echo base_url() ?>index.php/welcome/hasilcarimatkul/" hidden>
     

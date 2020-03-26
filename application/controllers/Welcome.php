@@ -33,7 +33,7 @@ class Welcome extends CI_Controller {
 	}
 
 	public function login(){
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+		$this->form_validation->set_rules('username', 'Username', 'trim|required');//|valid_email');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 		if ($this->form_validation->run() == false) {
 			$this->load->view('login_page');
@@ -43,14 +43,18 @@ class Welcome extends CI_Controller {
 	}
 
 	public function checkLogin(){
-		$email = $this->input->post('email');
+		$email = $this->input->post('username');
 		$password = $this->input->post('password');
 
 		$user = $this->BSMI_model->get_user($email);
 		if ($user) {
 			$saved_password = password_hash($user['password'], PASSWORD_DEFAULT);
 			if(password_verify($password, $saved_password)){
-				redirect('browse');
+				if ($email == "aldi.14117055@student.itera.ac.id") {
+					redirect('welcome/page_prodi/');	
+				}else{
+					redirect('welcome/page_matkul_operator/'.$user['kode_user']);
+				}
 			} else {
 				$this->load->view('login_page');
 			}
@@ -69,6 +73,12 @@ class Welcome extends CI_Controller {
 	public function page_matkul($kode_prodi){
 		$data["prodi"] = $this->BSMI_model->getprodi($kode_prodi);
 		$data["matkul"] = $this->BSMI_model->getmatkul($kode_prodi);
+		$this->load->view('halaman_matakuliah',$data);
+	}
+
+	public function page_matkul_operator($kode_user){
+		$data["prodi"] = $this->BSMI_model->getprodioperator($kode_user);
+		$data["matkul"] = $this->BSMI_model->getmatkul($data["prodi"]["kode_prodi"]);
 		$this->load->view('halaman_matakuliah',$data);
 	}
 
