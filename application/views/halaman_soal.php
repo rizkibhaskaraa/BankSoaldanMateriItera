@@ -49,13 +49,14 @@
             </div>
         </div>
         <div style="clear: both;"></div>
-        <div id="lp-1-tambahmateri">
-            <a href="<?php echo base_url()?>/index.php/welcome/tampilansoal/<?php echo $value["kode_matkul"]?>"><h3>Tambah soal</h3></a>
-        </div>
-        <div id="lp-1-hapusmateri">
-            <input type="submit" name="hapus" id="hapus" value="Hapus Soal">
-        </div>
-
+        <?php if ($cek_operatoradmin == true) {?>
+            <div id="lp-1-tambahmateri">
+                <a href="<?php echo base_url()?>/index.php/welcome/tampilansoal/<?php echo $value["kode_matkul"]?>"><h3>Tambah soal</h3></a>
+            </div>
+            <div id="lp-1-hapusmateri">
+                <input type="submit" name="hapus" id="hapus" value="Hapus Soal">
+            </div>
+        <?php } ?>
         <div style="clear: both;"></div>
     	<div id="lp-1-prodi-matkul">
            	<?php foreach ($soal as $value) { ?>

@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Welcome extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
+		session_start();
 		$this->load->model('BSMI_model'); //ngambil model model_lapor dari folder models
 		$this->load->helper('url');
 		$this->load->helper('form');
@@ -26,6 +27,7 @@ class Welcome extends CI_Controller {
 		$enrollmentInput = $this->input->post('enrolment_form');
 		$enrollmentKey = $this->BSMI_model->getenroll($enrollmentInput);
 		if($enrollmentKey){
+			$_SESSION["login"] = true;
 			redirect('browse');
 		} else {
 			redirect('');
@@ -45,15 +47,19 @@ class Welcome extends CI_Controller {
 	public function checkLogin(){
 		$email = $this->input->post('username');
 		$password = $this->input->post('password');
-
 		$user = $this->BSMI_model->get_user($email);
+		$data["prodi"] = $this->BSMI_model->getprodioperator($user['kode_user']);
+
 		if ($user) {
 			$saved_password = password_hash($user['password'], PASSWORD_DEFAULT);
 			if(password_verify($password, $saved_password)){
-				if ($email == "aldi.14117055@student.itera.ac.id") {
+				if ($email == "aldi.14117055@student.itera.ac.id"){
+					$_SESSION["admin"] = true;
 					redirect('welcome/page_prodi/');	
 				}else{
-					redirect('welcome/page_matkul_operator/'.$user['kode_user']);
+					$_SESSION["operator"] = true;
+					$_SESSION["kode_prodi"] = $data["prodi"]["kode_prodi"];
+					redirect('welcome/page_matkul_operator/'.$_SESSION["kode_prodi"]);
 				}
 			} else {
 				$this->load->view('login_page');
@@ -64,6 +70,17 @@ class Welcome extends CI_Controller {
 	}
 
 	public function page_prodi(){
+		//cek session apakah pengguna langsung akses link ke page tertentu tanpa memasukan enroll
+		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"]) ){
+			echo "
+			<script>
+				alert('masukkan enrollmentKey dahulu');
+				document.location.href='../';
+			</script>
+			";
+		}
+
+
 		$data['sains'] = $this->BSMI_model->getsains();
 		$data['jtik'] = $this->BSMI_model->getjtik();
 		$data['jtpi'] = $this->BSMI_model->getjtpi();
@@ -71,14 +88,49 @@ class Welcome extends CI_Controller {
 	}
 
 	public function page_matkul($kode_prodi){
-		$data["prodi"] = $this->BSMI_model->getprodi($kode_prodi);
-		$data["matkul"] = $this->BSMI_model->getmatkul($kode_prodi);
+		//cek session apakah pengguna langsung akses link ke page tertentu tanpa memasukan enroll
+		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"]) ){
+			echo "
+			<script>
+				alert('masukkan enrollmentKey dahulu');
+				document.location.href='../';
+			</script>
+			";
+		}
+
+		if (isset($_SESSION["operator"])) {
+			$kode_prodi = $_SESSION["kode_prodi"];
+			$data["prodi"] = $this->BSMI_model->getprodi($kode_prodi);
+			$data["matkul"] = $this->BSMI_model->getmatkul($kode_prodi);
+		}else{
+			$data["prodi"] = $this->BSMI_model->getprodi($kode_prodi);
+			$data["matkul"] = $this->BSMI_model->getmatkul($kode_prodi);
+		}		
+
+		
 		$this->load->view('halaman_matakuliah',$data);
 	}
 
-	public function page_matkul_operator($kode_user){
-		$data["prodi"] = $this->BSMI_model->getprodioperator($kode_user);
-		$data["matkul"] = $this->BSMI_model->getmatkul($data["prodi"]["kode_prodi"]);
+	public function page_matkul_operator($kode_prodi){
+			//cek session apakah operator langsung akses link ke page tertentu tanpa memasukan login
+		if(!isset($_SESSION["operator"]) && !isset($_SESSION["operator"])){
+			echo "
+			<script>
+				alert('login dahulu');
+				document.location.href='../welcome/login';
+			</script>
+			";
+		}
+
+		if (isset($_SESSION["operator"])) {
+			$kode_prodi = $_SESSION["kode_prodi"];
+			$data["prodi"] = $this->BSMI_model->getprodi($kode_prodi);
+			$data["matkul"] = $this->BSMI_model->getmatkul($kode_prodi);
+		}else{
+			$data["prodi"] = $this->BSMI_model->getprodi($kode_prodi);
+			$data["matkul"] = $this->BSMI_model->getmatkul($kode_prodi);
+		}
+
 		$this->load->view('halaman_matakuliah',$data);
 	}
 
@@ -116,39 +168,125 @@ class Welcome extends CI_Controller {
 	}
 
 	public function konten($kode_matkul){
+		//cek session apakah pengguna langsung akses link ke page tertentu tanpa memasukan enroll
+		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
+			echo "
+			<script>
+				alert('masukkan enrollmentKey dahulu');
+				document.location.href='../';
+			</script>
+			";
+		}
+
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->load->view('halaman_berkas',$data);		
 	}
 
 	public function materi($kode_matkul){
+		//cek session apakah pengguna langsung akses link ke page tertentu tanpa memasukan enroll
+		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"]) ){
+			echo "
+			<script>
+				alert('masukkan enrollmentKey dahulu');
+				document.location.href='../';
+			</script>
+			";
+		}
+
+		//mengirim informasi jika admin atau operator yang login
+		if (isset($_SESSION["operator"]) || isset($_SESSION["admin"]) ) {
+			$data["cek_operatoradmin"] = true;
+		}
+
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$data["materi"] = $this->BSMI_model->getmateri($kode_matkul); 
 		$this->load->view('halaman_materi',$data);			
 	}
 
 	public function soal($kode_matkul){
+		//cek session apakah pengguna langsung akses link ke page tertentu tanpa memasukan enroll
+		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"]) ){
+			echo "
+			<script>
+				alert('masukkan enrollmentKey dahulu');
+				document.location.href='../';
+			</script>
+			";
+		}
+
+		//mengirim informasi jika admin atau operator yang login
+		if (isset($_SESSION["operator"]) || isset($_SESSION["admin"]) ) {
+			$data["cek_operatoradmin"] = true;
+		}
+
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$data["soal"] = $this->BSMI_model->getsoal($kode_matkul); 
 		$this->load->view('halaman_soal',$data);			
 	}
 
 	public function video($kode_matkul){
+		//cek session apakah pengguna langsung akses link ke page ertentu tanpa memasukan enroll
+		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
+			echo "
+			<script>
+				alert('masukkan enrollmentKey dahulu');
+				document.location.href='../';
+			</script>
+			";
+		}
+
+		//mengirim informasi jika admin atau operator yang login
+		if (isset($_SESSION["operator"]) || isset($_SESSION["admin"]) ) {
+			$data["cek_operatoradmin"] = true;
+		}
+
+
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$data["video"] = $this->BSMI_model->getvideo($kode_matkul); 
 		$this->load->view('halaman_video',$data);			
 	}
 
 	public function tampilanmateri($kode_matkul){
+		//untuk tambah berkas harus login sebagai operator atau admin
+		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
+			echo "
+			<script>
+				alert('login dahulu');
+				document.location.href='../welcome/login';
+			</script>
+			";
+		}
+
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->load->view('halaman_tambahmateri',$data);
 	}
 
 	public function tampilansoal($kode_matkul){
+		//untuk tambah berkas harus login sebagai operator atau admin
+		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
+			echo "
+			<script>
+				alert('login dahulu');
+				document.location.href='../welcome/login';
+			</script>
+			";
+		}
+
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->load->view('halaman_tambahsoal',$data);
 	}
 
 	public function tampilanvideo($kode_matkul){
+		//untuk tambah berkas harus login sebagai operator atau admin
+		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
+			echo "
+			<script>
+				alert('login dahulu');
+				document.location.href='../welcome/login';
+			</script>
+			";
+		}
+
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->load->view('halaman_tambahvideo',$data);
 	}
@@ -158,7 +296,7 @@ class Welcome extends CI_Controller {
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->form_validation->set_rules('judul_materi','Judul Materi','required');
 		if($this->form_validation->run() == false) {
-			$this->load->view('halaman_tambahmateri',$data);
+			redirect('welcome/tampilanmateri/'.$kode_matkul);
 		}else{
 			if($this->BSMI_model->tambahmateri()==true){
 				echo "
@@ -185,7 +323,7 @@ class Welcome extends CI_Controller {
 		$this->form_validation->set_rules('tahun_soal','Tahun Soal','required|max_length[4]|integer');
 
 		if($this->form_validation->run() == false) {
-			$this->load->view('halaman_tambahsoal',$data);
+			redirect('welcome/tampilansoal/'.$kode_matkul);
 		}else{
 			if($this->BSMI_model->tambahsoal()==true){
 				echo "
@@ -210,7 +348,7 @@ class Welcome extends CI_Controller {
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->form_validation->set_rules('judul_video','Judul Video','required');
 		if($this->form_validation->run() == false) {
-			$this->load->view('halaman_tambahvideo',$data);
+			redirect('welcome/tampilanvideo/'.$kode_matkul);
 		}else{
 			if($this->BSMI_model->tambahvideo()==true){
 				echo "
@@ -232,6 +370,16 @@ class Welcome extends CI_Controller {
 
 
 	public function hasiltombolhapusmateri($kode_matkul){
+		//untuk hapus berkas harus login sebagai operator atau admin
+		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
+			echo "
+			<script>
+				alert('login dahulu');
+				document.location.href='../welcome/login';
+			</script>
+			";
+		}
+
 		$data["materi"] = $this->BSMI_model->getmateri($kode_matkul); 
 		$data["kode_matkul"] = $kode_matkul;
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
@@ -239,6 +387,16 @@ class Welcome extends CI_Controller {
 	}
 
 	public function hasiltombolhapussoal($kode_matkul){
+		//untuk hapus berkas harus login sebagai operator atau admin
+		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
+			echo "
+			<script>
+				alert('login dahulu');
+				document.location.href='../welcome/login';
+			</script>
+			";
+		}
+
 		$data["soal"] = $this->BSMI_model->getsoal($kode_matkul); 
 		$data["kode_matkul"] = $kode_matkul;
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
@@ -246,6 +404,16 @@ class Welcome extends CI_Controller {
 	}
 
 	public function hasiltombolhapusvideo($kode_matkul){
+		//untuk hapus berkas harus login sebagai operator atau admin
+		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
+			echo "
+			<script>
+				alert('login dahulu');
+				document.location.href='../welcome/login';
+			</script>
+			";
+		}
+
 		$data["video"] = $this->BSMI_model->getvideo($kode_matkul); 
 		$data["kode_matkul"] = $kode_matkul;
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);

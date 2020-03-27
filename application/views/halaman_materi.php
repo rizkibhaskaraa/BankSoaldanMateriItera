@@ -30,7 +30,7 @@
         	<input type="text" name="cari" id="cari" placeholder="ketik kata kunci pencarian">   </input>
         </div>
         <div style="clear: both;"></div>
-
+        <?php if ($cek_operatoradmin == true) {?>
         <!-- tombol tambah -->
         <div id="lp-1-tambahmateri">
             <a href="<?php echo base_url()?>/index.php/welcome/tampilanmateri/<?php echo $value["kode_matkul"]?>"><h3>Tambah materi</h3></a>
@@ -40,7 +40,7 @@
         <div id="lp-1-hapusmateri">
             <input type="submit" name="hapus" id="hapus" value="Hapus Materi">
         </div>
-
+        <?php } ?>
         <div style="clear: both;"></div>
     	<div id="lp-1-prodi-matkul">
            	<?php foreach ($materi as $value) { ?>

@@ -28,15 +28,17 @@
         </div>
 
         <div style="clear: both;"></div>
-         <div id="lp-1-tambahmateri">
-            <a href="<?php echo base_url()?>/index.php/welcome/tampilanvideo/<?php echo $value["kode_matkul"]?>"><h3>Tambah Video</h3></a>
-        </div>
+        <?php if ($cek_operatoradmin == true) {?>
+             <div id="lp-1-tambahmateri">
+                <a href="<?php echo base_url()?>/index.php/welcome/tampilanvideo/<?php echo $value["kode_matkul"]?>"><h3>Tambah Video</h3></a>
+            </div>
 
-         <!-- tombol hapus -->
-        <div id="lp-1-hapusmateri">
-            <input type="submit" name="hapus" id="hapus" value="Hapus Video">
-        </div>
-        <div style="clear: both;"></div>
+             <!-- tombol hapus -->
+            <div id="lp-1-hapusmateri">
+                <input type="submit" name="hapus" id="hapus" value="Hapus Video">
+            </div>
+            <div style="clear: both;"></div>
+        <?php } ?>
     	<div id="lp-1-prodi-matkul">    
             <?php foreach($video as $value) {?>
             <div id="video">
