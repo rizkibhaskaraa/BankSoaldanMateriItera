@@ -27,6 +27,7 @@
         	
         </div>
         <div id="lp-1-cari">
+            <a href="<?php echo base_url()?>/welcome/tampilanmatkul/<?php echo $kode_prodi ?>">Tambah Mata Kuliah</a>
         	<input type="text" name="cari" id="cari" placeholder="ketik kata kunci pencarian">   </input>
         </div>
         <div style="clear: both;"></div>
