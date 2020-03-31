@@ -23,14 +23,15 @@
     <div class="lp-page" id="lp-1	">
         <div id="lp-1-berkas">
         	<?php foreach ($matkul as $value) { ?>
-        	<h4><?php echo $value['nama_matkul']?></h4>
+            <h4><?php echo $value['nama_matkul']?></h4>
+            <a href="<?php echo base_url()?>/welcome/editmatkul/<?php echo $value["kode_matkul"]?>">Edit</a>
         	<?php } ?>
         </div>
         <div id="lp-1-deskripsi">
         	<?php foreach ($matkul as $value) { ?>
 	        <h2>Dosen</h2>
 	        <h2><?php echo $value['nama_dosen']?></h2>
-	        <?php } ?>
+            <?php } ?>
         </div>
     	<div id="lp-1-prodi-pilihberkas">
            	<a href="<?php echo base_url()?>/index.php/welcome/materi/<?php echo $value["kode_matkul"]?>"><h2>Materi</h2></a>

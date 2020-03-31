@@ -149,6 +149,24 @@ class BSMI_model extends CI_model
 		}
 	}
 
+	public function updatematkul()	{
+		$kode_matkul_lama = $this->input->post('kode_matkul_lama');
+		$kode_matkul = $this->input->post('kode_matkul');
+		$data = [
+			"kode_matkul" => $this->input->post('kode_matkul'),
+			"nama_matkul" => $this->input->post('nama_matkul'),
+			"nama_dosen" => $this->input->post('nama_dosen'),
+			"kode_prodi" => $this->input->post('kode_prodi')
+		];
+		if($kode_matkul == ""){
+			return false;
+		}else{
+			$this->db->where('kode_matkul', $kode_matkul_lama);
+			$this->db->update('matakuliah', $data);
+			return true;
+		}
+	}
+
 	public function tambahvideo(){	
 		//https://www.youtube.com/watch?v=
 		$linkasli = $this->input->post('link_video');

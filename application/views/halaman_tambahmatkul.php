@@ -22,9 +22,7 @@
     </div>
     <div class="lp-page" id="lp-1	">
         <div id="lp-1-prodi">
-        	<!-- foreach ($matkul as $value) { -->
-        	    <h4>Tambah Mata Kuliah</h4>
-        	<!-- } -->
+        	<h4>Tambah Mata Kuliah</h4>
         </div>
         <div style="clear: both;"></div>
         <div id="form-addmateri">

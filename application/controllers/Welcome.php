@@ -263,6 +263,21 @@ class Welcome extends CI_Controller {
 		$this->load->view('halaman_tambahmatkul',$data);
 	}
 
+	public function editmatkul($kode_matkul){
+		//untuk tambah berkas harus login sebagai operator atau admin
+		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
+			echo "
+			<script>
+				alert('login dahulu');
+				document.location.href='../welcome/login';
+			</script>
+			";
+		}
+
+		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$this->load->view('halaman_editmatkul',$data);
+	}
+
 	public function tampilanmateri($kode_matkul){
 		//untuk tambah berkas harus login sebagai operator atau admin
 		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
@@ -310,10 +325,9 @@ class Welcome extends CI_Controller {
 
 	public function addmatkul(){
 		$kode_prodi = $this->input->post('kode_prodi');
-		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->form_validation->set_rules('kode_matkul','Kode Mata Kuliah','required');
 		if($this->form_validation->run() == false) {
-			redirect('welcome/halaman_matakuliah/'.$kode_prodi);
+			redirect('welcome/tampilanmatkul/'.$kode_prodi);
 		}else{
 			if($this->BSMI_model->tambahmatkul()==true){
 				echo "
@@ -327,6 +341,30 @@ class Welcome extends CI_Controller {
 					<script>
 						alert('Gagal menambah video');
 						document.location.href='../welcome/tampilanmatkul/$kode_prodi';
+					</script>
+				";
+			}
+		}
+	}
+
+	public function updateDeskripsiMatkul(){
+		$kode_matkul = $this->input->post('kode_matkul');
+		$this->form_validation->set_rules('kode_matkul','Kode Mata Kuliah','required');
+		if($this->form_validation->run() == false) {
+			redirect('welcome/editmatkul/'.$kode_matkul);
+		}else{
+			if($this->BSMI_model->updatematkul()==true){
+				echo "
+					<script>
+						alert('Berhasil mengubah data mata kuliah');
+						document.location.href='../welcome/konten/$kode_matkul';
+					</script>
+					";
+			}else{
+				echo "
+					<script>
+						alert('Gagal mengubah data mata kuliah');
+						document.location.href='../welcome/editmatkul/$kode_matkul';
 					</script>
 				";
 			}
