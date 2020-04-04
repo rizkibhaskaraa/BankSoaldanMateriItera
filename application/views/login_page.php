@@ -12,7 +12,7 @@
             <span id="login-title">
                 Login BSMI
             </span>
-            <form method="post" action="<?php echo base_url('admin-bsmi') ?>">
+            <form method="post" action="<?php echo base_url('auth/login/admin') ?>">
                 <input type="text" name="username" id="email-admin" placeholder="Masukkan alamat email" value="<?php echo set_value('email');?>">
                 <input type="password" name="password" id="password-admin" placeholder="Masukkan password">
                 <input type="submit" value="Login">

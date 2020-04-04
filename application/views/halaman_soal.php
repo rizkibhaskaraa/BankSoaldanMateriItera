@@ -51,7 +51,7 @@
         <div style="clear: both;"></div>
         <?php if ($cek_operatoradmin == true) {?>
             <div id="lp-1-tambahmateri">
-                <a href="<?php echo base_url()?>/index.php/welcome/tampilansoal/<?php echo $value["kode_matkul"]?>"><h3>Tambah soal</h3></a>
+                <a href="<?php echo base_url('add/soal/'.$value["kode_matkul"])?>"><h3>Tambah soal</h3></a>
             </div>
             <div id="lp-1-hapusmateri">
                 <input type="submit" name="hapus" id="hapus" value="Hapus Soal">
@@ -60,20 +60,20 @@
         <div style="clear: both;"></div>
     	<div id="lp-1-prodi-matkul">
            	<?php foreach ($soal as $value) { ?>
-        		<a href="<?php echo base_url()?>/assets/soal/<?php echo $value["file"]?>"><h2><?php echo $value["judul"] ?></h2></a>
+        		<a href="<?php echo base_url('assets/soal/'.$value["file"])?>"><h2><?php echo $value["judul"] ?></h2></a>
         	<?php } ?>
         </div>
     </div>
 
     <input id="kode_matkul" value="<?php foreach ($matkul as $value){ echo $value['kode_matkul']; }?>" hidden>
 
-	<input id="alamat1" value="<?php echo base_url() ?>index.php/welcome/tipesoal/" hidden>
+	<input id="alamat1" value="<?php echo base_url('welcome/tipesoal') ?>" hidden>
     
-    <input id="alamat2" value="<?php echo base_url() ?>index.php/welcome/tahunsoal/" hidden>
+    <input id="alamat2" value="<?php echo base_url('welcome/tahunsoal') ?>" hidden>
 
-    <input id="alamathapus" value="<?php echo base_url() ?>index.php/welcome/hasiltombolhapussoal/" hidden>
+    <input id="alamathapus" value="<?php echo base_url('welcome/hasiltombolhapussoal') ?>" hidden>
     
-    <input id="alamat" value="<?php echo base_url() ?>index.php/welcome/hasilcarisoal/" hidden>
-	<script src="<?php echo base_url() ?>/assets/ajax/ajaxcarisoal.js"></script>
+    <input id="alamat" value="<?php echo base_url('welcome/hasilcarisoal') ?>" hidden>
+	<script src="<?php echo base_url('assets/ajax/ajaxcarisoal.js') ?>"></script>
 </body>
 </html>

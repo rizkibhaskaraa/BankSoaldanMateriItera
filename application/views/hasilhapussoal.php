@@ -8,10 +8,10 @@
 
         <!-- tombol batal -->
         <div id="lp-1-hapusmateri">
-            <a href="<?php echo base_url() ?>index.php/welcome/soal/<?php echo $kode_matkul; ?>" id="batal"><h3>Batal</h3></a>
+            <a href="<?php echo base_url('soal/'.$kode_matkul) ?>" id="batal"><h3>Batal</h3></a>
         </div>
 
-        <form method="post" action="<?php echo base_url() ?>index.php/welcome/hapussoal/<?php echo $kode_matkul; ?>">
+        <form method="post" action="<?php echo base_url('welcome/hapussoal/'.$kode_matkul) ?>">
 
             <!-- tombol hapus -->
             <div id="lp-1-hapusmateri">
@@ -21,7 +21,7 @@
 
             <div id="lp-1-prodi-matkul">
            	<?php foreach ($soal as $value) { ?>
-        		<a href="<?php echo base_url()?>/assets/soal/<?php echo $value["file"]?>"><h2><?php echo $value["judul"] ?></h2></a>
+        		<a href="<?php echo base_url('assets/soal/'.$value["file"])?>"><h2><?php echo $value["judul"] ?></h2></a>
                 <input type="checkbox" name="pilih[]" value="<?php echo $value["kode_soal"];?>">
         	<?php } ?>
         </div>

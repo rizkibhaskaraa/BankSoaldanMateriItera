@@ -30,7 +30,7 @@
         <div style="clear: both;"></div>
         <?php if ($cek_operatoradmin == true) {?>
              <div id="lp-1-tambahmateri">
-                <a href="<?php echo base_url()?>/index.php/welcome/tampilanvideo/<?php echo $value["kode_matkul"]?>"><h3>Tambah Video</h3></a>
+                <a href="<?php echo base_url('add/video/'.$value["kode_matkul"])?>"><h3>Tambah Video</h3></a>
             </div>
 
              <!-- tombol hapus -->
@@ -53,9 +53,9 @@
 
     <input id="kode_matkul" value="<?php foreach ($matkul as $value){ echo $value['kode_matkul']; }?>" hidden>
 
-    <input id="alamathapus" value="<?php echo base_url() ?>index.php/welcome/hasiltombolhapusvideo/" hidden>
+    <input id="alamathapus" value="<?php echo base_url('welcome/hasiltombolhapusvideo') ?>" hidden>
     
-    <script src="<?php echo base_url() ?>/assets/ajax/ajaxhapusvideo.js"></script>
+    <script src="<?php echo base_url('assets/ajax/ajaxhapusvideo.js') ?>"></script>
 
 </body>
 </html>

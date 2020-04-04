@@ -33,7 +33,7 @@
         <?php if ($cek_operatoradmin == true) {?>
         <!-- tombol tambah -->
         <div id="lp-1-tambahmateri">
-            <a href="<?php echo base_url()?>/index.php/welcome/tampilanmateri/<?php echo $value["kode_matkul"]?>"><h3>Tambah materi</h3></a>
+            <a href="<?php echo base_url('add/materi/'.$value["kode_matkul"])?>"><h3>Tambah materi</h3></a>
         </div>   
 
         <!-- tombol hapus -->
@@ -44,18 +44,18 @@
         <div style="clear: both;"></div>
     	<div id="lp-1-prodi-matkul">
            	<?php foreach ($materi as $value) { ?>
-        		<a href="<?php echo base_url()?>/assets/materi/<?php echo $value["file"]?>"><h2><?php echo $value["judul"] ?></h2></a>
+        		<a href="<?php echo base_url('assets/materi/'.$value["file"])?>"><h2><?php echo $value["judul"] ?></h2></a>
         	<?php } ?>
         </div>
     </div>
 
     <input id="kode_matkul" value="<?php foreach ($matkul as $value){ echo $value['kode_matkul']; }?>" hidden>
 
-	<input id="alamat" value="<?php echo base_url() ?>index.php/welcome/hasilcarimateri/" hidden>
+	<input id="alamat" value="<?php echo base_url('welcome/hasilcarimateri') ?>" hidden>
 
-    <input id="alamathapus" value="<?php echo base_url() ?>index.php/welcome/hasiltombolhapusmateri/" hidden>
+    <input id="alamathapus" value="<?php echo base_url('welcome/hasiltombolhapusmateri') ?>" hidden>
     
-	<script src="<?php echo base_url() ?>/assets/ajax/ajaxcarimateri.js"></script>
+	<script src="<?php echo base_url('assets/ajax/ajaxcarimateri.js') ?>"></script>
 
 </body>
 </html>

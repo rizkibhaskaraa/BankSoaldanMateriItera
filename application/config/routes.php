@@ -50,8 +50,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'welcome';
-$route['browse'] = 'welcome/page_prodi';
-$route['enroll'] = 'welcome/checkEnrollmentKey';
-$route['admin-bsmi'] = 'welcome/login';
+$route['auth/login/admin'] = 'welcome/login';
+$route['prodi/(:any)']= 'welcome/page_matkul/$1';
+$route['dashboard'] = 'welcome/page_prodi';
+$route['dashboard/(:any)'] = 'welcome/page_matkul_operator/$1';
+$route['matakuliah/(:any)'] = 'welcome/konten/$1';
+$route['materi/(:any)'] = 'welcome/materi/$1';
+$route['soal/(:any)'] = 'welcome/soal/$1';
+$route['video/(:any)'] = 'welcome/video/$1';
+$route['add/matakuliah/(:any)'] = 'welcome/tampilanmatkul/$1';
+$route['add/materi/(:any)'] = 'welcome/tampilanmateri/$1';
+$route['add/soal/(:any)'] = 'welcome/tampilansoal/$1';
+$route['add/video/(:any)'] = 'welcome/tampilanvideo/$1';
+$route['edit/matakuliah/(:any)'] = 'welcome/editmatkul/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

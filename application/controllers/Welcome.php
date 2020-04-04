@@ -11,8 +11,7 @@ class Welcome extends CI_Controller {
 		$this->load->library('form_validation');
 	}
 
-	public function index()
-	{
+	public function index()	{
 		$this->load->helper('form');
 		$this->form_validation->set_rules('enrolment_form', 'Enrollment key', 'trim|required');
 
@@ -28,7 +27,7 @@ class Welcome extends CI_Controller {
 		$enrollmentKey = $this->BSMI_model->getenroll($enrollmentInput);
 		if($enrollmentKey){
 			$_SESSION["login"] = true;
-			redirect('browse');
+			redirect('dashboard');
 		} else {
 			redirect('');
 		}
@@ -55,11 +54,11 @@ class Welcome extends CI_Controller {
 			if(password_verify($password, $saved_password)){
 				if ($email == "aldi.14117055@student.itera.ac.id"){
 					$_SESSION["admin"] = true;
-					redirect('welcome/page_prodi/');	
+					redirect('dashboard');	
 				}else{
 					$_SESSION["operator"] = true;
 					$_SESSION["kode_prodi"] = $data["prodi"]["kode_prodi"];
-					redirect('welcome/page_matkul_operator/'.$_SESSION["kode_prodi"]);
+					redirect('dashboard/'.$_SESSION["kode_prodi"]);
 				}
 			} else {
 				$this->load->view('login_page');
@@ -107,7 +106,7 @@ class Welcome extends CI_Controller {
 			$data["matkul"] = $this->BSMI_model->getmatkul($kode_prodi);
 		}		
 
-		
+		$data['kode_prodi'] = $kode_prodi;
 		$this->load->view('halaman_matakuliah',$data);
 	}
 
@@ -117,7 +116,7 @@ class Welcome extends CI_Controller {
 			echo "
 			<script>
 				alert('login dahulu');
-				document.location.href='../welcome/login';
+				document.location.href='../login';
 			</script>
 			";
 		}
@@ -254,7 +253,7 @@ class Welcome extends CI_Controller {
 			echo "
 			<script>
 				alert('login dahulu');
-				document.location.href='../welcome/login';
+				document.location.href='../auth/login/admin';
 			</script>
 			";
 		}
@@ -269,7 +268,7 @@ class Welcome extends CI_Controller {
 			echo "
 			<script>
 				alert('login dahulu');
-				document.location.href='../welcome/login';
+				document.location.href='../auth/login/admin';
 			</script>
 			";
 		}
@@ -284,7 +283,7 @@ class Welcome extends CI_Controller {
 			echo "
 			<script>
 				alert('login dahulu');
-				document.location.href='../welcome/login';
+				document.location.href='../auth/login/admin';
 			</script>
 			";
 		}
@@ -299,7 +298,7 @@ class Welcome extends CI_Controller {
 			echo "
 			<script>
 				alert('login dahulu');
-				document.location.href='../welcome/login';
+				document.location.href='../auth/login/admin';
 			</script>
 			";
 		}
@@ -314,7 +313,7 @@ class Welcome extends CI_Controller {
 			echo "
 			<script>
 				alert('login dahulu');
-				document.location.href='../welcome/login';
+				document.location.href='../auth/login/admin';
 			</script>
 			";
 		}
@@ -327,20 +326,20 @@ class Welcome extends CI_Controller {
 		$kode_prodi = $this->input->post('kode_prodi');
 		$this->form_validation->set_rules('kode_matkul','Kode Mata Kuliah','required');
 		if($this->form_validation->run() == false) {
-			redirect('welcome/tampilanmatkul/'.$kode_prodi);
+			redirect('add/matakuliah/'.$kode_prodi);
 		}else{
 			if($this->BSMI_model->tambahmatkul()==true){
 				echo "
 					<script>
 						alert('Berhasil menambah mata kuliah');
-						document.location.href='../welcome/page_matkul_operator/$kode_prodi';
+						document.location.href='../dashboard/$kode_prodi';
 					</script>
 					";
 			}else{
 				echo "
 					<script>
 						alert('Gagal menambah video');
-						document.location.href='../welcome/tampilanmatkul/$kode_prodi';
+						document.location.href='../add/matakuliah/$kode_prodi';
 					</script>
 				";
 			}
@@ -351,20 +350,20 @@ class Welcome extends CI_Controller {
 		$kode_matkul = $this->input->post('kode_matkul');
 		$this->form_validation->set_rules('kode_matkul','Kode Mata Kuliah','required');
 		if($this->form_validation->run() == false) {
-			redirect('welcome/editmatkul/'.$kode_matkul);
+			redirect('edit/matakuliah/'.$kode_matkul);
 		}else{
 			if($this->BSMI_model->updatematkul()==true){
 				echo "
 					<script>
 						alert('Berhasil mengubah data mata kuliah');
-						document.location.href='../welcome/konten/$kode_matkul';
+						document.location.href='../matakuliah/$kode_matkul';
 					</script>
 					";
 			}else{
 				echo "
 					<script>
 						alert('Gagal mengubah data mata kuliah');
-						document.location.href='../welcome/editmatkul/$kode_matkul';
+						document.location.href='../edit/matakuliah/$kode_matkul';
 					</script>
 				";
 			}
@@ -376,20 +375,20 @@ class Welcome extends CI_Controller {
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->form_validation->set_rules('judul_materi','Judul Materi','required');
 		if($this->form_validation->run() == false) {
-			redirect('welcome/tampilanmateri/'.$kode_matkul);
+			redirect('add/materi/'.$kode_matkul);
 		}else{
 			if($this->BSMI_model->tambahmateri()==true){
 				echo "
 					<script>
 						alert('berhasil menambah materi');
-						document.location.href='../welcome/materi/$kode_matkul';
+						document.location.href='../materi/$kode_matkul';
 					</script>
 					";
 				}else{
 					echo "
 						<script>
 							alert('gagal menamabah materi,file tidak boleh kosong');
-							document.location.href='../welcome/tampilanmateri/$kode_matkul';
+							document.location.href='../add/materi/$kode_matkul';
 						</script>
 					";
 				}
@@ -403,20 +402,20 @@ class Welcome extends CI_Controller {
 		$this->form_validation->set_rules('tahun_soal','Tahun Soal','required|max_length[4]|integer');
 
 		if($this->form_validation->run() == false) {
-			redirect('welcome/tampilansoal/'.$kode_matkul);
+			redirect('add/soal/'.$kode_matkul);
 		}else{
 			if($this->BSMI_model->tambahsoal()==true){
 				echo "
 					<script>
 						alert('berhasil menambah soal');
-						document.location.href='../welcome/soal/$kode_matkul';
+						document.location.href='../soal/$kode_matkul';
 					</script>
 					";
 			}else{
 				echo "
 					<script>
 						alert('gagal menamabah soal,file tidak boleh kosong');
-						document.location.href='../welcome/tampilansoal/$kode_matkul';
+						document.location.href='../add/soal/$kode_matkul';
 					</script>
 				";
 			}
@@ -428,20 +427,20 @@ class Welcome extends CI_Controller {
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->form_validation->set_rules('judul_video','Judul Video','required');
 		if($this->form_validation->run() == false) {
-			redirect('welcome/tampilanvideo/'.$kode_matkul);
+			redirect('add/video/'.$kode_matkul);
 		}else{
 			if($this->BSMI_model->tambahvideo()==true){
 				echo "
 					<script>
 						alert('berhasil menambah video');
-						document.location.href='../welcome/video/$kode_matkul';
+						document.location.href='../video/$kode_matkul';
 					</script>
 					";
 			}else{
 				echo "
 					<script>
 						alert('gagal menamabah video,link video harus diisi atau link tidak sesuai');
-						document.location.href='../welcome/tampilanvideo/$kode_matkul';
+						document.location.href='../add/video/$kode_matkul';
 					</script>
 				";
 			}
@@ -455,7 +454,7 @@ class Welcome extends CI_Controller {
 			echo "
 			<script>
 				alert('login dahulu');
-				document.location.href='../welcome/login';
+				document.location.href='../auth/login/admin';
 			</script>
 			";
 		}
@@ -472,7 +471,7 @@ class Welcome extends CI_Controller {
 			echo "
 			<script>
 				alert('login dahulu');
-				document.location.href='../welcome/login';
+				document.location.href='../auth/login/admin';
 			</script>
 			";
 		}
@@ -489,7 +488,7 @@ class Welcome extends CI_Controller {
 			echo "
 			<script>
 				alert('login dahulu');
-				document.location.href='../welcome/login';
+				document.location.href='../auth/login/admin';
 			</script>
 			";
 		}
