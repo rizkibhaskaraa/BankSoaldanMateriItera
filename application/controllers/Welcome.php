@@ -16,6 +16,7 @@ class Welcome extends CI_Controller {
 		$this->form_validation->set_rules('enrolment_form', 'Enrollment key', 'trim|required');
 
 		if($this->form_validation->run() == false){
+			$this->load->view('header');
 			$this->load->view('landing_page');
 		} else {
 			$this->checkEnrollmentKey();
@@ -83,6 +84,7 @@ class Welcome extends CI_Controller {
 		$data['sains'] = $this->BSMI_model->getsains();
 		$data['jtik'] = $this->BSMI_model->getjtik();
 		$data['jtpi'] = $this->BSMI_model->getjtpi();
+		$this->load->view('header');
 		$this->load->view('halaman_prodi',$data);
 	}
 
@@ -107,6 +109,7 @@ class Welcome extends CI_Controller {
 		}		
 
 		$data['kode_prodi'] = $kode_prodi;
+		$this->load->view('header');
 		$this->load->view('halaman_matakuliah',$data);
 	}
 
@@ -180,6 +183,7 @@ class Welcome extends CI_Controller {
 		}
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$this->load->view('header');
 		$this->load->view('halaman_berkas',$data);		
 	}
 
@@ -201,6 +205,7 @@ class Welcome extends CI_Controller {
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$data["materi"] = $this->BSMI_model->getmateri($kode_matkul); 
+		$this->load->view('header');
 		$this->load->view('halaman_materi',$data);			
 	}
 
@@ -222,6 +227,7 @@ class Welcome extends CI_Controller {
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$data["soal"] = $this->BSMI_model->getsoal($kode_matkul); 
+		$this->load->view('header');
 		$this->load->view('halaman_soal',$data);			
 	}
 
@@ -244,6 +250,7 @@ class Welcome extends CI_Controller {
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$data["video"] = $this->BSMI_model->getvideo($kode_matkul); 
+		$this->load->view('header');
 		$this->load->view('halaman_video',$data);			
 	}
 
@@ -259,6 +266,7 @@ class Welcome extends CI_Controller {
 		}
 
 		$data["prodi"] = $this->BSMI_model->getprodi($kode_prodi);
+		$this->load->view('header');
 		$this->load->view('halaman_tambahmatkul',$data);
 	}
 
@@ -274,6 +282,7 @@ class Welcome extends CI_Controller {
 		}
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$this->load->view('header');
 		$this->load->view('halaman_editmatkul',$data);
 	}
 
@@ -289,6 +298,7 @@ class Welcome extends CI_Controller {
 		}
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$this->load->view('header');
 		$this->load->view('halaman_tambahmateri',$data);
 	}
 
@@ -304,6 +314,7 @@ class Welcome extends CI_Controller {
 		}
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$this->load->view('header');
 		$this->load->view('halaman_tambahsoal',$data);
 	}
 
@@ -319,6 +330,7 @@ class Welcome extends CI_Controller {
 		}
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		$this->load->view('header');
 		$this->load->view('halaman_tambahvideo',$data);
 	}
 

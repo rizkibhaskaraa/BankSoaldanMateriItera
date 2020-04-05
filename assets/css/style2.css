@@ -1,0 +1,21 @@
+.header-container{
+    height: 50px;
+}
+
+.header-logo, .header-nav{
+    display: inline-block;
+}
+
+.header-logo img{
+    display: inline-block;
+    height: 35px;
+}
+
+.header-nav a{
+    height: 50px;
+    display: inline-block;
+}
+
+.header-nav a :hover{
+    background-color: blue;
+}
