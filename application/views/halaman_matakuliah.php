@@ -48,7 +48,7 @@
 
     <input id="kode_prodi" value="<?php echo $prodi["kode_prodi"]; ?>" hidden>
 
-	<input id="alamat" value="<?php echo base_url('welcome/hasilcarimatkul') ?>" hidden>
+	<input id="alamat" value="<?php echo base_url('welcome/hasilcarimatkul/')?>" hidden>
     
 	<script src="<?php echo base_url('assets/ajax/ajaxcarimatkul.js') ?>"></script>
 </body>

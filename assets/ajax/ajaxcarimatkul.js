@@ -12,7 +12,7 @@ var alamat = document.getElementById('alamat');
 }*/
 cari.addEventListener('keyup', function(){
 	//buat objeck
-	
+	//alert(kode_prodi.value);
 	var ajaxCari = new XMLHttpRequest();
 
 	ajaxCari.onreadystatechange = function(){

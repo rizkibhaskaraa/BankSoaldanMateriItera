@@ -148,6 +148,8 @@ class Welcome extends CI_Controller {
 	public function hasilcarimatkul($kode_prodi,$kode_matkul){
 		$carimatkul = str_replace('%20', ' ', $kode_matkul);
 		$data["matkul"] = $this->BSMI_model->getmatkulcari($kode_prodi,$carimatkul);
+		$data["kode"] = $kode_prodi;
+		$data["cari"] = $kode_matkul;
 		$this->load->view('hasilcarimatkul',$data);	
 	}
 

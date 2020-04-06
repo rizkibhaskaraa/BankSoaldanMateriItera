@@ -67,13 +67,13 @@
 
     <input id="kode_matkul" value="<?php foreach ($matkul as $value){ echo $value['kode_matkul']; }?>" hidden>
 
-	<input id="alamat1" value="<?php echo base_url('welcome/tipesoal') ?>" hidden>
+	<input id="alamat1" value="<?php echo base_url('welcome/tipesoal/') ?>" hidden>
     
-    <input id="alamat2" value="<?php echo base_url('welcome/tahunsoal') ?>" hidden>
+    <input id="alamat2" value="<?php echo base_url('welcome/tahunsoal/') ?>" hidden>
 
     <input id="alamathapus" value="<?php echo base_url('welcome/hasiltombolhapussoal') ?>" hidden>
     
-    <input id="alamat" value="<?php echo base_url('welcome/hasilcarisoal') ?>" hidden>
+    <input id="alamat" value="<?php echo base_url('welcome/hasilcarisoal/') ?>" hidden>
 	<script src="<?php echo base_url('assets/ajax/ajaxcarisoal.js') ?>"></script>
 </body>
 </html>
