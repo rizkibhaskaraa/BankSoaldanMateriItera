@@ -14,9 +14,9 @@
         </div>
         <div class="lp-navigation">
             <ul>
-                <li><a href="#">HOME</a></li>
+                <li><a href="<?php echo base_url() ?>">HOME</a></li>
                 <li><a href="#">FAQ</a></li>
-                <li><a href="#">ABOUT</a></li>
+                <li><a href="<?php echo base_url()?>/#lp-about">ABOUT</a></li>
             </ul>
         </div>
     </div>
@@ -27,9 +27,17 @@
         	
         </div>
         <div id="lp-1-cari">
-            <a href="<?php echo base_url('add/matakuliah/'.$kode_prodi)?>">Tambah Mata Kuliah</a>
         	<input type="text" name="cari" id="cari" placeholder="ketik kata kunci pencarian">   </input>
         </div>
+        <div style="clear: both;"></div>
+        <?php if ($cek_operatoradmin == true) {?>
+        <!-- tombol tambah -->
+        <div id="lp-1-tambahmateri">
+            <a href="<?php echo base_url('add/matakuliah/'.$kode_prodi)?>">
+                <h3>Tambah Mata Kuliah</h3>
+            </a>
+        </div>  
+        <?php } ?>
         <div style="clear: both;"></div>
     	<div id="lp-1-prodi-matkul">
            	<?php foreach ($matkul as $value) { ?>
