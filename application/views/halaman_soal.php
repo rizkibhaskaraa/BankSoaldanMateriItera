@@ -71,7 +71,7 @@
     
     <input id="alamat2" value="<?php echo base_url('welcome/tahunsoal/') ?>" hidden>
 
-    <input id="alamathapus" value="<?php echo base_url('welcome/hasiltombolhapussoal') ?>" hidden>
+    <input id="alamathapus" value="<?php echo base_url('welcome/hasiltombolhapussoal/') ?>" hidden>
     
     <input id="alamat" value="<?php echo base_url('welcome/hasilcarisoal/') ?>" hidden>
 	<script src="<?php echo base_url('assets/ajax/ajaxcarisoal.js') ?>"></script>

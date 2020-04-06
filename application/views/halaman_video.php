@@ -53,7 +53,7 @@
 
     <input id="kode_matkul" value="<?php foreach ($matkul as $value){ echo $value['kode_matkul']; }?>" hidden>
 
-    <input id="alamathapus" value="<?php echo base_url('welcome/hasiltombolhapusvideo') ?>" hidden>
+    <input id="alamathapus" value="<?php echo base_url('welcome/hasiltombolhapusvideo/') ?>" hidden>
     
     <script src="<?php echo base_url('assets/ajax/ajaxhapusvideo.js') ?>"></script>
 
