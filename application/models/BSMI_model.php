@@ -11,12 +11,15 @@ class BSMI_model extends CI_model
 	}
 
 	public function getsains(){
+		$this->db->order_by('nama_prodi','ASC');
 		return $this->db->get_where('prodi', array('jurusan'=>'sains'))->result_array();
 	}
 	public function getjtik(){
+		$this->db->order_by('nama_prodi','ASC');
 		return $this->db->get_where('prodi', array('jurusan'=>'jtik'))->result_array();
 	}
 	public function getjtpi(){
+		$this->db->order_by('nama_prodi','ASC');
 		return $this->db->get_where('prodi', array('jurusan'=>'jtpi'))->result_array();
 	}
 
@@ -29,6 +32,7 @@ class BSMI_model extends CI_model
 	}
 
 	public function getmatkul($kode_prodi){
+		$this->db->order_by('nama_matkul','ASC');
 		return $this->db->get_where('matakuliah', array('kode_prodi'=>$kode_prodi))->result_array();		
 	}
 
@@ -70,14 +74,17 @@ class BSMI_model extends CI_model
 	}
 
 	public function getmateri($kode_matkul){
+		$this->db->order_by('judul','ASC');
 		return $this->db->get_where('materi', array('kode_matkul'=>$kode_matkul))->result_array();
 	}
 
 	public function getsoal($kode_matkul){
+		$this->db->order_by('judul','ASC');
 		return $this->db->get_where('soal', array('kode_matkul'=>$kode_matkul))->result_array();
 	}
 
 	public function getvideo($kode_matkul){
+		$this->db->order_by('judul','ASC');
 		return $this->db->get_where('video',array('kode_matkul' => $kode_matkul))->result_array();
 	}
 
