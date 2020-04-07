@@ -29,9 +29,9 @@
 
     <input id="kode_matkul" value="<?php foreach ($matkul as $value){ echo $value['kode_matkul']; }?>" hidden>
 
-	<input id="alamat" value="<?php echo base_url('welcome/hasilcarimateri') ?>" hidden>
+	<input id="alamat" value="<?php echo base_url('welcome/hasilcarimateri/') ?>" hidden>
 
-    <input id="alamathapus" value="<?php echo base_url('welcome/hasiltombolhapusmateri') ?>" hidden>
+    <input id="alamathapus" value="<?php echo base_url('welcome/hasiltombolhapusmateri/') ?>" hidden>
     
 	<script src="<?php echo base_url('assets/ajax/ajaxcarimateri.js') ?>"></script>
 

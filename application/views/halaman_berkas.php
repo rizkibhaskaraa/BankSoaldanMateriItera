@@ -1,8 +1,14 @@
     <div class="lp-page" id="lp-1	">
         <div id="lp-1-berkas">
         	<?php foreach ($matkul as $value) { ?>
-            <h4><?php echo $value['nama_matkul']?></h4>
-            <a href="<?php echo base_url('edit/matakuliah/'.$value["kode_matkul"])?>">Edit</a>
+                <h4><?php echo $value['nama_matkul']?></h4>
+                <?php if ($cek_operatoradmin == true) {?>
+                    <!-- tombol edit -->
+                    <div id="lp-1-editdeskripsi">
+                        <a href="<?php echo base_url('edit/matakuliah/'.$value["kode_matkul"])?>"><h3>Edit</h3></a>
+                    </div>   
+                    <div style="clear: both;"></div>
+                <?php } ?>
         	<?php } ?>
         </div>
         <div id="lp-1-deskripsi">

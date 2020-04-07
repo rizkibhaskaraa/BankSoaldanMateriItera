@@ -108,6 +108,11 @@ class Welcome extends CI_Controller {
 			$data["matkul"] = $this->BSMI_model->getmatkul($kode_prodi);
 		}		
 
+		//mengirim informasi jika admin atau operator yang login
+		if (isset($_SESSION["operator"]) || isset($_SESSION["admin"]) ) {
+			$data["cek_operatoradmin"] = true;
+		}
+
 		$data['kode_prodi'] = $kode_prodi;
 		$this->load->view('header');
 		$this->load->view('halaman_matakuliah',$data);
@@ -132,6 +137,11 @@ class Welcome extends CI_Controller {
 			$data["prodi"] = $this->BSMI_model->getprodi($kode_prodi);
 			$data["matkul"] = $this->BSMI_model->getmatkul($kode_prodi);
 		}
+		
+		//mengirim informasi jika admin atau operator yang login
+		if (isset($_SESSION["operator"]) || isset($_SESSION["admin"]) ) {
+			$data["cek_operatoradmin"] = true;
+		}
 
 		$data['kode_prodi'] = $kode_prodi;
 
@@ -141,6 +151,8 @@ class Welcome extends CI_Controller {
 	public function hasilcarimatkul($kode_prodi,$kode_matkul){
 		$carimatkul = str_replace('%20', ' ', $kode_matkul);
 		$data["matkul"] = $this->BSMI_model->getmatkulcari($kode_prodi,$carimatkul);
+		$data["kode"] = $kode_prodi;
+		$data["cari"] = $kode_matkul;
 		$this->load->view('hasilcarimatkul',$data);	
 	}
 
@@ -180,6 +192,10 @@ class Welcome extends CI_Controller {
 				document.location.href='../';
 			</script>
 			";
+		}
+
+		if (isset($_SESSION["operator"]) || isset($_SESSION["admin"]) ) {
+			$data["cek_operatoradmin"] = true;
 		}
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);

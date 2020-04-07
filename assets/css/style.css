@@ -55,17 +55,17 @@ body{
     height: 400px;
     width: 60%;
     padding: 30px;
-    /* background-color: aquamarine; */
+    /*background-color: aquamarine; */
     /* float: left; */
     padding-top: 50px;
 }
 
 #lp-1-container h1{
-    font-size: 48px;
+    font-size: 4vw;
 }
 
 #lp-1-container h3{
-    font-size: 24px;
+    font-size: 2vw;
     font-weight: 600;
 }
 
@@ -74,18 +74,22 @@ body{
     display: inline-block;
     background-color: rgb(37, 37, 245);
     color: white;
+    font-size: 1.8vw;
     margin-top: 40px;
-    height: 50px;
-    width: 300px;
+    height: 8vh;
+    width: 20vw;
     line-height: 50px;
     border-radius: 50px;
     cursor: pointer;
 }
 
-#lp-1 img{
-    width: 300px;
+#lp-1-container-img{
+    margin-top: 5%;
+    width: 25%;
     float: right;
-    margin: 50px 85px;
+}
+#lp-1-container-img img{
+    height: 50vh;
 }
 
 #formPopup{
@@ -196,6 +200,74 @@ body{
 }
 
 /* edit by Aldi */
+#lp-about{
+    margin-top: 6%;
+    height: 55vh;
+    background-color: #fff;
+}
+#lp-about-1{
+    height: 50vh;
+    width: 100%;
+}
+
+#container-about{
+    float: right;
+    width: 60%;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+#lp-about h1{
+    font-size: 4vh;
+}
+
+#lp-about h3{
+    font-size: 3vh;
+
+}
+#container-about h1,#container-about h3{
+    text-align: center;
+}
+
+#container-img{
+    margin-top: 1.5%;
+    margin-left: 5%;
+    width: 25%;
+    float: left;
+}
+
+#container-img img{
+    height: 50vh;
+}
+#fasilitas{
+    height: 45vh;
+    display: flex;
+}
+#fasilitas h2{
+    margin: 1%;
+    background-color: #000;
+    color: #fff;
+    width: 30%;
+    border-radius: 10px;
+    margin-right: 2%;
+    margin-left: 2%;
+    font-size: 2.5vh;
+    text-align: center;
+}
+#fasilitas h2 img{
+    margin: 5%;
+    width: 50%;
+    height: 45%;
+}
+
+#lp-about-1 h1{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-right: 2%;
+    margin-left: 2%;
+    text-align: center;
+}
+
 #lp-1-jurusan{
     display: flex;
     justify-content: center;
@@ -249,13 +321,13 @@ body{
 
 #up{
     position: fixed;
-    bottom: 1%;
-    left: 92%; 
+    bottom: 0%;
+    left: 95%; 
 }
 
 #up img{
-    height: 100px;
-    width: 100px;
+    height: 6vh;
+    width: 4vw;
     background-color: lavender;
     border-radius: 50%;
 }
@@ -378,6 +450,16 @@ body{
     background-color: #0000FF;
 }
 
+#lp-1-editdeskripsi{
+    margin-left: 5%;
+    float: left;
+    width: 13%;
+    height: 8vh;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #0000FF;
+}
+
 #lp-1-hapusmateri a{
     margin-left: 5%;
     float: left;
@@ -399,7 +481,7 @@ body{
     background-color: red;
 }
 
-#lp-1-tambahmateri a,#lp-1-hapusmateri #hapus,#lp-1-hapusmateri a{
+#lp-1-tambahmateri a,#lp-1-editdeskripsi a,#lp-1-hapusmateri #hapus,#lp-1-hapusmateri a{
     text-decoration: none;
     color: #fff;
     font-size: 2.5vh;
