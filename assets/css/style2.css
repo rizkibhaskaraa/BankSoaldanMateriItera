@@ -1,21 +1,187 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* BSMI CSS */
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* a:visited{
+    color: black;
+} */
+
+.white-black{
+    background-color: white;
+    color: black;
+}
+
+.header{
+    display: block;
+    height: 75px;
+    box-shadow: 0 0px 4px grey;
+}
+
+.container{
+    padding: 10px 40px;
+    box-sizing: border-box;
+}
+
 .header-container{
-    height: 50px;
+    padding: 0 40px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.header-logo{
+    float: left;
 }
 
 .header-logo, .header-nav{
+    display: table-cell;
+}
+
+.header-logo a{
     display: inline-block;
+    line-height: 75px;
 }
 
 .header-logo img{
     display: inline-block;
-    height: 35px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+.header-nav{
+    width: fit-content;
+    float: right;
+}
+
+.header-nav li{
+    list-style-type: none;
+    float: left;
+    height: 75px;
+    line-height: 75px;
 }
 
 .header-nav a{
-    height: 50px;
+    display: inline-block;
+    height: 75px;
+    text-decoration: none;
+    padding: 0 20px;
+}
+
+.header-nav a:visited{
+    color: black;
+}
+
+.header-nav li :hover{
+    background-color: lightgray;
     display: inline-block;
 }
 
-.header-nav a :hover{
-    background-color: blue;
+.page-section h3{
+    margin: 0 auto;
+    height: 150px;
+    line-height: 150px;
+    font-size: 44px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.flexbox-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.page-section{
+    margin-bottom: 100px;
+}
+
+.page-section a{
+    display: inline-block;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 20px 60px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.page-section a:hover{
+    background-color: #111111;
+}
+
+.jurusan-section a{
+    width: 240px;
+    height: 240px;
+    line-height: 240px;
+}
+
+.prodi-section a{
+    width: 200px;
+    height: 150px;
+    line-height: 150px;
+}
+
+#up{
+    display: none;
 }
