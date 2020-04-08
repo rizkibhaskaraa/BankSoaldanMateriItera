@@ -48,3 +48,43 @@ body{
     
 }
 
+.content-faq .q-a{
+    background-color: rgba(191, 191, 191, 0.2);
+    border: 1px hidden black;
+    margin-bottom: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+}
+
+.content-faq .q-a .q {
+    color: #DE322E;
+    float: inline-start;
+    margin-top: 12px;
+    margin-bottom: ;
+    margin-left: 20px;
+    margin-right: -22px;
+}
+
+.content-faq .q-a .a {
+    color: black;
+    float: inline-start;
+    margin-top: 55px;
+    margin-right: 15px;
+}
+
+
+
+
+
+
+footer{
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    
+  
+    padding: 20px;
+}
+footer .footnote{
+    font-size: 12px;
+}
