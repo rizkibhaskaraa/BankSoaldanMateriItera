@@ -121,7 +121,7 @@ class Welcome extends CI_Controller {
 			echo "
 			<script>
 				alert('login dahulu');
-				document.location.href='../login';
+				document.location.href='..';
 			</script>
 			";
 		}

@@ -30,7 +30,18 @@
 
         
         <div class="content-faq">
-            
+        <?php foreach($array as $question) {?>
+		<div class="q-a">
+			<h1 class="question">
+				<?php echo $question?>
+			</h1>
+			<p class="answer">
+				<?php echo $answer?>
+			</p>
+		</div>
+	<?php } ?>
+           
+
            
         </div>
            
