@@ -48,6 +48,6 @@ body{
     
 }
 
-.content-faq {
-    opacity: 50%;
+.content-faq  {
+    border:2px;
 }

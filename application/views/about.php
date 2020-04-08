@@ -21,6 +21,20 @@
                 <li><a href="<?php echo base_url('welcome/halamanFaq') ?>">FAQ</a></li>
                 <li><a href="<?php echo base_url('welcome/halamanAbout')?>">ABOUT</a></li>
             </ul>
+            <div class="about-logo">
+            <img src="<?php echo base_url('assets/img/about-us.png') ?>" alt=""> 
         </div>
+
+        <div class="logos">
+            <img src="<?php echo base_url('assets/img/initeam.png') ?>" alt=""> 
+            <img src="<?php echo base_url('assets/img/silang.png') ?>" alt=""> 
+            <img src="<?php echo base_url('assets/img/km-itera.png') ?>" alt=""> 
+        </div>
+
+
+        </div>  
+
+       
+        
 </body>
 </html>

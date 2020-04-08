@@ -38,3 +38,18 @@ body{
 .header-logo img{
     height: 60px;
 }
+
+.about-logo img{
+    width: 20em;
+    height: 140 px;
+    margin-right:auto;display:block;
+    margin-top:150px;
+    margin-bottom: 70px;;
+}
+
+.logos img{
+    width: 20em;
+    height: 140 px;
+    margin-left:auto;margin-right:auto;display:block;
+  
+}
