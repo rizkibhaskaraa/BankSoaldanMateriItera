@@ -3,8 +3,8 @@ html{
 }
 
 body{
-    background-color: rgb(253, 207, 0);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FFD700;
+    font-family:  'Raleway', sans-serif;
     padding: 0;
     margin: 0;
 }
@@ -20,7 +20,7 @@ body{
 /* lp : landing page */
 
 .lp-header{
-    padding: 20px;
+    padding: 30px;
     /* background-color: darkgreen; */
 }
 
@@ -28,6 +28,7 @@ body{
     text-decoration: none;
     color: black;
     font-weight: 600;
+    padding: 10px;
 }
 
 .lp-navigation ul li{

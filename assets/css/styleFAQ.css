@@ -1,0 +1,53 @@
+body{
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+    padding: 0;
+    margin: 0;
+ 
+}
+
+.lp-header{
+    padding: 30px;
+    background-color: #FFD700;
+    /* background-color: darkgreen; */
+    
+}
+
+.lp-navigation ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.lp-navigation ul li{
+    display: inline;
+    list-style-type: none;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.lp-navigation{
+    float: right;
+}
+
+.header-logo{
+    display: inline-block;
+}
+
+.header-logo img{
+    height: 60px;
+}
+
+.faq-logo img {
+    width: 50em;
+    height: 140 px;
+    margin-left:auto;margin-right:auto;display:block;
+    margin-top:80px;
+    margin-bottom: 70px;;
+    
+}
+
+.content-faq {
+    opacity: 50%;
+}

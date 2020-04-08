@@ -15,8 +15,8 @@
         <div class="lp-navigation">
             <ul>
                 <li><a href="<?php echo base_url() ?>">HOME</a></li>
-                <li><a href="<?php echo base_url('application/views/faq.html') ?>">FAQ</a></li>
-                <li><a href="<?php echo base_url('application/views/about.php')?>">ABOUT</a></li>
+                <li><a href="<?php echo base_url('welcome/halamanFaq') ?>">FAQ</a></li>
+                <li><a href="<?php echo base_url('welcome/halamanAbout')?>">ABOUT</a></li>
             </ul>
         </div>
     </div>
