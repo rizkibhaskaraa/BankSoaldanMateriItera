@@ -24,11 +24,13 @@
             <div class="about-logo">
             <img src="<?php echo base_url('assets/img/about-us.png') ?>" alt=""> 
         </div>
-</div>
+        </div>
+
+
             <div class="logos">
                 <div class="iniTeam">
                 <img src="<?php echo base_url('assets/img/initeam.png') ?>" alt=""> 
-                  
+                </div>
                 <div class="collabs">
                     <img src="<?php echo base_url('assets/img/silangg.png') ?>" alt=""> 
                     </div>
@@ -37,9 +39,81 @@
                     <img src="<?php echo base_url('assets/img/kmitera.png') ?>" alt=""> 
                     </div>
    
-                 </div>
+            </div>
+                    
+                    
 
-        
-        
+</div>
+                        <div class="content">
+                        <center><p class = "text">
+                        <?php echo "Website ini terbentuk karena adanya kolaborasi antara INITEAM dari beberapa Mahasiswa Teknik Informatika '17 dan KM ITERA khususnya dari Kementrian Riset & Pendidikan. "?>
+                        </p></center>
+                        
+                        <div class="bawah">
+                            <?php echo "Perwakilan dari KM ITERA yang mewakili yaitu Anbia S selaku Mentri Riset & Pendidikan ITERA dan untuk INITEAM sendiri terdiri dari 5 orang adalah sebagai berikut : "?>    
+                        </p>
+
+                        <div class="anggota">
+                        <?php
+                            $nama = array(
+                                14115047=>"Roy Putra O",
+                                14117073=>"Nova Yastika",
+                                14117098=>"Riwandy ",
+                                14117084=>"Rizki Bhaskara M.E ",
+                                14117055=>"Aldi Indrawan");
+                            
+                            foreach ($nama as $nim =>$nama)
+                            {
+                            echo "$nama ($nim)";
+                            echo "<br />";
+                            }
+                            ?>
+                        </div>
+                    </div>
+
 </body>
+
+<footer>
+                       
+                        <div class="q-a">
+                        <center><h5 class = "q">
+                        <?php echo "Dikembangkan Oleh"?>
+                        </h5></center>
+                        </div>
+                        
+                            <div class="ini-team">
+                                <img src="<?php echo base_url('assets/img/initeam.png') ?>" alt=""> 
+                            </div>
+
+                            <div class="collabs">
+                                <img src="<?php echo base_url('assets/img/silang.png') ?>" alt=""> 
+                            </div>
+
+                            <div class="kmitera">
+                                <img src="<?php echo base_url('assets/img/kmitera.png') ?>" alt=""> 
+                            </div>
+
+                            <div class="hmif">
+                                <img src="<?php echo base_url('assets/img/HMIF.png') ?>" alt=""> 
+                            </div>
+
+                            <div class="itera">
+                                <img src="<?php echo base_url('assets/img/itera.png') ?>" alt=""> 
+                            </div>
+
+                           
+                        
+                        <center>&copy 2020. Institut Teknologi Sumatera. Hak Cipta dilindungi Undang-Undang.</center>
+
+                        <div class="footnote">
+                        <center>v05042020</center>
+                        </div>
+
+                    </div>
+                        
+                        
+
+
+      </footer>
+
 </html>
