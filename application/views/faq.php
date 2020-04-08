@@ -96,7 +96,7 @@
                         <center>&copy 2020. Institut Teknologi Sumatera. Hak Cipta dilindungi Undang-Undang.</center>
 
                         <div class="footnote">
-                        <center>v06042020</center>
+                        <center>v05042020</center>
                         </div>
 
                     </div>

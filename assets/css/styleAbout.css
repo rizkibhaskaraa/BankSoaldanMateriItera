@@ -47,9 +47,27 @@ body{
     margin-bottom: 70px;;
 }
 
-.logos img{
-    width: 20em;
-    height: 140 px;
-    margin-left:auto;margin-right:auto;display:block;
+.lp-header .logos .iniTeam img{
+    width: 640px;
+    height: auto;
+    float: inline-start;
+    margin-top: 280px;
+    margin-right: -135px;
+    margin-left: 80px;
+}
+
+.lp-header .logos .collabs img{
+    width: 110px;
+    height: auto;
+    float: inline-start;
+    margin-top: 455px;
   
+}
+
+.lp-header .logos .kmitera img{
+    width: 220px;
+    height: auto;
+    float: inline-start;
+    margin-top: 400px;
+    margin-left: 120px;
 }
