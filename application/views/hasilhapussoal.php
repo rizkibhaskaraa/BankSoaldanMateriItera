@@ -15,7 +15,7 @@
 
             <!-- tombol hapus -->
             <div id="lp-1-hapusmateri">
-            <input type="submit" id="hapus" value="Hapus soal terpilih" onclick="return confirm('yakin ingin hapus?')">
+            <input type="submit" id="hapus" value="Hapus soal terpilih" onclick="return confirm('Yakin ingin hapus?')">
             </div>
             <div style="clear: both;"></div>
 
