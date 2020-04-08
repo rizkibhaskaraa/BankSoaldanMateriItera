@@ -61,7 +61,7 @@ body{
     color: #DE322E;
     float: inline-start;
     margin-top: 12px;
-    margin-bottom: ;
+    margin-bottom: 0px ;
     margin-left: 20px;
     margin-right: -22px;
 }
@@ -73,18 +73,69 @@ body{
     margin-right: 15px;
 }
 
-
-
-
-
-
 footer{
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.8);
     color: white;
-    
-  
-    padding: 20px;
+    padding: 97px;
+    margin-top: 120px;
 }
+
+footer .q-a .q{
+    float: inline-start;
+    margin-top: -44px;
+    margin-left: 62px;
+
+    font-size: 15px;
+    font-weight: bolder;
+}
+
 footer .footnote{
     font-size: 12px;
+}
+
+footer  .ini-team img{
+    width: auto;
+    height: 190px;
+    float: inline-start;
+    margin-top: -60px;
+    margin-left: -60px;
+    /* margin-right: 82px; */
+}
+
+footer  .collabs img{
+    width: auto;
+    height: 45px;
+    float: inline-start;
+    margin-top: 5px;
+    margin-left: -80px;
+    /* margin-right: 82px; */
+}
+
+footer  .kmitera img{
+    width: auto;
+    height: 100px;
+    float: inline-start;
+    margin-top: -15px;
+    margin-left: -40px;
+    /* margin-right: 82px; */
+}
+
+
+
+footer  .itera img{
+    width: auto;
+    height: 100px;
+    float: inline-end;
+    margin-top: -15px;
+    margin-left: 50px;
+    margin-right: 120px;
+}
+
+footer  .hmif img{
+    width: auto;
+    height: 100px;
+    float: inline-end;
+    margin-top: -15px;
+    margin-left: -95px;
+    
 }

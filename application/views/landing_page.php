@@ -69,4 +69,56 @@
     </div>
     <script src="<?php echo base_url('assets/js/landing-page.js')?>"></script>
 </body>
+
+
+<footer>
+                       
+                        <div class="q-a">
+                        <center><h5 class = "q">
+                        <?php echo "Dikembangkan Oleh"?>
+                        </h5></center>
+                        </div>
+                        
+                            <div class="ini-team">
+                                <img src="<?php echo base_url('assets/img/initeam.png') ?>" alt=""> 
+                            </div>
+
+                            <div class="collabs">
+                                <img src="<?php echo base_url('assets/img/silang.png') ?>" alt=""> 
+                            </div>
+
+                            <div class="kmitera">
+                                <img src="<?php echo base_url('assets/img/kmitera.png') ?>" alt=""> 
+                            </div>
+
+                            <div class="hmif">
+                                <img src="<?php echo base_url('assets/img/HMIF.png') ?>" alt=""> 
+                            </div>
+
+                            <div class="itera">
+                                <img src="<?php echo base_url('assets/img/itera.png') ?>" alt=""> 
+                            </div>
+
+                           
+                        
+                        <center>&copy 2020. Institut Teknologi Sumatera. Hak Cipta dilindungi Undang-Undang.</center>
+
+                        <div class="footnote">
+                        <center>v06042020</center>
+                        </div>
+
+                    </div>
+                        
+                        
+
+
+      </footer>
+
+</html>
+
+
+
+
+
+
 </html>
