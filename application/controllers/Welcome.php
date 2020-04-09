@@ -143,7 +143,7 @@ class Welcome extends CI_Controller {
 		}
 
 		$data['kode_prodi'] = $kode_prodi;
-
+		$this->load->view('header');
 		$this->load->view('halaman_matakuliah',$data);
 	}
 

@@ -198,7 +198,7 @@ a{
     padding-top: 40px;
     box-sizing: border-box;
     font-size: 44px;
-    display: inline-block;
+    display: block;
     float: left;
 }
 
