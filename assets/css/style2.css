@@ -276,3 +276,22 @@ a{
 .edit-button:hover{
     color: white;
 }
+
+.tombol{
+    display: inline-block;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    height: 40px;
+    width: fit-content;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+    float: left;
+}
+
+.tombol:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}

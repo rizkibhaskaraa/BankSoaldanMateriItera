@@ -1,26 +1,26 @@
     <div class="lp-page" id="lp-1">
-        <div id="lp-1-prodi">
+        <div id="lp-1-prodi" class="title">
         	<?php foreach ($matkul as $value) { ?>
         	<h4>Materi <?php echo $value['nama_matkul']?></h4>
         	<?php } ?>
         </div>
-        <div id="lp-1-cari">
-        	<input type="text" name="cari" id="cari" placeholder="ketik kata kunci pencarian">   </input>
+        <div id="lp-1-cari" class="search-section">
+        	<input type="text" class="white-black border-black search-bar" name="cari" id="cari" placeholder="ketik kata kunci pencarian">   </input>
         </div>
         <div style="clear: both;"></div>
         <?php if ($cek_operatoradmin == true) {?>
         <!-- tombol tambah -->
         <div id="lp-1-tambahmateri">
-            <a href="<?php echo base_url('add/materi/'.$value["kode_matkul"])?>"><h3>Tambah materi</h3></a>
+            <a class="tombol" href="<?php echo base_url('add/materi/'.$value["kode_matkul"])?>"><h3>Tambah materi</h3></a>
         </div>   
 
         <!-- tombol hapus -->
         <div id="lp-1-hapusmateri">
-            <input type="submit" name="hapus" id="hapus" value="Hapus Materi">
+            <input class="tombol" type="submit" name="hapus" id="hapus" value="Hapus Materi">
         </div>
         <?php } ?>
         <div style="clear: both;"></div>
-    	<div id="lp-1-prodi-matkul">
+    	<div id="lp-1-prodi-matkul" class="flexbox-container matkul-section">
            	<?php foreach ($materi as $value) { ?>
         		<a href="<?php echo base_url('assets/materi/'.$value["file"])?>"><h2><?php echo $value["judul"] ?></h2></a>
         	<?php } ?>
