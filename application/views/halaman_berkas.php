@@ -1,7 +1,7 @@
     <div class="lp-page" id="lp-1">
         <div id="lp-1-berkas">
             <?php foreach ($matkul as $value) { ?>
-                <div class="title">
+                <div class="title-1">
                     <h4><?php echo $value['nama_matkul']?></h4>
                 </div>
                 <?php if ($cek_operatoradmin == true) {?>
