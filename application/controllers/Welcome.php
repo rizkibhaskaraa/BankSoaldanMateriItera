@@ -124,7 +124,7 @@ class Welcome extends CI_Controller {
 			echo "
 			<script>
 				alert('login dahulu');
-				document.location.href='../login';
+				document.location.href='..';
 			</script>
 			";
 		}
@@ -542,5 +542,12 @@ class Welcome extends CI_Controller {
 		$this->BSMI_model->hapusvideo($datahapus,$kode_matkul);
 	}
 
+	public function halamanFaq(){
+		$this->load->view('faq.php');
+	}
+
+	public function halamanAbout(){
+		$this->load->view('about.php');
+	}
 }
 

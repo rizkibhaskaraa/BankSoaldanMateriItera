@@ -1,0 +1,168 @@
+body{
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+    padding: 0;
+    margin: 0;
+ 
+}
+
+.lp-header{
+    padding: 30px;
+    background-color: #FFD700;
+    /* background-color: darkgreen; */
+    
+}
+
+.lp-navigation ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.lp-navigation ul li{
+    display: inline;
+    list-style-type: none;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.lp-navigation{
+    float: right;
+}
+
+.header-logo{
+    display: inline-block;
+}
+
+.header-logo img{
+    height: 60px;
+}
+
+.about-logo img{
+    width: 20em;
+    height: 140 px;
+    margin-right:auto;display:block;
+    margin-top:150px;
+    margin-bottom: 0px;
+}
+
+.lp-header .logos .iniTeam img{
+    width: 640px;
+    height: auto;
+    float: inline-start;
+    margin-top: 220px;
+    margin-right: -135px;
+    margin-left: 150px;
+}
+
+.lp-header .logos .collabs img{
+    width: 110px;
+    height: auto;
+    float: inline-start;
+    margin-top: 395px;
+    margin-left: 20px;
+  
+}
+
+.lp-header .logos .kmitera img{
+    width: 220px;
+    height: auto;
+    float: inline-start;
+    margin-top: 70px;
+    margin-left: 100px;
+    margin-right: 50px;
+}
+
+.content .text{
+    float: inline-start;
+    margin-left: 90px   ;
+    margin-top: -350px;
+    margin-right: 80px;
+    
+}
+
+.content .bawah{
+    float: inline-start;
+    margin-left: 125px   ;
+    margin-top: -330px;
+    margin-right: 80px;
+}
+
+.bawah .anggota {
+    float: inline-end;
+    margin-bottom:120px;
+    margin-top: 5px;
+    margin-left: 500px;
+    font-weight: 700;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+footer{
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    padding: 97px;
+    margin-bottom: -500px;
+    margin-top: 900px;
+}
+
+footer .q-a .q{
+    float: inline-start;
+    margin-top: -44px;
+    margin-left: 62px;
+
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+footer .footnote{
+    font-size: 12px;
+}
+
+footer  .ini-team img{
+    width: auto;
+    height: 190px;
+    float: inline-start;
+    margin-top: -60px;
+    margin-left: -60px;
+    /* margin-right: 82px; */
+}
+
+footer  .collabs img{
+    width: auto;
+    height: 45px;
+    float: inline-start;
+    margin-top: 5px;
+    margin-left: -80px;
+    /* margin-right: 82px; */
+}
+
+footer  .kmitera img{
+    width: auto;
+    height: 100px;
+    float: inline-start;
+    margin-top: -15px;
+    margin-left: -40px;
+    /* margin-right: 82px; */
+}
+
+
+
+footer  .itera img{
+    width: auto;
+    height: 100px;
+    float: inline-end;
+    margin-top: -15px;
+    margin-left: 50px;
+    margin-right: 120px;
+}
+
+footer  .hmif img{
+    width: auto;
+    height: 100px;
+    float: inline-end;
+    margin-top: -15px;
+    margin-left: -95px;
+    
+}
