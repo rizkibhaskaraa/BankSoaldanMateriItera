@@ -1,19 +1,19 @@
     <div class="lp-page" id="lp-1">
-        <div id="lp-1-prodi">
+        <div id="lp-1-prodi" class="title">
         	<?php foreach ($matkul as $value) { ?>
         	<h4>Soal latihan <?php echo $value['nama_matkul']?></h4>
         	<?php } ?>
         </div>
         <div id="operasi">
-            <div id="lp-1-cari">
-            	<input type="text" name="cari" id="cari" placeholder="ketik kata kunci pencarian"></input>
-            <select id="selecttipe">
+            <div id="lp-1-cari" class="search-section">
+            	<input class="white-black border-black search-bar" type="text" name="cari" id="cari" placeholder="ketik kata kunci pencarian"></input>
+            <select id="selecttipe" class="white-black border-black">
                 <option>Tipe</option>
                 <option>UTS</option>
                 <option>UAS</option>
                 <option>KUIS</option>
             </select>
-            <select id="selecttahun">
+            <select id="selecttahun" class="white-black border-black">
                 <option>Tahun</option>
                 <option>2015</option>
                 <option>2016</option>
@@ -29,14 +29,14 @@
         <div style="clear: both;"></div>
         <?php if ($cek_operatoradmin == true) {?>
             <div id="lp-1-tambahmateri">
-                <a href="<?php echo base_url('add/soal/'.$value["kode_matkul"])?>"><h3>Tambah soal</h3></a>
+                <a class="tombol" href="<?php echo base_url('add/soal/'.$value["kode_matkul"])?>"><h3>Tambah soal</h3></a>
             </div>
             <div id="lp-1-hapusmateri">
-                <input type="submit" name="hapus" id="hapus" value="Hapus Soal">
+                <input class="tombol" type="submit" name="hapus" id="hapus" value="Hapus Soal">
             </div>
         <?php } ?>
         <div style="clear: both;"></div>
-    	<div id="lp-1-prodi-matkul">
+    	<div id="lp-1-prodi-matkul" class="flexbox-container matkul-section">
            	<?php foreach ($soal as $value) { ?>
         		<a href="<?php echo base_url('assets/soal/'.$value["file"])?>"><h2><?php echo $value["judul"] ?></h2></a>
         	<?php } ?>

@@ -254,7 +254,7 @@ a{
     float: right;
 }
 
-.form-submit #reset, .form-submit #submit{
+.form-submit #reset, .form-submit #submit, .form-submit input{
     display: inline-block;
     height: 40px;
     width: 80px;
@@ -263,7 +263,7 @@ a{
     border: 2px solid black;
 }
 
-.form-submit #reset:hover, .form-submit #submit:hover{
+.form-submit #reset:hover, .form-submit #submit:hover, .form-submit input:hover{
     background-color: black;
     color: white;
     cursor: pointer;
@@ -294,4 +294,10 @@ a{
     cursor: pointer;
     background-color: black;
     color: white;
+}
+
+.flexbox-container .video{
+    display: inline-block;
+    margin: 10px;
+    border-radius: 0;
 }

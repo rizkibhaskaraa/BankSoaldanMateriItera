@@ -1,5 +1,5 @@
     <div class="lp-page" id="lp-1">
-        <div id="lp-1-prodi">
+        <div id="lp-1-prodi" class="title">
         	<?php foreach ($matkul as $value) { ?>
         	<h4>Video referensi <?php echo $value['nama_matkul']?></h4>
         	<?php } ?>
@@ -8,18 +8,18 @@
         <div style="clear: both;"></div>
         <?php if ($cek_operatoradmin == true) {?>
              <div id="lp-1-tambahmateri">
-                <a href="<?php echo base_url('add/video/'.$value["kode_matkul"])?>"><h3>Tambah Video</h3></a>
+                <a class="tombol" href="<?php echo base_url('add/video/'.$value["kode_matkul"])?>"><h3>Tambah Video</h3></a>
             </div>
 
              <!-- tombol hapus -->
             <div id="lp-1-hapusmateri">
-                <input type="submit" name="hapus" id="hapus" value="Hapus Video">
+                <input class="tombol" type="submit" name="hapus" id="hapus" value="Hapus Video">
             </div>
             <div style="clear: both;"></div>
         <?php } ?>
-    	<div id="lp-1-prodi-matkul">    
+    	<div id="lp-1-prodi-matkul" class="flexbox-container">    
             <?php foreach($video as $value) {?>
-            <div id="video">
+            <div id="video" class="video">
                 <div id="v-video">
                 <iframe src="https://www.youtube.com/embed/<?php echo $value['link'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 10%;" allowfullscreen></iframe>
                 <h3><?php echo $value['judul'] ?></h3>
