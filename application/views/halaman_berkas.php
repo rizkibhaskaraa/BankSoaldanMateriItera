@@ -1,10 +1,12 @@
-    <div class="lp-page" id="lp-1	">
+    <div class="lp-page" id="lp-1">
         <div id="lp-1-berkas">
-        	<?php foreach ($matkul as $value) { ?>
-                <h4><?php echo $value['nama_matkul']?></h4>
+            <?php foreach ($matkul as $value) { ?>
+                <div class="title">
+                    <h4><?php echo $value['nama_matkul']?></h4>
+                </div>
                 <?php if ($cek_operatoradmin == true) {?>
                     <!-- tombol edit -->
-                    <div id="lp-1-editdeskripsi">
+                    <div id="lp-1-editdeskripsi" class="form-submit button edit-button border-black">
                         <a href="<?php echo base_url('edit/matakuliah/'.$value["kode_matkul"])?>"><h3>Edit</h3></a>
                     </div>   
                     <div style="clear: both;"></div>
@@ -17,7 +19,7 @@
 	        <h2><?php echo $value['nama_dosen']?></h2>
             <?php } ?>
         </div>
-    	<div id="lp-1-prodi-pilihberkas">
+    	<div id="lp-1-prodi-pilihberkas" class="flexbox-container jurusan-section">
            	<a href="<?php echo base_url('materi/'.$value["kode_matkul"])?>"><h2>Materi</h2></a>
            	<a href="<?php echo base_url('soal/'.$value["kode_matkul"])?>"><h2>Soal</h2></a>
            	<a href="<?php echo base_url('video/'.$value["kode_matkul"])?>"><h2>Video</h2></a>
