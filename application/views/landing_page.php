@@ -24,7 +24,7 @@
         <div id="lp-1-container">
             <h1>Selamat Datang di Website<br>Bank Soal dan Materi ITERA</h1>
             <p>Dapatkan Soal dan Materi Program Studimu agar bisa menjadi referensi ketika ujian nanti</p>
-            <div id="start">Mulai Cari Referensimu</div>
+            <div id="start">Mulai Cari Referensimu!</div>
         </div>
         <div id="lp-1-container-img">
         <img src="<?php echo base_url('assets/img/lp_lampu.png') ?>" alt="Welcome"><!-- Diisi dengan gambar lampu pijar -->

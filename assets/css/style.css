@@ -62,8 +62,6 @@ body{
     height: 400px;
     width: 60%;
     padding: 30px;
-    /*background-color: aquamarine; */
-    /* float: left; */
     padding-top: 80px;
 }
 
@@ -80,10 +78,10 @@ body{
 #start{
     text-decoration: none;
     display: inline-block;
-    background-color: rgb(37, 37, 245,0.9);
-    color: white;
+    background-color:whitesmoke;
+    color: black;
     font-size: 17px;
-    margin-top: 17px;
+    margin-top: 18px;
     height: 8vh;
     width: 20vw;
     line-height: 57px;
@@ -93,6 +91,18 @@ body{
     -moz-border-radius: 50px;
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
+    
+}
+
+#start:hover{
+    color: white !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.7px;
+    background-color: rgb(37, 37, 245,0.9);
+   
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.3s ease 0s;
 }
 
 #lp-1-container-img{
