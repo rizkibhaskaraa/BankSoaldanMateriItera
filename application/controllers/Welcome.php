@@ -16,7 +16,6 @@ class Welcome extends CI_Controller {
 		$this->form_validation->set_rules('enrolment_form', 'Enrollment key', 'trim|required');
 
 		if($this->form_validation->run() == false){
-			$this->load->view('header');
 			$this->load->view('landing_page');
 		} else {
 			$this->checkEnrollmentKey();
