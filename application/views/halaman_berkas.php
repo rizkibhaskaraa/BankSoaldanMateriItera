@@ -13,6 +13,7 @@
                 <?php } ?>
         	<?php } ?>
         </div>
+        <div style="clear: both;"></div>
         <div id="lp-1-deskripsi">
         	<?php foreach ($matkul as $value) { ?>
 	        <h2>Dosen</h2>

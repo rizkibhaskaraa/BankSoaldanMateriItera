@@ -16,9 +16,9 @@
             </div>
             <div class="header-nav">
                 <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="<?php echo base_url() ?>">HOME</a></li>
+                    <li><a href="<?php echo base_url('welcome/halamanFaq') ?>">FAQ</a></li>
+                    <li><a href="<?php echo base_url('welcome/halamanAbout')?>">ABOUT</a></li>
                 </ul>
             </div>
         </div>

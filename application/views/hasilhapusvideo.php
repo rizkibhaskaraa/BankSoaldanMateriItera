@@ -1,5 +1,5 @@
 <div class="lp-page" id="lp-1">
-        <div id="lp-1-prodi">
+        <div id="lp-1-prodi" class="title">
             <?php foreach ($matkul as $value) { ?>
             <h4>Video referensi <?php echo $value['nama_matkul']?></h4>
             <?php } ?>
@@ -19,7 +19,7 @@
             </div>
             <div style="clear: both;"></div>
 
-            <div id="lp-1-prodi-matkul">
+            <div id="lp-1-prodi-matkul" class="flexbox-container">
             <?php foreach($video as $value) {?>
             <div id="videohapus">
                 <div id="v-video">

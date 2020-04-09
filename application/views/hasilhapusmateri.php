@@ -1,5 +1,5 @@
 <div class="lp-page" id="lp-1">
-        <div id="lp-1-prodi">
+        <div id="lp-1-prodi" class="title">
             <?php foreach ($matkul as $value) { ?>
             <h4>Materi <?php echo $value['nama_matkul']?></h4>
             <?php } ?>
@@ -19,7 +19,7 @@
             </div>
             <div style="clear: both;"></div>
 
-            <div id="lp-1-prodi-matkul">
+            <div id="lp-1-prodi-matkul" class="flexbox-container matkul-section">
            	<?php foreach ($materi as $value) { ?>
         		<a href="<?php echo base_url()?>/assets/materi/<?php echo $value["file"]?>"><h2><?php echo $value["judul"] ?></h2></a>
                 <input type="checkbox" name="pilih[]" value="<?php echo $value["kode_materi"];?>">
