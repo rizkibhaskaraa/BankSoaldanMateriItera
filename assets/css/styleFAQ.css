@@ -15,10 +15,18 @@ body{
 
 .lp-navigation ul li a{
     text-decoration: none;
+    
     color: black;
-    font-weight: 600;
-    padding: 10px;
+    font-weight: bolder;
+    font-size: larger;
+    padding: 20px;
 }
+
+.lp-navigation ul li a:hover{
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+}
+
 
 .lp-navigation ul li{
     display: inline;

@@ -23,7 +23,7 @@
     <div class="lp-page" id="lp-1">
         <div id="lp-1-container">
             <h1>Selamat Datang di Website<br>Bank Soal dan Materi ITERA</h1>
-            <h4>Dapatkan Soal dan Materi Program Studimu agar bisa menjadi referensi ketika ujian nanti</h4>
+            <p>Dapatkan Soal dan Materi Program Studimu agar bisa menjadi referensi ketika ujian nanti</p>
             <div id="start">Mulai Cari Referensimu</div>
         </div>
         <div id="lp-1-container-img">
@@ -33,7 +33,7 @@
     <div id="lp-about">
         <div id="container-about">
             <h1>Apa Itu Bank Soal dan <br>Materi ITERA?</h1>
-            <h3>Bank Soal dan Materi ITERA (BSMI) merupakan Website hasil pengembangan "INI TEAM" dari Mahasiswa Teknik Informatika 17 ITERA yang bekerja sama dengan Kementrian Riset dan Pendidikan KM ITERA 2020. BSMI ini dibuat dengan tujuaun untuk memudahkan Mahasiswa ITERA dalam mencari referensi belajar</h3>
+            <p>Bank Soal dan Materi ITERA (BSMI) merupakan Website hasil pengembangan "IniTeam" dari Mahasiswa Teknik Informatika 17 ITERA yang bekerja sama dengan Kementrian Riset dan Pendidikan KM ITERA 2020. BSMI ini dibuat dengan tujuaun untuk memudahkan Mahasiswa ITERA dalam mencari referensi belajar.</p>
         </div>
         <div id="container-img">
             <img src="<?php echo base_url('assets/img/asset(3).png') ?>" alt="Welcome"><!-- Diisi dengan gambar lampu pijar -->

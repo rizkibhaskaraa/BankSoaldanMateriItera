@@ -27,8 +27,14 @@ body{
 .lp-navigation ul li a{
     text-decoration: none;
     color: black;
-    font-weight: 600;
-    padding: 10px;
+    font-weight: bolder;
+    font-size: larger;
+    padding: 20px;
+}
+
+.lp-navigation ul li a:hover{
+    background-color: rgba(0,0,0,0.2);
+    color: white;
 }
 
 .lp-navigation ul li{
@@ -58,39 +64,45 @@ body{
     padding: 30px;
     /*background-color: aquamarine; */
     /* float: left; */
-    padding-top: 50px;
+    padding-top: 80px;
 }
 
 #lp-1-container h1{
     font-size: 4vw;
 }
 
-#lp-1-container h3{
-    font-size: 2vw;
-    font-weight: 600;
+#lp-1-container p{
+    margin-top: -25px;
+    font-size: 13pt;
+    font-weight: 500;
 }
 
 #start{
     text-decoration: none;
     display: inline-block;
-    background-color: rgb(37, 37, 245);
+    background-color: rgb(37, 37, 245,0.9);
     color: white;
     font-size: 17px;
-    margin-top: 40px;
+    margin-top: 17px;
     height: 8vh;
     width: 20vw;
-    line-height: 50px;
+    line-height: 57px;
     border-radius: 50px;
     cursor: pointer;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
 }
 
 #lp-1-container-img{
-    margin-top: 5%;
+    margin-top: 2%;
     width: 25%;
     float: right;
 }
 #lp-1-container-img img{
     height: 50vh;
+    
 }
 
 #formPopup{
@@ -200,15 +212,16 @@ body{
     height: 35px;
 }
 
-/* edit by Aldi */
+
 #lp-about{
     margin-top: 6%;
-    height: 55vh;
+    height: 90vh;
     background-color: #fff;
 }
 #lp-about-1{
-    height: 50vh;
+    height: 80vh;
     width: 100%;
+    margin-top: 50pt;
 }
 
 #container-about{
@@ -219,26 +232,27 @@ body{
 }
 
 #lp-about h1{
-    font-size: 4vh;
+    font-size: 40pt;
+    margin-top: 65pt;
 }
 
-#lp-about h3{
-    font-size: 3vh;
-
+#lp-about p{
+    font-size: 20pt;
+    text-align: justify;
 }
-#container-about h1,#container-about h3{
+#container-about h1{
     text-align: center;
 }
 
 #container-img{
-    margin-top: 1.5%;
+    margin-top: 5%;
     margin-left: 5%;
     width: 25%;
     float: left;
 }
 
 #container-img img{
-    height: 50vh;
+    height: 60vh;
 }
 #fasilitas{
     height: 45vh;
