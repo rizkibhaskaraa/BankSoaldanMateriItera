@@ -1,5 +1,5 @@
-# BankSoaldanMateriItera
-Project Bank Soal dan Materi Itera
+# BankSoaldanMateriITERA
+Project Bank Soal dan Materi ITERA
 Bank Soal dan Materi Itera (BSMI) merupakan Website hasil 
 pengembangan "Ini Team" dari Teknik Informatika 17 yang 
 bekerja sama dengan Kementrian Riset dan Pendidikan KM 
