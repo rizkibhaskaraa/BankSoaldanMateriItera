@@ -6,9 +6,9 @@ bekerja sama dengan Kementrian Riset dan Pendidikan KM
 ITERA 2020, yang dimana bertujuan untuk memudahkan 
 Mahasiswa ITERA dalam pencarian referensi belajar.
 
-Team Members :
-Rizki Bhaskara M.E 14117084 <br />
-Aldi Indrawan 14117055 <br />
-Nova Yastika 14117073 <br />
-Riwandy 14117098 <br />
-Roy Putra O 14115047 
+Team Members : <br />
+1. Rizki Bhaskara M.E 14117084 <br />
+2. Aldi Indrawan 14117055 <br />
+3. Nova Yastika 14117073 <br />
+4. Riwandy 14117098 <br />
+5. Roy Putra O 14115047 
