@@ -8,14 +8,14 @@
 
         <!-- tombol batal -->
         <div id="lp-1-hapusmateri">
-            <a href="<?php echo base_url('soal/'.$kode_matkul) ?>" id="batal"><h3>Batal</h3></a>
+            <a href="<?php echo base_url('soal/'.$kode_matkul) ?>" class="cancel"><h3>Batal</h3></a>
         </div>
 
         <form method="post" action="<?php echo base_url('welcome/hapussoal/'.$kode_matkul) ?>">
 
             <!-- tombol hapus -->
             <div id="lp-1-hapusmateri" >
-            <input type="submit" id="hapus" value="Hapus soal terpilih" onclick="return confirm('Yakin ingin hapus?')">
+            <input type="submit" id="delete" value="Hapus soal terpilih" onclick="return confirm('Yakin ingin hapus?')">
             </div>
             <div style="clear: both;"></div>
 

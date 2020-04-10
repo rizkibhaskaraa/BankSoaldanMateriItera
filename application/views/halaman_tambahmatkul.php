@@ -22,8 +22,8 @@
                     
                     <input type="text" name="kode_prodi" value="<?php echo $prodi['kode_prodi']?>" hidden>
                     <div class="form-submit">
-                        <input type="reset" value="Reset" id="reset">
-                        <input type="submit" value="Simpan" id="submit">
+                        <input type="reset" value="Reset" >
+                        <input type="submit" value="Simpan" >
                     </div>
                 <?php echo form_close(); ?>
             </div>    

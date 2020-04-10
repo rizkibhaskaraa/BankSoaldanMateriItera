@@ -23,8 +23,8 @@
                         <input type="text" name="kode_matkul_lama" value="<?php echo $value['kode_matkul']?>" hidden>
                         <input type="text" name="kode_prodi" value="<?php echo $value['kode_prodi']?>" hidden>
                         <div class="form-submit">
-                            <input type="reset" id="reset" value="Reset">
-                            <input type="submit" id="submit" value="Simpan">
+                            <input type="reset" value="Reset">
+                            <input type="submit" value="Simpan">
                         </div>
                         
                     <?php echo form_close(); ?>
