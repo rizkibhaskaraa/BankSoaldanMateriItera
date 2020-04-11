@@ -6,7 +6,7 @@
             <div style="clear: both;"></div>
             <div id="form-addmateri" class="form-input">
                 <?php echo  form_open_multipart('welcome/addmatkul');?>
-                    <div id="alert">
+                    <div class="alert">
                     <?php if(validation_errors()): ?>
                         <h4><?php echo validation_errors(); ?></h4>
                     <?php endif; ?>

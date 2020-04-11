@@ -9,7 +9,7 @@
             <?php echo  form_open_multipart('welcome/addmateri');?>
                 <div class="visible-form">
                     <h3>Judul materi <?php echo $value["nama_matkul"];?></h3>
-                    <div id="alert">
+                    <div class="alert">
                     <?php if(validation_errors()): ?>
                         <h4><?php echo validation_errors(); ?></h4>
                     <?php endif; ?>

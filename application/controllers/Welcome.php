@@ -14,6 +14,14 @@ class Welcome extends CI_Controller {
 	public function index()	{
 		$this->load->helper('form');
 		$this->form_validation->set_rules('enrolment_form', 'Enrollment key', 'trim|required');
+		//cek user (end-user/operator/admin)
+		if (isset($_SESSION["operator"])){
+			redirect('dashboard/'.$_SESSION["kode_prodi"]);
+		}
+
+		if (isset($_SESSION["admin"])) {
+			redirect('dashboard/');	
+		}
 
 		if($this->form_validation->run() == false){
 			$this->load->view('landing_page');
@@ -352,8 +360,14 @@ class Welcome extends CI_Controller {
 	public function addmatkul(){
 		$kode_prodi = $this->input->post('kode_prodi');
 		$this->form_validation->set_rules('kode_matkul','Kode Mata Kuliah','required');
+		$this->form_validation->set_rules('nama_matkul','Nama Mata Kuliah','required');
+		$this->form_validation->set_rules('nama_dosen','Deskripsi Mata Kuliah','required');
+
 		if($this->form_validation->run() == false) {
-			redirect('add/matakuliah/'.$kode_prodi);
+			//redirect('add/matakuliah/'.$kode_prodi);
+			$this->load->view('header',$data);
+			$this->load->view('halaman_tambahmatkul',$data);
+
 		}else{
 			if($this->BSMI_model->tambahmatkul()==true){
 				echo "
@@ -402,7 +416,9 @@ class Welcome extends CI_Controller {
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->form_validation->set_rules('judul_materi','Judul Materi','required');
 		if($this->form_validation->run() == false) {
-			redirect('add/materi/'.$kode_matkul);
+			//redirect('add/materi/'.$kode_matkul);
+			$this->load->view('header',$data);
+			$this->load->view('halaman_tambahmateri',$data);
 		}else{
 			if($this->BSMI_model->tambahmateri()==true){
 				echo "
@@ -429,7 +445,9 @@ class Welcome extends CI_Controller {
 		$this->form_validation->set_rules('tahun_soal','Tahun Soal','required|max_length[4]|integer');
 
 		if($this->form_validation->run() == false) {
-			redirect('add/soal/'.$kode_matkul);
+			//redirect('add/soal/'.$kode_matkul);
+			$this->load->view('header',$data);
+			$this->load->view('halaman_tambahsoal',$data);
 		}else{
 			if($this->BSMI_model->tambahsoal()==true){
 				echo "
@@ -454,7 +472,9 @@ class Welcome extends CI_Controller {
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->form_validation->set_rules('judul_video','Judul Video','required');
 		if($this->form_validation->run() == false) {
-			redirect('add/video/'.$kode_matkul);
+			//redirect('add/video/'.$kode_matkul);
+			$this->load->view('header',$data);
+			$this->load->view('halaman_tambahvideo',$data);
 		}else{
 			if($this->BSMI_model->tambahvideo()==true){
 				echo "

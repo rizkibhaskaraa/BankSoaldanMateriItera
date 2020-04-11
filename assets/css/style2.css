@@ -387,3 +387,9 @@ a{
     border-radius: 10px;
     background-color: rgba(0,0,255,0.5);
 }
+
+.alert {
+    margin-top: 1%;
+    color: red;
+    font-size: 2vh; 
+}
