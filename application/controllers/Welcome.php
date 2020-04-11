@@ -81,7 +81,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"]) ){
 			echo "
 			<script>
-				alert('masukkan enrollmentKey dahulu');
+				alert('Masukkan EnrollmentKey Terlebih Dahulu');
 				document.location.href='../';
 			</script>
 			";
@@ -100,7 +100,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"]) ){
 			echo "
 			<script>
-				alert('masukkan enrollmentKey dahulu');
+				alert('Masukkan EnrollmentKey Terlebih Dahulu');
 				document.location.href='../';
 			</script>
 			";
@@ -130,7 +130,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["operator"]) && !isset($_SESSION["operator"])){
 			echo "
 			<script>
-				alert('login dahulu');
+				alert('Login Terlebih Dahulu');
 				document.location.href='..';
 			</script>
 			";
@@ -195,7 +195,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('masukkan enrollmentKey dahulu');
+				alert('Masukkan EnrollmentKey Terlebih Dahulu');
 				document.location.href='../';
 			</script>
 			";
@@ -215,7 +215,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"]) ){
 			echo "
 			<script>
-				alert('masukkan enrollmentKey dahulu');
+				alert('Masukkan EnrollmentKey Terlebih Dahulu');
 				document.location.href='../';
 			</script>
 			";
@@ -237,7 +237,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"]) ){
 			echo "
 			<script>
-				alert('masukkan enrollmentKey dahulu');
+				alert('Masukkan EnrollmentKey Terlebih Dahulu');
 				document.location.href='../';
 			</script>
 			";
@@ -259,7 +259,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('masukkan enrollmentKey dahulu');
+				alert('Masukkan EnrollmentKey Terlebih Dahulu');
 				document.location.href='../';
 			</script>
 			";
@@ -282,7 +282,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('login dahulu');
+				alert('Login Terlebih Dahulu');
 				document.location.href='../auth/login/admin';
 			</script>
 			";
@@ -298,7 +298,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('login dahulu');
+				alert('Login Terlebih Dahulu');
 				document.location.href='../auth/login/admin';
 			</script>
 			";
@@ -314,7 +314,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('login dahulu');
+				alert('Login Terlebih Dahulu');
 				document.location.href='../auth/login/admin';
 			</script>
 			";
@@ -330,7 +330,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('login dahulu');
+				alert('Login Terlebih Dahulu');
 				document.location.href='../auth/login/admin';
 			</script>
 			";
@@ -346,7 +346,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('login dahulu');
+				alert('Login Terlebih Dahulu');
 				document.location.href='../auth/login/admin';
 			</script>
 			";
@@ -372,14 +372,14 @@ class Welcome extends CI_Controller {
 			if($this->BSMI_model->tambahmatkul()==true){
 				echo "
 					<script>
-						alert('Berhasil menambah mata kuliah');
+						alert('Berhasil Menambahkan Mata Kuliah');
 						document.location.href='../dashboard/$kode_prodi';
 					</script>
 					";
 			}else{
 				echo "
 					<script>
-						alert('Gagal menambah video');
+						alert('Gagal Menambahkan Video');
 						document.location.href='../add/matakuliah/$kode_prodi';
 					</script>
 				";
@@ -396,14 +396,14 @@ class Welcome extends CI_Controller {
 			if($this->BSMI_model->updatematkul()==true){
 				echo "
 					<script>
-						alert('Berhasil mengubah data mata kuliah');
+						alert('Berhasil Mengubah Data Mata Kuliah');
 						document.location.href='../matakuliah/$kode_matkul';
 					</script>
 					";
 			}else{
 				echo "
 					<script>
-						alert('Gagal mengubah data mata kuliah');
+						alert('Gagal Mengubah Data Mata Kuliah');
 						document.location.href='../edit/matakuliah/$kode_matkul';
 					</script>
 				";
