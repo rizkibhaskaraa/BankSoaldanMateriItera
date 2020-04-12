@@ -30,6 +30,11 @@ class Welcome extends CI_Controller {
 		}
 	}
 
+	public function hapussession(){
+		session_destroy();
+		$this->load->view("landing_page");
+	}
+
 	private function checkEnrollmentKey(){
 		$enrollmentInput = $this->input->post('enrolment_form');
 		$enrollmentKey = $this->BSMI_model->getenroll($enrollmentInput);
@@ -87,11 +92,15 @@ class Welcome extends CI_Controller {
 			";
 		}
 
+		//cek login
+		if (isset($_SESSION["operator"]) || isset($_SESSION["admin"]) ) {
+			$data["cek_operatoradmin"] = true;
+		}
 
 		$data['sains'] = $this->BSMI_model->getsains();
 		$data['jtik'] = $this->BSMI_model->getjtik();
 		$data['jtpi'] = $this->BSMI_model->getjtpi();
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('halaman_prodi',$data);
 	}
 
@@ -121,7 +130,7 @@ class Welcome extends CI_Controller {
 		}
 
 		$data['kode_prodi'] = $kode_prodi;
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('halaman_matakuliah',$data);
 	}
 
@@ -151,7 +160,7 @@ class Welcome extends CI_Controller {
 		}
 
 		$data['kode_prodi'] = $kode_prodi;
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('halaman_matakuliah',$data);
 	}
 
@@ -206,7 +215,7 @@ class Welcome extends CI_Controller {
 		}
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('halaman_berkas',$data);		
 	}
 
@@ -228,7 +237,7 @@ class Welcome extends CI_Controller {
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$data["materi"] = $this->BSMI_model->getmateri($kode_matkul); 
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('halaman_materi',$data);			
 	}
 
@@ -250,7 +259,7 @@ class Welcome extends CI_Controller {
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$data["soal"] = $this->BSMI_model->getsoal($kode_matkul); 
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('halaman_soal',$data);			
 	}
 
@@ -273,7 +282,7 @@ class Welcome extends CI_Controller {
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$data["video"] = $this->BSMI_model->getvideo($kode_matkul); 
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('halaman_video',$data);			
 	}
 
@@ -288,8 +297,12 @@ class Welcome extends CI_Controller {
 			";
 		}
 
+		if (isset($_SESSION["operator"]) || isset($_SESSION["admin"]) ) {
+			$data["cek_operatoradmin"] = true;
+		}
+
 		$data["prodi"] = $this->BSMI_model->getprodi($kode_prodi);
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('halaman_tambahmatkul',$data);
 	}
 
@@ -304,8 +317,12 @@ class Welcome extends CI_Controller {
 			";
 		}
 
+		if (isset($_SESSION["operator"]) || isset($_SESSION["admin"]) ) {
+			$data["cek_operatoradmin"] = true;
+		}
+
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('halaman_editmatkul',$data);
 	}
 
@@ -320,8 +337,12 @@ class Welcome extends CI_Controller {
 			";
 		}
 
+		if (isset($_SESSION["operator"]) || isset($_SESSION["admin"]) ) {
+			$data["cek_operatoradmin"] = true;
+		}
+
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('halaman_tambahmateri',$data);
 	}
 
@@ -336,8 +357,12 @@ class Welcome extends CI_Controller {
 			";
 		}
 
+		if (isset($_SESSION["operator"]) || isset($_SESSION["admin"]) ) {
+			$data["cek_operatoradmin"] = true;
+		}
+
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('halaman_tambahsoal',$data);
 	}
 
@@ -352,8 +377,12 @@ class Welcome extends CI_Controller {
 			";
 		}
 
+		if (isset($_SESSION["operator"]) || isset($_SESSION["admin"]) ) {
+			$data["cek_operatoradmin"] = true;
+		}
+
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('halaman_tambahvideo',$data);
 	}
 
@@ -362,6 +391,10 @@ class Welcome extends CI_Controller {
 		$this->form_validation->set_rules('kode_matkul','Kode Mata Kuliah','required');
 		$this->form_validation->set_rules('nama_matkul','Nama Mata Kuliah','required');
 		$this->form_validation->set_rules('nama_dosen','Deskripsi Mata Kuliah','required');
+
+		if (isset($_SESSION["operator"]) || isset($_SESSION["admin"]) ) {
+			$data["cek_operatoradmin"] = true;
+		}
 
 		if($this->form_validation->run() == false) {
 			//redirect('add/matakuliah/'.$kode_prodi);
@@ -414,6 +447,9 @@ class Welcome extends CI_Controller {
 	public function addmateri(){
 		$kode_matkul = $this->input->post('kode_matkul');
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		if (isset($_SESSION["operator"]) || isset($_SESSION["admin"]) ) {
+			$data["cek_operatoradmin"] = true;
+		}
 		$this->form_validation->set_rules('judul_materi','Judul Materi','required');
 		if($this->form_validation->run() == false) {
 			//redirect('add/materi/'.$kode_matkul);
@@ -441,6 +477,9 @@ class Welcome extends CI_Controller {
 	public function addsoal(){
 		$kode_matkul = $this->input->post('kode_matkul');
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		if (isset($_SESSION["operator"]) || isset($_SESSION["admin"]) ) {
+			$data["cek_operatoradmin"] = true;
+		}
 		$this->form_validation->set_rules('judul_soal','Judul Soal','required');
 		$this->form_validation->set_rules('tahun_soal','Tahun Soal','required|max_length[4]|integer');
 
@@ -470,6 +509,9 @@ class Welcome extends CI_Controller {
 	public function addvideo(){
 		$kode_matkul = $this->input->post('kode_matkul');
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
+		if (isset($_SESSION["operator"]) || isset($_SESSION["admin"]) ) {
+			$data["cek_operatoradmin"] = true;
+		}
 		$this->form_validation->set_rules('judul_video','Judul Video','required');
 		if($this->form_validation->run() == false) {
 			//redirect('add/video/'.$kode_matkul);

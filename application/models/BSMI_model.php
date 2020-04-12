@@ -37,6 +37,7 @@ class BSMI_model extends CI_model
 	}
 
 	public function getmatkulcari($kode_prodi,$kode_matkul){
+		$this->db->order_by('nama_matkul','ASC');
 		$this->db->like('nama_matkul', $kode_matkul);
 		return $this->db->get_where('matakuliah', array('kode_prodi'=>$kode_prodi))->result_array();		
 	}	

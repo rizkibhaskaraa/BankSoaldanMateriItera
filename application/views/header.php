@@ -19,6 +19,9 @@
                     <li><a href="<?php echo base_url() ?>">HOME</a></li>
                     <li><a href="<?php echo base_url('welcome/halamanFaq') ?>">FAQ</a></li>
                     <li><a href="<?php echo base_url('welcome/halamanAbout')?>">ABOUT</a></li>
+                    <?php if ($cek_operatoradmin == true) {?>
+                    <li><a href="<?php echo base_url("welcome/hapussession")?>">LOGOUT</a></li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>
