@@ -57,8 +57,9 @@
         <form class="input-form" id="formContainer" method="POST" action="<?php echo base_url(); ?>">
             <h1>Masukkan Enrollment Key</h1>
             <input type="text" name="enrolment_form" id="enrolment-form">
-            <input type="submit" name="submit" value="Masuk">
             <input type="button" id="cancelPopup" value="Batal">
+            <input type="submit" name="submit" value="Masuk">
+            
         </form>
     </div>
 
