@@ -393,3 +393,79 @@ a{
     color: red;
     font-size: 2vh; 
 }
+
+.profile-section{
+    height: 50px;
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    z-index: 2;
+}
+
+#user-identifier{
+    float: right;
+    width: fit-content;
+    position: relative;
+}
+
+.user-name, #user-icon{
+    display: block;
+    height: 50px;
+    float: left;
+}
+
+#user-icon{
+    cursor: pointer;
+}
+
+#user-icon img{
+    width: 38px;
+    margin: 6px 10px;
+}
+
+#user-icon:hover + #logout-button{
+    visibility: visible;
+}
+
+.user-name{
+    line-height: 50px;
+    box-sizing: border-box;
+    margin: 0 10px;
+}
+
+#logout-button{
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    visibility: hidden;
+}
+
+#logout-button:hover{
+    visibility: visible;
+}
+
+#logout-button a{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px grey;
+    display: block;
+    width: 150px;
+    height: 40px;
+    font-size: 18px;
+}
+
+#logout-button span, #logout-button img{
+    float: left;
+}
+
+#logout-button span{
+    line-height: 20px;
+    margin: 10px;
+}
+
+#logout-button img{
+    height: 26px;
+    float: right;
+    margin: 7px 10px;
+}

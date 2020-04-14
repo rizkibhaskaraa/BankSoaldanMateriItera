@@ -67,10 +67,12 @@ class Welcome extends CI_Controller {
 			if(password_verify($password, $saved_password)){
 				if ($email == "aldi.14117055@student.itera.ac.id"){
 					$_SESSION["admin"] = true;
-					redirect('dashboard');	
+					$_SESSION["greetings"] = "Halo, Admin KM ITERA";
+					redirect('dashboard');
 				}else{
 					$_SESSION["operator"] = true;
 					$_SESSION["kode_prodi"] = $data["prodi"]["kode_prodi"];
+					$_SESSION["greetings"] = "Halo, Operator Prodi ".$data["prodi"]["nama_prodi"];
 					redirect('dashboard/'.$_SESSION["kode_prodi"]);
 				}
 			} else {
@@ -101,6 +103,7 @@ class Welcome extends CI_Controller {
 		$data['jtik'] = $this->BSMI_model->getjtik();
 		$data['jtpi'] = $this->BSMI_model->getjtpi();
 		$this->load->view('header',$data);
+		$this->load->view('profile_icon');
 		$this->load->view('halaman_prodi',$data);
 	}
 
@@ -131,6 +134,7 @@ class Welcome extends CI_Controller {
 
 		$data['kode_prodi'] = $kode_prodi;
 		$this->load->view('header',$data);
+		$this->load->view('profile_icon');
 		$this->load->view('halaman_matakuliah',$data);
 	}
 
@@ -161,6 +165,7 @@ class Welcome extends CI_Controller {
 
 		$data['kode_prodi'] = $kode_prodi;
 		$this->load->view('header',$data);
+		$this->load->view('profile_icon');
 		$this->load->view('halaman_matakuliah',$data);
 	}
 
@@ -216,6 +221,7 @@ class Welcome extends CI_Controller {
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->load->view('header',$data);
+		$this->load->view('profile_icon');
 		$this->load->view('halaman_berkas',$data);		
 	}
 
@@ -238,6 +244,7 @@ class Welcome extends CI_Controller {
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$data["materi"] = $this->BSMI_model->getmateri($kode_matkul); 
 		$this->load->view('header',$data);
+		$this->load->view('profile_icon');
 		$this->load->view('halaman_materi',$data);			
 	}
 
@@ -260,6 +267,7 @@ class Welcome extends CI_Controller {
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$data["soal"] = $this->BSMI_model->getsoal($kode_matkul); 
 		$this->load->view('header',$data);
+		$this->load->view('profile_icon');
 		$this->load->view('halaman_soal',$data);			
 	}
 
@@ -283,6 +291,7 @@ class Welcome extends CI_Controller {
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$data["video"] = $this->BSMI_model->getvideo($kode_matkul); 
 		$this->load->view('header',$data);
+		$this->load->view('profile_icon');
 		$this->load->view('halaman_video',$data);			
 	}
 
@@ -303,6 +312,7 @@ class Welcome extends CI_Controller {
 
 		$data["prodi"] = $this->BSMI_model->getprodi($kode_prodi);
 		$this->load->view('header',$data);
+		$this->load->view('profile_icon');
 		$this->load->view('halaman_tambahmatkul',$data);
 	}
 
@@ -323,6 +333,7 @@ class Welcome extends CI_Controller {
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->load->view('header',$data);
+		$this->load->view('profile_icon');
 		$this->load->view('halaman_editmatkul',$data);
 	}
 
@@ -343,6 +354,7 @@ class Welcome extends CI_Controller {
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->load->view('header',$data);
+		$this->load->view('profile_icon');
 		$this->load->view('halaman_tambahmateri',$data);
 	}
 
@@ -363,6 +375,7 @@ class Welcome extends CI_Controller {
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->load->view('header',$data);
+		$this->load->view('profile_icon');
 		$this->load->view('halaman_tambahsoal',$data);
 	}
 
@@ -383,6 +396,7 @@ class Welcome extends CI_Controller {
 
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->load->view('header',$data);
+		$this->load->view('profile_icon');
 		$this->load->view('halaman_tambahvideo',$data);
 	}
 
@@ -399,6 +413,7 @@ class Welcome extends CI_Controller {
 		if($this->form_validation->run() == false) {
 			//redirect('add/matakuliah/'.$kode_prodi);
 			$this->load->view('header',$data);
+			$this->load->view('profile_icon');
 			$this->load->view('halaman_tambahmatkul',$data);
 
 		}else{
@@ -454,6 +469,7 @@ class Welcome extends CI_Controller {
 		if($this->form_validation->run() == false) {
 			//redirect('add/materi/'.$kode_matkul);
 			$this->load->view('header',$data);
+			$this->load->view('profile_icon');
 			$this->load->view('halaman_tambahmateri',$data);
 		}else{
 			if($this->BSMI_model->tambahmateri()==true){
@@ -486,6 +502,7 @@ class Welcome extends CI_Controller {
 		if($this->form_validation->run() == false) {
 			//redirect('add/soal/'.$kode_matkul);
 			$this->load->view('header',$data);
+			$this->load->view('profile_icon');
 			$this->load->view('halaman_tambahsoal',$data);
 		}else{
 			if($this->BSMI_model->tambahsoal()==true){
@@ -516,6 +533,7 @@ class Welcome extends CI_Controller {
 		if($this->form_validation->run() == false) {
 			//redirect('add/video/'.$kode_matkul);
 			$this->load->view('header',$data);
+			$this->load->view('profile_icon');
 			$this->load->view('halaman_tambahvideo',$data);
 		}else{
 			if($this->BSMI_model->tambahvideo()==true){
