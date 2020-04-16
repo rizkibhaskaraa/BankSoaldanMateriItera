@@ -484,3 +484,13 @@ a{
     float: right;
     margin: 7px 10px;
 }
+
+.more-options{
+    display: inline-block;
+}
+
+.more-options #triangle{
+    width: 15px;
+    height: 12px;
+    margin: 19px 0;
+}
