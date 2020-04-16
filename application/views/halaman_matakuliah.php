@@ -13,10 +13,10 @@
             <?php if ($cek_operatoradmin == true) {?>
             <!-- tombol tambah -->
             <div id="lp-1-tambahmateri">
-                <a href="<?php echo base_url('add/matakuliah/'.$kode_prodi)?>" class="button white-black border-black">
+                <a href="<?php echo base_url('add/matakuliah/'.$kode_prodi)?>" class="tombol  border-black">
                     <span>Tambah Mata Kuliah</span>
                 </a>
-            </div>  
+            </div>
             <?php } ?>
             <div style="clear: both;"></div>
             <div id="lp-1-prodi-matkul" class="flexbox-container matkul-section">

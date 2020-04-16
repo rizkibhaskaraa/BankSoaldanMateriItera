@@ -227,12 +227,6 @@ a{
     border: 2px solid black;
 }
 
-.button{
-    display: inline-block;
-    padding: 5px;
-    box-sizing: border-box;
-    margin: 40px;
-}
 
 .button:hover{
     background-color: black;
@@ -304,6 +298,8 @@ a{
     font-weight: bold;
     margin: 10px;
     float: left;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 .tombol:hover{
@@ -337,29 +333,23 @@ a{
 }
 
 #lp-1-tambahmateri a{
-    border:none;
-    padding-left: 1%;
-    padding-right: 1%;
-    border-radius: 10px;
-    padding-top: 0.5%;
-    
-    background-color: rgba(0,0,255);
-    color:white;
+    background-color: rgb(53, 53, 163);
+    color: white;
+    border-color: white;
+}
+
+#lp-1-tambahmateri a:hover, #lp-1-hapusmateri .tombol:hover{
+    background-color: white;
+    color: black;
+    border-color: black;
 }
 
 #lp-1-hapusmateri .tombol{
     border:none;
-    border-radius: 15px;
-    background-color: rgba(255,0,0);
+    background-color: rgb(218, 17, 17);
     color: white;
-    padding-top:0.5%;
-    padding-bottom: 3%;
-    font-size: 25px;
-   
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
+    font-size: 20px;
+    border: 2px solid white;
 }
 
 #lp-1-hapusmateri #delete{
