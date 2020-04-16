@@ -276,7 +276,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('masukkan enrollmentKey dahulu');
+				alert('Masukkan EnrollmentKey Dahulu');
 				document.location.href='../';
 			</script>
 			";

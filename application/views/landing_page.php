@@ -75,9 +75,9 @@
 <footer>
                        
                         <div class="q-a">
-                        <center><h5 class = "q">
+                        <h5 class = "q">
                         <?php echo "Dikembangkan Oleh"?>
-                        </h5></center>
+                        </h5>
                         </div>
                         
                             <div class="ini-team">

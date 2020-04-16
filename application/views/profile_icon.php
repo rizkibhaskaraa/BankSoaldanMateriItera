@@ -6,7 +6,9 @@
             </div>
             <div id="user-icon">
                 <img src="<?php echo base_url('assets/img/user.png')?>" alt="user">
-            </div>
+                <img src="<?php echo base_url('assets/img/triangle.png')?>"alt="triangle">
+            </div>  
+
             <div id="logout-button">
                 <a href="<?php echo base_url('welcome/hapussession')?>">
                     <span>Logout</span>

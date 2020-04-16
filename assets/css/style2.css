@@ -54,7 +54,7 @@ html{
 }
 
 body{
-    font-family: Raleway, Arial, Helvetica, sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: bold;
 }
 
@@ -76,6 +76,8 @@ a{
     display: block;
     height: 75px;
     box-shadow: 0 0px 4px grey;
+    background-color: #FFD700;
+    padding: 30px;
 }
 
 .container{
@@ -87,6 +89,7 @@ a{
     padding: 0 40px;
     box-sizing: border-box;
     margin: auto;
+    
 }
 
 .header-logo{
@@ -104,13 +107,15 @@ a{
 
 .header-logo img{
     display: inline-block;
-    height: 40px;
+    height: 60px;
     vertical-align: middle;
+
 }
 
 .header-nav{
     width: fit-content;
     float: right;
+   
 }
 
 .header-nav li{
@@ -118,6 +123,7 @@ a{
     float: left;
     height: 75px;
     line-height: 75px;
+    
 }
 
 .header-nav a{
@@ -125,6 +131,7 @@ a{
     height: 75px;
     text-decoration: none;
     padding: 0 20px;
+    
 }
 
 .header-nav a:visited{
@@ -132,12 +139,13 @@ a{
 }
 
 .header-nav li :hover{
-    background-color: lightgray;
-    display: inline-block;
+    background-color: rgba(0,0,0,0.2);
+    color: white;
 }
 
 .page-section h3{
     margin: 0 auto;
+    margin-top: 60px;
     height: 150px;
     line-height: 150px;
     font-size: 44px;
@@ -264,14 +272,14 @@ a{
 }
 
 .form-submit input[type="reset"]:hover{/*, .form-submit input:hover{*/
-    background-color: rgba(255,0,0,0.7);
+    background-color: rgba(255,0,0);
     color: white;
     font-weight: bold;
     cursor: pointer;
 }
 
 .form-submit input[type="submit"]:hover{
-    background-color: #00FF00;
+    background-color: #4CAF50;
     color: white;
     font-weight: bold;
     cursor: pointer;   
@@ -334,15 +342,24 @@ a{
     padding-right: 1%;
     border-radius: 10px;
     padding-top: 0.5%;
-    background-color: rgba(0,0,255,0.5);
+    
+    background-color: rgba(0,0,255);
+    color:white;
 }
 
 #lp-1-hapusmateri .tombol{
     border:none;
-    border-radius: 10px;
-    background-color: rgba(255,0,0,0.7);
+    border-radius: 15px;
+    background-color: rgba(255,0,0);
+    color: white;
     padding-top:0.5%;
     padding-bottom: 3%;
+    font-size: 25px;
+   
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
 }
 
 #lp-1-hapusmateri #delete{
@@ -355,7 +372,8 @@ a{
     font-size: 1.5vw;
     margin-top: 1%;
     border-radius: 10px;
-    background-color: rgba(255,0,0,0.7);
+    background-color: rgba(255,0,0);
+    color: white;
 }
 
 #lp-1-hapusmateri .cancel{
@@ -366,7 +384,8 @@ a{
     height: 5vh;
     border-radius: 10px;
     font-size: 1.5vw;
-    background-color: rgba(0,0,255,0.5);
+    background-color: rgba(0,0,255);
+    color:white;
     line-height: 5vh;
 }
 
@@ -385,8 +404,9 @@ a{
     margin-bottom: -3%;
     text-align: center;
     border-radius: 10px;
-    background-color: rgba(0,0,255,0.5);
-}
+     background-color: rgba(0,0,255);
+    color:white;
+    }
 
 .alert {
     margin-top: 1%;
@@ -421,6 +441,11 @@ a{
 
 #user-icon img{
     width: 38px;
+    margin: 6px 10px;
+}
+
+#user-icon img img{
+    width: 8px;
     margin: 6px 10px;
 }
 
