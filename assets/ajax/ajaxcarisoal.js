@@ -12,6 +12,7 @@ var alamathapus = document.getElementById('alamathapus');
 var kontenhapus = document.getElementById('lp-1');
 var tombolhapus = document.getElementById('hapus');
 
+
 cari.addEventListener('keyup', function(){
 	//buat objeck
 	
@@ -22,12 +23,12 @@ cari.addEventListener('keyup', function(){
 			konten.innerHTML = ajaxCari.responseText;
 		}
 	}
-	ajaxCari.open('GET', alamat.value+kode_matkul.value+"/"+cari.value+"/"+tahun.value , true);
+	ajaxCari.open('GET', alamat.value+kode_matkul.value+"/"+tipe.value+"/"+tahun.value+"/"+cari.value , true);
 	ajaxCari.send();
 
 });
 
-tahun.addEventListener('click', function(){
+tahun.addEventListener('change', function(){
 	//buat objeck
 	
 	var ajaxtahun = new XMLHttpRequest();
@@ -37,12 +38,11 @@ tahun.addEventListener('click', function(){
 			konten.innerHTML = ajaxtahun.responseText;
 		}
 	}
-	ajaxtahun.open('GET', alamat2.value+kode_matkul.value+"/"+tahun.value , true);
+	ajaxtahun.open('GET', alamat2.value+kode_matkul.value+"/"+tahun.value+"/"+tipe.value+"/"+cari.value , true);
 	ajaxtahun.send();
-
 });
 
-tipe.addEventListener('click', function(){
+tipe.addEventListener('change', function(){
 	//buat objeck
 	
 	var ajaxtipe = new XMLHttpRequest();
@@ -52,9 +52,8 @@ tipe.addEventListener('click', function(){
 			konten.innerHTML = ajaxtipe.responseText;
 		}
 	}
-	ajaxtipe.open('GET', alamat1.value+kode_matkul.value+"/"+tipe.value , true);
+	ajaxtipe.open('GET', alamat1.value+kode_matkul.value+"/"+tipe.value+'/'+tahun.value+"/"+cari.value , true);
 	ajaxtipe.send();
-
 });
 
 tombolhapus.addEventListener('click',function(){

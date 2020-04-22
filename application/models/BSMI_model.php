@@ -47,26 +47,63 @@ class BSMI_model extends CI_model
 		return $this->db->get_where('materi', array('kode_matkul'=>$kode_matkul))->result_array();		
 	}
 
-	public function gettipe($kode_matkul,$tipe){
-		if ($tipe == "Tipe") {
-
+	public function gettipe($kode_matkul,$tipe,$tahun,$kode_soal){
+		if ($tipe == "Semua%20Tipe") {
+			if ($tahun == "Semua%20Tahun") {
+				$this->db->like('judul', $kode_soal);	
+			}else{
+				$this->db->like('tahun', $tahun);
+				$this->db->like('judul', $kode_soal);	
+			}
 		}else{
-			$this->db->like('tipe', $tipe);
+			if ($tahun == "Semua%20Tahun") {
+				$this->db->like('tipe', $tipe);	
+				$this->db->like('judul', $kode_soal);	
+			}else{
+				$this->db->like('tipe', $tipe);
+				$this->db->like('tahun', $tahun);
+				$this->db->like('judul', $kode_soal);	
+			}
 		}
 		return $this->db->get_where('soal', array('kode_matkul'=>$kode_matkul))->result_array();		
 	}	
 
-	public function gettahun($kode_matkul,$tahun){
-		if ($tahun == "Tahun") {
+	public function gettahun($kode_matkul,$tahun,$tipe,$kode_soal){
+		if ($tahun == "Semua%20Tahun") {
+			if ($tipe == "Semua%20Tipe") {
+				$this->db->like('judul', $kode_soal);	
+			}else{
+				$this->db->like('tipe', $tipe);	
+				$this->db->like('judul', $kode_soal);	
+			}
 
 		}else{
-			$this->db->like('tahun', $tahun);
+			if ($tipe == "Semua%20tipe") {
+				$this->db->like('tahun', $tahun);	
+				$this->db->like('judul', $kode_soal);	
+			}else{
+				$this->db->like('tahun', $tahun);
+				$this->db->like('tipe', $tipe);		
+				$this->db->like('judul', $kode_soal);	
+			}
+			
 		}
 		return $this->db->get_where('soal', array('kode_matkul'=>$kode_matkul))->result_array();		
 	}
 
-	public function getsoalcari($kode_matkul,$kode_soal){
-		$this->db->like('judul', $kode_soal);
+	public function getsoalcari($kode_matkul,$tipe,$tahun,$kode_soal){
+		if ($tipe == "Semua%20Tipe") {
+			if ($tahun == "Semua%20Tahun") {
+				$this->db->like('judul', $kode_soal);		
+			}else{
+				$this->db->like('judul', $kode_soal);
+				$this->db->like('tahun', $tahun);
+			}
+		}else{
+			$this->db->like('judul', $kode_soal);
+			$this->db->like('tipe', $tipe);
+		}
+		
 		return $this->db->get_where('soal', array('kode_matkul'=>$kode_matkul))->result_array();		
 	}	
 

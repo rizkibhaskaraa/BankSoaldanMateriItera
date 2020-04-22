@@ -211,7 +211,7 @@ a{
 }
 
 .search-section{
-    float: right;
+    float: left;
     padding-top: 40px;
     box-sizing: border-box;
 }

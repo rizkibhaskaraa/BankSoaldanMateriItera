@@ -7,14 +7,14 @@
         <div id="operasi">
             <div id="lp-1-cari" class="search-section">
             	<input class="white-black border-black search-bar" type="text" name="cari" id="cari" placeholder="ketik kata kunci pencarian"></input>
-            <select id="selecttipe" class="white-black border-black">
-                <option>Tipe</option>
+            <select id="selecttipe" class="white-black border-black search-bar">
+                <option>Semua Tipe</option>
                 <option>UTS</option>
                 <option>UAS</option>
                 <option>KUIS</option>
             </select>
-            <select id="selecttahun" class="white-black border-black">
-                <option>Tahun</option>
+            <select id="selecttahun" class="white-black border-black search-bar">
+                <option>Semua Tahun</option>
                 <option>2015</option>
                 <option>2016</option>
                 <option>2017</option>

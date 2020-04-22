@@ -183,22 +183,22 @@ class Welcome extends CI_Controller {
 		$this->load->view('hasilcarimateri',$data);	
 	}
 
-	public function hasilcarisoal($kode_matkul,$kode_soal){
+	public function hasilcarisoal($kode_matkul,$tipe,$tahun,$kode_soal){
 		$carisoal = str_replace('%20', ' ', $kode_soal);
-		$data["soal"] = $this->BSMI_model->getsoalcari($kode_matkul,$carisoal);
+		$data["soal"] = $this->BSMI_model->getsoalcari($kode_matkul,$tipe,$tahun,$carisoal);
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->load->view('hasilcarisoal',$data);	
 	}
 
-	public function tipesoal($kode_matkul,$tipe){
-		$data["soal"] = $this->BSMI_model->gettipe($kode_matkul,$tipe);
+	public function tipesoal($kode_matkul,$tipe,$tahun,$kode_soal){
+		$data["soal"] = $this->BSMI_model->gettipe($kode_matkul,$tipe,$tahun,$kode_soal);
 		$data["tipe"] = $tipe;
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$this->load->view('hasilcarisoal',$data);	
 	}
 
-	public function tahunsoal($kode_matkul,$tahun){
-		$data["soal"] = $this->BSMI_model->gettahun($kode_matkul,$tahun);
+	public function tahunsoal($kode_matkul,$tahun,$tipe,$kode_soal){
+		$data["soal"] = $this->BSMI_model->gettahun($kode_matkul,$tahun,$tipe,$kode_soal);
 		$data["matkul"] = $this->BSMI_model->getmatkulkhusus($kode_matkul);
 		$data["tahun"] = $tahun;
 		$this->load->view('hasilcarisoal',$data);	
