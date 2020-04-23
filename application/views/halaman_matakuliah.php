@@ -7,7 +7,7 @@
                 
             </div>
             <div id="lp-1-cari" class="search-section">
-                <input type="text" class="white-black border-black search-bar" name="cari" id="cari" placeholder="Cari">   </input>
+                <input type="text" class="white-black border-black search-bar" name="cari" id="cari" placeholder="Search">   </input>
             </div>
             <div style="clear: both;"></div>
             <?php if ($cek_operatoradmin == true) {?>
