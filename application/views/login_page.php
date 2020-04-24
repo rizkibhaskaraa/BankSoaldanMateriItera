@@ -10,7 +10,7 @@
     <div class="login-form-card">
         <div class="login-form-container">
             <span id="login-title">
-                SELAMAT DATANG DI
+                Selamat Datang Di
             </span>
         <div class="login-logo">
             <img src="<?php echo base_url('assets/img/header_logo.png') ?>" alt="Bank Soal dan Materi Itera"> 
@@ -18,7 +18,7 @@
 
         <div class="description">
             Institut Teknologi Sumatera <br> Lampung Selatan
-            </div>
+        </div>
 
             <form method="post" action="<?php echo base_url('auth/login/admin') ?>">
                 <input type="text" name="username" id="email-admin" placeholder="Email" value="<?php echo set_value('email');?>">
@@ -26,6 +26,16 @@
                 <input type="submit" value="LOGIN">
             </form>
         </div>
+
+        <div class=foot>
+            &copy 2020 IniTeam x KM-ITERA  
+        </div>
+
+        
+
     </div>
+
+    
 </body>
+    
 </html>
