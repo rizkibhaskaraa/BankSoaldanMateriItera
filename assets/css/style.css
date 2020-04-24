@@ -159,6 +159,7 @@ body{
     box-sizing: border-box;
     text-align: center;
     color: #333333;
+
 }
 
 .input-form input[type=text]:focus{
@@ -184,13 +185,14 @@ body{
 }
 
 .login-form-card{
-    background-color: white;
+    background-color: rgba(256,256,256,0.8);
     width: 400px;
     margin: 100px auto;
     border-radius: 10px;
     height: fit-content;
-    padding: 40px;
+    padding: 50px;
     box-sizing: border-box;
+    
 }
 
 .login-form-container{
@@ -200,8 +202,12 @@ body{
 }
 
 #login-title{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 36px;
+    margin-top: 23px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: rgba(0,0,0,0.9);
+   
 }
 
 .login-form-container form input{
@@ -650,4 +656,16 @@ footer  .hmif img{
     margin-top: -15px;
     margin-left: -95px;
     
+}
+
+.login-logo img{
+    float: center;
+    width: fit-content;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.description {
+    margin-top: 14px;
+    font-weight: 500;
 }

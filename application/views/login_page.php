@@ -10,12 +10,20 @@
     <div class="login-form-card">
         <div class="login-form-container">
             <span id="login-title">
-                Login BSMI
+                SELAMAT DATANG DI
             </span>
+        <div class="login-logo">
+            <img src="<?php echo base_url('assets/img/header_logo.png') ?>" alt="Bank Soal dan Materi Itera"> 
+        </div>
+
+        <div class="description">
+            Institut Teknologi Sumatera <br> Lampung Selatan
+            </div>
+
             <form method="post" action="<?php echo base_url('auth/login/admin') ?>">
-                <input type="text" name="username" id="email-admin" placeholder="Masukkan alamat email" value="<?php echo set_value('email');?>">
-                <input type="password" name="password" id="password-admin" placeholder="Masukkan password">
-                <input type="submit" value="Login">
+                <input type="text" name="username" id="email-admin" placeholder="Email" value="<?php echo set_value('email');?>">
+                <input type="password" name="password" id="password-admin" placeholder="Password">
+                <input type="submit" value="LOGIN">
             </form>
         </div>
     </div>
