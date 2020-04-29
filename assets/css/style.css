@@ -356,16 +356,16 @@ body{
     }
 
 #up{
+    display: none;
     position: fixed;
-    bottom: 0%;
-    left: 95%; 
+    right: 40px;
+    bottom: 40px;
+    z-index: 99;
 }
 
 #up img{
-    height: 6vh;
-    width: 4vw;
-    background-color: lavender;
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
 }
 
 #lp-1-prodi{

@@ -79,12 +79,23 @@
 				<?php } ?>
 			</div>
 		</div>
-		<div id="up">
-			<a href="#home">
-				<img src="<?php echo base_url('assets/img/up.png') ?>">
-			</a>
-		</div>
 	</div>
-	</body>
+	<div id="up" class="shaped-card">
+		<a href="#home">
+			<img src="<?php echo base_url('assets/img/up.png') ?>">
+		</a>
+	</div>
+	<script>
+		var toTopButton = document.getElementById("up");
 
-	</html>
+		window.onscroll = function() {
+			if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+				toTopButton.style.display = "block";
+			} else {
+				toTopButton.style.display = "none";
+			}
+		};
+	</script>
+</body>
+
+</html>
