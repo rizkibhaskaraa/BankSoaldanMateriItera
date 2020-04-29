@@ -1,0 +1,12 @@
+Hasil Demo Project BSMI bersama client :
+
+1.Client meminta agar di dalam BSMI terdapat content video baik berupa video tutorial berhubungan dengan matakuliah yang dibuat langsung oleh prodi atau video referensi belajar.
+*Untuk request content video ini sudah kami implementasikan di dalam website BSMI, yang mana sistem nya adalah mengembed link video dari youtube. Hal ini dilakukan untuk menghemat penggunakan memory atau storage.
+
+2.Setelah melakukan demo project dengan client,client mengajukan saran agar di halaman user untuk tampilan jurusan dan program studi di berikan fitur searching matakuliah yang gunanya untuk mempermudah user atau mahasiswa yang kemungkinan mengambil matakuliah luar prodi dan tidak mengetahui jurusan dari prodi tersebut.
+*Untuk sementara saran kami terima dengan baik, namun dengan beberapa pertimbangan lain yang telah kami diskusikan secara kelompok :
+	1. Saran client dapat kami implementasikan di dalam website, tapi dengan 		fitur yang kami letakkan di bawah, hal ini agar fitur pilihan jurusan dan 	program studi yang telah kami buat tetap dapat digunakan dengan baik. 
+	2. Mungkin fitur searching matakuliah kami ganti dengan fitur searching 		program studi, jadi user juga dapat langsung menemukan program studi yang 	dicari.
+*Kedua hal di atas memang di peruntukan untuk kemudahan dari user dalam menggunakan website BSMI ini, maka dari itu kami tetap akan mempertimbangkan nya secara matang dan mendiskusikan nya kembali dengan client.
+
+3. Untuk bagian hosting website,client memberikan saran jika nanti hosting tidak dapat di lakukan,maka dapat menggunakan cara lain,yaitu menggunakan sistem LAN yang mana website ini hanya dapat di akses di komputer Itera saja (komputer lab,komputer perpustakaan) agar mahasiswa Itera tetap dapat menggunakan website BSMI yanh telah kami kembangkan.
