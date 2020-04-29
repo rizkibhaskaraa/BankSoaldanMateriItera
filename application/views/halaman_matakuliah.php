@@ -21,7 +21,14 @@
             <div style="clear: both;"></div>
             <div id="lp-1-prodi-matkul" class="flexbox-container matkul-section">
                 <?php foreach ($matkul as $value) { ?>
-                    <a href="<?php echo base_url('matakuliah/'.$value["kode_matkul"])?>"><h2><?php echo $value["nama_matkul"] ?></h2></a>
+                    <a class="card" href="<?php echo base_url('matakuliah/'.$value["kode_matkul"])?>">
+						<div class="card-image">
+							<img src="<?php echo base_url('assets/img/card-bg/ps_' . $value["kode_prodi"] . '.jpg') ?>" alt="<?php echo $value["nama_matkul"] ?>">
+						</div>
+						<div class="card-title-small">
+							<h2><?php echo $value["nama_matkul"] ?></h2>
+						</div>
+					</a>
                 <?php } ?>
             </div>
         </div>
