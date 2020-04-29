@@ -5,7 +5,7 @@
 				<!-- JURUSAN SAINS -->
 				<a href="#lp-1-sains" class="card">
 					<div class="card-image">
-						<img src="<?php echo base_url('assets/img/card-bg/jur_sains.jpg')?>" alt="Jurusan Sains">
+						<img src="<?php echo base_url('assets/img/card-bg/jur_sains.jpg') ?>" alt="Jurusan Sains">
 					</div>
 					<div class="card-title">
 						<h2>Jurusan Sains</h2>
@@ -15,7 +15,7 @@
 				<!-- JURUSAN TEKNOLOGI INFRASTRUKTUR DAN KEWILAYAHAN -->
 				<a href="#lp-1-jtik" class="card">
 					<div class="card-image">
-						<img src="<?php echo base_url('assets/img/card-bg/jur_jtik.jpg')?>" alt="Jurusan Teknologi Infrastruktur dan Kewilayahan">
+						<img src="<?php echo base_url('assets/img/card-bg/jur_jtik.jpg') ?>" alt="Jurusan Teknologi Infrastruktur dan Kewilayahan">
 					</div>
 					<div class="card-title">
 						<h2>Jurusan Teknologi Infrastruktur dan Kewilayahan</h2>
@@ -25,12 +25,13 @@
 				<!-- JURUSAN TEKNOLOGI PRODUKSI DAN INDUSTRI -->
 				<a href="#lp-1-jteif" class="card">
 					<div class="card-image">
-						<img src="<?php echo base_url('assets/img/card-bg/jur_jtpi.jpg')?>" alt="Jurusan Teknologi Produksi dan Industri">
+						<img src="<?php echo base_url('assets/img/card-bg/jur_jtpi.jpg') ?>" alt="Jurusan Teknologi Produksi dan Industri">
 					</div>
 					<div class="card-title">
 						<h2>Jurusan Teknologi Produksi dan Industri</h2>
 					</div>
 				</a>
+			</div>
 		</div>
 		<div id="lp-1-sains" class="page-section prodi-section">
 			<h3>Jurusan Sains</h3>
@@ -38,13 +39,13 @@
 				<?php foreach ($sains as $value) { ?>
 					<a class="card" href="<?php echo base_url('prodi/' . $value["kode_prodi"]) ?>">
 						<div class="card-image">
-							<img src="<?php echo base_url('assets/img/card-bg/ps_'.$value["kode_prodi"].'.jpg')?>" alt="<?php echo $value['nama_prodi']; ?>">
+							<img src="<?php echo base_url('assets/img/card-bg/ps_' . $value["kode_prodi"] . '.jpg') ?>" alt="<?php echo $value['nama_prodi']; ?>">
 						</div>
 						<div class="card-title-small">
 							<h2><?php echo $value['nama_prodi']; ?></h2>
 						</div>
 					</a>
-					
+
 				<?php } ?>
 			</div>
 		</div>
@@ -54,7 +55,7 @@
 				<?php foreach ($jtik as $value) { ?>
 					<a class="card" href="<?php echo base_url('prodi/' . $value["kode_prodi"]) ?>">
 						<div class="card-image">
-							<img src="<?php echo base_url('assets/img/card-bg/ps_'.$value["kode_prodi"].'.jpg')?>" alt="<?php echo $value['nama_prodi']; ?>">
+							<img src="<?php echo base_url('assets/img/card-bg/ps_' . $value["kode_prodi"] . '.jpg') ?>" alt="<?php echo $value['nama_prodi']; ?>">
 						</div>
 						<div class="card-title-small">
 							<h2><?php echo $value['nama_prodi']; ?></h2>
@@ -69,10 +70,10 @@
 				<?php foreach ($jtpi as $value) { ?>
 					<a class="card" href="<?php echo base_url('prodi/' . $value["kode_prodi"]) ?>">
 						<div class="card-image">
-							<img src="<?php echo base_url('assets/img/card-bg/ps_'.$value["kode_prodi"].'.jpg')?>" alt="<?php echo $value['nama_prodi']; ?>">
+							<img src="<?php echo base_url('assets/img/card-bg/ps_' . $value["kode_prodi"] . '.jpg') ?>" alt="<?php echo $value['nama_prodi']; ?>">
 						</div>
 						<div class="card-title-small">
-							<h2><?php echo $value['nama_prodi'];?></h2>
+							<h2><?php echo $value['nama_prodi']; ?></h2>
 						</div>
 					</a>
 				<?php } ?>
