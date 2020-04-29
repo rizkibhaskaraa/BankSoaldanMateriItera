@@ -227,8 +227,12 @@ body{
     font-size: 16px;
     cursor: pointer;
     height: 35px;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
+.login-form-container form input[type=submit]:hover{
+    background-color: rgba(0, 0, 187, 0.842);
+}
 
 #lp-about{
     margin-top: 6%;
@@ -660,9 +664,8 @@ footer  .hmif img{
 
 .login-logo img{
     float: center;
-    width: fit-content;
     height: 50px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .description {

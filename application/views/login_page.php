@@ -23,7 +23,7 @@
             <form method="post" action="<?php echo base_url('auth/login/admin') ?>">
                 <input type="text" name="username" id="email-admin" placeholder="Email" value="<?php echo set_value('email');?>">
                 <input type="password" name="password" id="password-admin" placeholder="Password">
-                <input type="submit" value="LOGIN">
+                <input type="submit" value="Login">
             </form>
         </div>
 

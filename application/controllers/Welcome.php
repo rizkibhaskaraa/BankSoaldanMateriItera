@@ -102,6 +102,9 @@ class Welcome extends CI_Controller {
 		$data['sains'] = $this->BSMI_model->getsains();
 		$data['jtik'] = $this->BSMI_model->getjtik();
 		$data['jtpi'] = $this->BSMI_model->getjtpi();
+		// $data['jteif'] = $this->BSMI_model->getjteif();
+		// $data['jtmb'] = $this->BSMI_model->getjtmb();
+		// $data['jtph'] = $this->BSMI_model->getjtph();
 		$this->load->view('header',$data);
 		$this->load->view('profile_icon');
 		$this->load->view('halaman_prodi',$data);

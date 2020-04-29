@@ -22,6 +22,18 @@ class BSMI_model extends CI_model
 		$this->db->order_by('nama_prodi','ASC');
 		return $this->db->get_where('prodi', array('jurusan'=>'jtpi'))->result_array();
 	}
+	// public function getjteif(){
+	// 	$this->db->order_by('nama_prodi','ASC');
+	// 	return $this->db->get_where('prodi', array('jurusan'=>'jteif'))->result_array();
+	// }
+	// public function getjtmb(){
+	// 	$this->db->order_by('nama_prodi','ASC');
+	// 	return $this->db->get_where('prodi', array('jurusan'=>'jtmb'))->result_array();
+	// }
+	// public function getjtph(){
+	// 	$this->db->order_by('nama_prodi','ASC');
+	// 	return $this->db->get_where('prodi', array('jurusan'=>'jtph'))->result_array();
+	// }
 
 	public function getprodi($id){
 		return $this->db->get_where('prodi', array('kode_prodi'=>$id))->row_array();	
