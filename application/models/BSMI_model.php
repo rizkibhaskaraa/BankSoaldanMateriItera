@@ -90,7 +90,7 @@ class BSMI_model extends CI_model
 			}
 
 		}else{
-			if ($tipe == "Semua%20tipe") {
+			if ($tipe == "Semua%20Tipe") {
 				$this->db->like('tahun', $tahun);	
 				$this->db->like('judul', $kode_soal);	
 			}else{
