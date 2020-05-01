@@ -18,12 +18,18 @@
             <input type="submit" id="delete" value="Hapus materi terpilih" onclick="return confirm('yakin ingin hapus?')">
             </div>
             <div style="clear: both;"></div>
-
             <div id="lp-1-prodi-matkul" class="flexbox-container matkul-section">
-           	<?php foreach ($materi as $value) { ?>
-        		<a href="<?php echo base_url()?>/assets/materi/<?php echo $value["file"]?>"><h2><?php echo $value["judul"] ?></h2></a>
-                <input type="checkbox" name="pilih[]" value="<?php echo $value["kode_materi"];?>">
-        	<?php } ?>
-        </div>
+                <?php foreach ($materi as $value) { ?>
+                    <a class="card" href="<?php echo base_url('assets/materi/'.$value["file"])?>">
+                        <div class="card-image">
+                            <img src="<?php echo base_url('assets/img/card-bg/illustration_materi.jpg') ?>" alt="<?php echo $value["judul"] ?>">
+                        </div>
+                        <div class="card-title-small">
+                            <h2><?php echo $value["judul"] ?></h2>
+                        </div>
+                    </a>
+                    <input type="checkbox" name="pilih[]" value="<?php echo $value["kode_materi"];?>">
+                <?php } ?>
+            </div>      
         </form>
 </div>
