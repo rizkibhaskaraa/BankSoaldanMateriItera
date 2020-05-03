@@ -143,7 +143,7 @@ class Welcome extends CI_Controller {
 
 	public function page_matkul_operator($kode_prodi){
 			//cek session apakah operator langsung akses link ke page tertentu tanpa memasukan login
-		if(!isset($_SESSION["operator"]) && !isset($_SESSION["operator"])){
+		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
 				alert('login dahulu');
