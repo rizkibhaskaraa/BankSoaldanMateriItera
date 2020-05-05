@@ -1,9 +1,9 @@
 	<div class="container">
-		<div class="lp-page page-section jurusan-section" id="lp-1">
+		<div class="page-section" id="jurusan-section">
 			<h3>Jurusan</h3>
-			<div id="lp-1-jurusan" class="flexbox-container">
+			<div id="flex-container-jurusan" class="flexbox-container nowrap">
 				<!-- JURUSAN SAINS -->
-				<a href="#lp-1-sains" class="card">
+				<a href="#jurusan-sains" class="card big-card">
 					<div class="card-image">
 						<img src="<?php echo base_url('assets/img/card-bg/jur_sains.jpg') ?>" alt="Jurusan Sains">
 					</div>
@@ -13,7 +13,7 @@
 				</a>
 
 				<!-- JURUSAN TEKNOLOGI INFRASTRUKTUR DAN KEWILAYAHAN -->
-				<a href="#lp-1-jtik" class="card">
+				<a href="#jurusan-jtik" class="card big-card">
 					<div class="card-image">
 						<img src="<?php echo base_url('assets/img/card-bg/jur_jtik.jpg') ?>" alt="Jurusan Teknologi Infrastruktur dan Kewilayahan">
 					</div>
@@ -23,7 +23,7 @@
 				</a>
 
 				<!-- JURUSAN TEKNOLOGI PRODUKSI DAN INDUSTRI -->
-				<a href="#lp-1-jteif" class="card">
+				<a href="#jurusan-jtpi" class="card big-card">
 					<div class="card-image">
 						<img src="<?php echo base_url('assets/img/card-bg/jur_jtpi.jpg') ?>" alt="Jurusan Teknologi Produksi dan Industri">
 					</div>
@@ -33,46 +33,51 @@
 				</a>
 			</div>
 		</div>
-		<div id="lp-1-sains" class="page-section prodi-section">
-			<h3>Jurusan Sains</h3>
-			<div id="lp-1-prodi-sains" class="flexbox-container">
-				<?php foreach ($sains as $value) { ?>
-					<a class="card" href="<?php echo base_url('prodi/' . $value["kode_prodi"]) ?>">
-						<div class="card-image">
-							<img src="<?php echo base_url('assets/img/card-bg/ps_' . $value["kode_prodi"] . '.jpg') ?>" alt="<?php echo $value['nama_prodi']; ?>">
-						</div>
-						<div class="card-title-small">
-							<h2><?php echo $value['nama_prodi']; ?></h2>
-						</div>
-					</a>
 
-				<?php } ?>
-			</div>
-		</div>
-		<div id="lp-1-jtik" class="page-section prodi-section">
-			<h3>Jurusan Teknologi Infrastruktur dan Kewilayahan</h3>
-			<div id="lp-1-prodi-jtik" class="flexbox-container">
-				<?php foreach ($jtik as $value) { ?>
-					<a class="card" href="<?php echo base_url('prodi/' . $value["kode_prodi"]) ?>">
+		<!-- SECTION CONTAINER JURUSAN SAINS -->
+		<div id="jurusan-sains" class="page-section prodi">
+			<h3>Jurusan Sains</h3>
+			<div class="flexbox-container wrap">
+				<?php foreach ($sains as $value) { ?>
+					<a class="card small-card" href="<?php echo base_url('prodi/' . $value["kode_prodi"]) ?>">
 						<div class="card-image">
 							<img src="<?php echo base_url('assets/img/card-bg/ps_' . $value["kode_prodi"] . '.jpg') ?>" alt="<?php echo $value['nama_prodi']; ?>">
 						</div>
-						<div class="card-title-small">
+						<div class="card-title">
 							<h2><?php echo $value['nama_prodi']; ?></h2>
 						</div>
 					</a>
 				<?php } ?>
 			</div>
 		</div>
-		<div id="lp-1-jteif" class="page-section prodi-section">
-			<h3>Jurusan Teknologi Produksi dan Industri</h3>
-			<div id="lp-1-prodi-jtpi" class="flexbox-container">
-				<?php foreach ($jtpi as $value) { ?>
-					<a class="card" href="<?php echo base_url('prodi/' . $value["kode_prodi"]) ?>">
+
+		<!-- SECTION CONTAINER JTIK -->
+		<div id="jurusan-jtik" class="page-section prodi">
+			<h3>Jurusan Teknologi Infrastruktur dan Kewilayahan</h3>
+			<div class="flexbox-container wrap">
+				<?php foreach ($jtik as $value) { ?>
+					<a class="card small-card" href="<?php echo base_url('prodi/' . $value["kode_prodi"]) ?>">
 						<div class="card-image">
 							<img src="<?php echo base_url('assets/img/card-bg/ps_' . $value["kode_prodi"] . '.jpg') ?>" alt="<?php echo $value['nama_prodi']; ?>">
 						</div>
-						<div class="card-title-small">
+						<div class="card-title">
+							<h2><?php echo $value['nama_prodi']; ?></h2>
+						</div>
+					</a>
+				<?php } ?>
+			</div>
+		</div>
+
+		<!-- SECTION CONTAINER JTPI -->
+		<div id="jurusan-jtpi" class="page-section prodi">
+			<h3>Jurusan Teknologi Produksi dan Industri</h3>
+			<div class="flexbox-container wrap">
+				<?php foreach ($jtpi as $value) { ?>
+					<a class="card small-card" href="<?php echo base_url('prodi/' . $value["kode_prodi"]) ?>">
+						<div class="card-image">
+							<img src="<?php echo base_url('assets/img/card-bg/ps_' . $value["kode_prodi"] . '.jpg') ?>" alt="<?php echo $value['nama_prodi']; ?>">
+						</div>
+						<div class="card-title">
 							<h2><?php echo $value['nama_prodi']; ?></h2>
 						</div>
 					</a>
@@ -97,5 +102,4 @@
 		};
 	</script>
 </body>
-
 </html>

@@ -1,4 +1,3 @@
-console.log('ok');
 //ambil elemen
 var cari = document.getElementById('cari');
 var kode_prodi = document.getElementById('kode_prodi')
@@ -11,7 +10,7 @@ var alamat = document.getElementById('alamat');
 	}
 }*/
 cari.addEventListener('keyup', function(){
-	//buat objeck
+	//buat object
 	//alert(kode_prodi.value);
 	var ajaxCari = new XMLHttpRequest();
 
@@ -21,6 +20,6 @@ cari.addEventListener('keyup', function(){
 		}
 	}
 	ajaxCari.open('GET', alamat.value+kode_prodi.value+"/"+cari.value , true);
+	console.log(kode_prodi.value);
 	ajaxCari.send();
-
 });

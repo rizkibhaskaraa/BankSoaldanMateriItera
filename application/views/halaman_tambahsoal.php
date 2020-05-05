@@ -1,7 +1,7 @@
-    <div class="lp-page" id="lp-1	">
+    <div class="container" id="lp-1	">
         <div id="lp-1-prodi" class="title">
         	<?php foreach ($matkul as $value) { ?>
-        	<h4>Upload Soal <?php echo $value['nama_matkul']?></h4>
+        	<h1>Upload Soal <?php echo $value['nama_matkul']?></h1>
         	<?php } ?>
         </div>
         <div style="clear: both;"></div>
@@ -13,12 +13,12 @@
                 <?php endif; ?>
                 </div>
                 <div class="visible-form">
-                    <h3>Judul Soal <?php echo $value["nama_matkul"];?></h3>
+                    <label for="judul_materi">Judul Soal</label>
                     <input type="text" name="judul_soal" id="judul_materi" placeholder="isi judul soal"></br>
-                    <h3>Tahun Soal</h3>
-                    <input type="text" name="tahun_soal" placeholder="isi tahun"></br>
-                    <h3>Tipe soal</h3>
-                    <select name="tipe_soal">
+                    <label for="tahun_soal">Tahun Soal</label>
+                    <input type="text" name="tahun_soal" id="taun_soal" placeholder="isi tahun"></br>
+                    <label for="tipe_soal">Tipe Soal</label><br>
+                    <select name="tipe_soal" id="tipe_soal">
                         <option value="UTS">UTS</option>
                         <option value="UAS">UAS</option>
                         <option value="KUIS">KUIS</option>
@@ -26,22 +26,29 @@
                     </br>
                     <h3>File soal</h3>
                     <div class="dropzone-wrapper">
+                        <input type="file" name="File" id="file-upload" class="dropzone" required onchange="processSelectedFiles(this)">
                         <div class="dropzone-desc">
-                        <p>Choose an file or drag it here.</p>
+                            <img src="<?php echo base_url('assets/img/file_upload.png')?>" alt="">
+                            <p id="file-text">Choose an file or drag it here.</p>
                         </div>
-                        <input type="file" name="File" class="dropzone">
                     </div>
                 </div>
                 <input type="text" name="kode_matkul" value="<?php echo $value['kode_matkul']?>" hidden>
                 <div class="form-submit">
-                    <input type="reset" value="reset">
-                    <input type="submit" value="simpan">
+                    <input class="button button-delete" type="reset" value="Reset">
+                    <input class="button button-add" type="submit" value="Simpan">
                 </div>
                 
             <?php echo form_close(); ?>
         </div>    
     </div>
-
+    <script>
+        var fileText = document.getElementById('file-text');
+        function processSelectedFiles(fileInput) {
+            var files = fileInput.files;
+            fileText.innerHTML = "File chosen : " + files[0].name;
+        }
+    </script>
 </body>
 </html>
 

@@ -1,4 +1,4 @@
-    <div class="lp-page" id="lp-1">
+    <div class="container" id="lp-1">
         <div id="lp-1-prodi" class="title">
         	<?php foreach ($matkul as $value) { ?>
         	<h4>Soal latihan <?php echo $value['nama_matkul']?></h4>
@@ -22,27 +22,30 @@
                 <option>2019</option>
                 <option>2020</option>
                 <option>2021</option>
-
             </select>
             </div>
         </div>
+
         <div style="clear: both;"></div>
-        <?php if ($cek_operatoradmin == true) {?>
-            <div id="lp-1-tambahmateri">
-                <a class="tombol" href="<?php echo base_url('add/soal/'.$value["kode_matkul"])?>"><h3>Tambah soal</h3></a>
-            </div>
-            <div id="lp-1-hapusmateri">
-                <input class="tombol" type="submit" name="hapus" id="hapus" value="Hapus Soal">
-            </div>
-        <?php } ?>
+        <div class="action-section">
+            <?php if ($cek_operatoradmin == true) {?>
+                <div id="lp-1-tambahmateri">
+                    <a class="button button-add" href="<?php echo base_url('add/soal/'.$value["kode_matkul"])?>"><h3>Tambah soal</h3></a>
+                </div>
+                <div id="lp-1-hapusmateri">
+                    <input class="button button-delete" type="submit" name="hapus" id="hapus" value="Hapus Soal">
+                </div>
+            <?php } ?>
+        </div>
+        
         <div style="clear: both;"></div>
-        <div id="lp-1-prodi-matkul" class="flexbox-container matkul-section">
+        <div id="lp-1-prodi-matkul" class="flexbox-container wrap">
             <?php foreach ($soal as $value) { ?>
-                <a class="card" href="<?php echo base_url('assets/soal/'.$value["file"])?>">
+                <a class="card small-card" href="<?php echo base_url('assets/soal/'.$value["file"])?>">
                     <div class="card-image">
                         <img src="<?php echo base_url('assets/img/card-bg/illustration_soal.jpg') ?>" alt="<?php echo $value["judul"] ?>">
                     </div>
-                    <div class="card-title-small">
+                    <div class="card-title">
                         <h2><?php echo $value["judul"] ?></h2>
                     </div>
                 </a>

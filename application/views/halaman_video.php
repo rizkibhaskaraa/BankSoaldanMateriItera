@@ -1,4 +1,4 @@
-    <div class="lp-page" id="lp-1">
+    <div class="container" id="lp-1">
         <div id="lp-1-prodi" class="title">
         	<?php foreach ($matkul as $value) { ?>
         	<h4>Video referensi <?php echo $value['nama_matkul']?></h4>
@@ -7,22 +7,25 @@
 
         <div style="clear: both;"></div>
         <?php if ($cek_operatoradmin == true) {?>
-             <div id="lp-1-tambahmateri">
-                <a class="tombol" href="<?php echo base_url('add/video/'.$value["kode_matkul"])?>"><h3>Tambah Video</h3></a>
-            </div>
+            <div class="action-section">
+                <div id="lp-1-tambahmateri">
+                    <a class="button button-add" href="<?php echo base_url('add/video/'.$value["kode_matkul"])?>"><h3>Tambah Video</h3></a>
+                </div>
 
-             <!-- tombol hapus -->
-            <div id="lp-1-hapusmateri">
-                <input class="tombol" type="submit" name="hapus" id="hapus" value="Hapus Video">
+                <!-- tombol hapus -->
+                <div id="lp-1-hapusmateri">
+                    <input class="button button-delete" type="submit" name="hapus" id="hapus" value="Hapus Video">
+                </div>
             </div>
+             
             <div style="clear: both;"></div>
         <?php } ?>
-    	<div id="lp-1-prodi-matkul" class="flexbox-container">    
+    	<div id="lp-1-prodi-matkul" class="flexbox-container wrap">    
             <?php foreach($video as $value) {?>
             <div id="video" class="video">
                 <div id="v-video">
-                <iframe src="https://www.youtube.com/embed/<?php echo $value['link'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="border-radius: 10%;" allowfullscreen></iframe>
-                <h3><?php echo $value['judul'] ?></h3>
+                    <iframe src="https://www.youtube.com/embed/<?php echo $value['link'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen></iframe>
+                    <h3><?php echo $value['judul']?></h3>
                 </div>
             </div>
             <?php } ?>

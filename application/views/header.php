@@ -8,7 +8,7 @@
     <title>Bank Soal dan Materi ITERA</title>
 </head>
 <body>
-    <div class="header white-black" id="home">
+    <div class="header" id="home">
         <div class="header-container">
             <div class="header-logo">
                 <!-- Diisi dengan logo ITERA dan Tulisan BSMI -->
