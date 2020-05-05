@@ -20,15 +20,21 @@
              
             <div style="clear: both;"></div>
         <?php } ?>
-    	<div id="lp-1-prodi-matkul" class="flexbox-container wrap">    
+    	<div id="lp-1-prodi-matkul" class="flexbox-container wrap"> 
             <?php foreach($video as $value) {?>
-            <div id="video" class="video">
-                <div id="v-video">
-                    <iframe src="https://www.youtube.com/embed/<?php echo $value['link'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen></iframe>
-                    <h3><?php echo $value['judul']?></h3>
+                <div class="card small-card video" onclick="openFullScreen(this)">
+                    <div class="card-image">
+                        <img src="https://img.youtube.com/vi/<?php echo $value['link'] ?>/sddefault.jpg" alt="<?php echo $value["judul"] ?>">
+                    </div>
+                    <div class="card-title">
+                        <h2><?php echo $value["judul"] ?></h2>
+                    </div>
+                    <div class="full-screen-video">
+                        <iframe class="embedded-video" src="https://www.youtube.com/embed/<?php echo $value['link'] ?>" frameborder="0" allow="accelerometer; encrypted-media; gyroscope;" allowfullscreen></iframe>
+                    </div>                    
                 </div>
-            </div>
             <?php } ?>
+            <div id="close-full-screen" class="close-full-screen" onclick="closeFullScreen(this)"><span>&#x2716;</span></div>
         </div>
     </div>
 
@@ -37,6 +43,6 @@
     <input id="alamathapus" value="<?php echo base_url('welcome/hasiltombolhapusvideo/') ?>" hidden>
     
     <script src="<?php echo base_url('assets/ajax/ajaxhapusvideo.js') ?>"></script>
-
+    <script src="<?php echo base_url('assets/js/landing-page.js') ?>"></script>
 </body>
 </html>

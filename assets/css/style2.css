@@ -342,8 +342,6 @@ a{
     display: block;
 }
 
-.custom-checkbox
-
 .profile-section{
     height: 50px;
     width: 100%;
@@ -437,6 +435,7 @@ a{
 
 .video{
     margin: 20px 2px;
+    cursor: pointer;
 }
 
 .visible-form input[type=text]{
@@ -514,6 +513,35 @@ a{
     top: 80px;
     left: 0;
     right: 0;
+}
+
+.full-screen-video{
+    display: none;
+    align-content: center;
+    background-color: #111111;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.full-screen-video iframe{
+    margin: auto;
+    width: 800px;
+    height: 480px;
+    min-width: 200px;
+    min-height: 120px;
+}
+
+#close-full-screen{
+    display: none;
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
 }
 
 /* NOT FIXED STYLE */

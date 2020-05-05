@@ -18,3 +18,21 @@ window.onscroll = function() {
         toTopButton.style.display = "none";
     }
 };
+
+function openFullScreen(videoCard) {
+    var fullScreenVideo = videoCard.getElementsByClassName("full-screen-video");
+    var closeButton = document.getElementById("close-full-screen");
+    fullScreenVideo[0].style.display = "flex";
+    closeButton.style.display = "block";
+}
+
+function closeFullScreen(closeButton) {
+    var fullScreenVideos = document.getElementsByClassName("full-screen-video");
+    var video;
+    for (let i = 0; i < fullScreenVideos.length; i++) {
+        video = fullScreenVideos[i].getElementsByClassName("embedded-video");
+        video[0].src = video[0].src;
+        fullScreenVideos[i].style.display = "none";
+    }
+    closeButton.style.display = "none";
+}

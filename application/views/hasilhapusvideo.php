@@ -6,8 +6,6 @@
 </div>
 <div style="clear: both;"></div>
 
-
-
 <form method="post" action="<?php echo base_url('welcome/hapusvideo/'.$kode_matkul) ?>">
     <div class="action-section">
         <!-- tombol batal -->
@@ -22,17 +20,21 @@
     
     <div style="clear: both;"></div>
 
-    <div id="lp-1-prodi-matkul" class="flexbox-container">
-    <?php foreach($video as $value) {?>
-        <div id="video" class="video element-delete">
-            <div id="v-video">
-                <iframe src="https://www.youtube.com/embed/<?php echo $value['link'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen></iframe>
-                <h3><?php echo $value['judul']?></h3>
+    <div id="lp-1-prodi-matkul" class="flexbox-container wrap">
+        <?php $increment = 0; ?>
+        <?php foreach($video as $value) {?>
+            <div class="card-no-hover small-card video element-delete">
+                <div class="card-image">
+                    <img src="https://img.youtube.com/vi/<?php echo $value['link'] ?>/sddefault.jpg" alt="<?php echo $value["judul"] ?>">
+                </div>
+                <div class="card-title">
+                    <h2><?php echo $value["judul"] ?></h2>
+                </div>
+                <input type="checkbox" id="checkbox<?php echo $increment; ?>" class="checkbox-delete" name="pilih[]" value="<?php echo $value["kode_video"];?>">
+                <label class="checkbox-delete-cover" for="checkbox<?php echo $increment; ?>"></label>
+                <div class="custom-checkbox"></div>
             </div>
-            <input class="chekbox-delete" type="checkbox" name="pilih[]" value="<?php echo $value["kode_video"];?>">
-        </div>
-    
-    <?php } ?>
-
-</div>
+            <?php $increment = $increment + 1; ?>
+        <?php } ?>
+    </div>
 </form>
