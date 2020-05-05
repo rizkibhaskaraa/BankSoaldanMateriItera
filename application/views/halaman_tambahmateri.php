@@ -19,7 +19,7 @@
                         <input type="file" name="File" id="file-upload" class="dropzone" required onchange="processSelectedFiles(this)">
                         <div class="dropzone-desc">
                             <img src="<?php echo base_url('assets/img/file_upload.png')?>" alt="">
-                            <p id="file-text">Choose an file or drag it here.</p>
+                            <p id="file-text">Choose a file or drag it here.</p>
                         </div>
                     </div>
                 </div>

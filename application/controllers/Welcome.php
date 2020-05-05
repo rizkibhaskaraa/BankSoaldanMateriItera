@@ -88,7 +88,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"]) ){
 			echo "
 			<script>
-				alert('masukkan enrollmentKey dahulu');
+				alert('Masukkan enrollment key terlebih dahulu');
 				document.location.href='../';
 			</script>
 			";
@@ -115,7 +115,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"]) ){
 			echo "
 			<script>
-				alert('masukkan enrollmentKey dahulu');
+				alert('Masukkan enrollment key terlebih dahulu');
 				document.location.href='../';
 			</script>
 			";
@@ -146,7 +146,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('login dahulu');
+				alert('Anda harus login terlebih dahulu');
 				document.location.href='..';
 			</script>
 			";
@@ -212,7 +212,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('masukkan enrollmentKey dahulu');
+				alert('Masukkan enrollment key terlebih dahulu');
 				document.location.href='../';
 			</script>
 			";
@@ -233,7 +233,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"]) ){
 			echo "
 			<script>
-				alert('masukkan enrollmentKey dahulu');
+				alert('Masukkan enrollment key terlebih dahulu');
 				document.location.href='../';
 			</script>
 			";
@@ -256,7 +256,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"]) ){
 			echo "
 			<script>
-				alert('masukkan enrollmentKey dahulu');
+				alert('Masukkan enrollment key terlebih dahulu');
 				document.location.href='../';
 			</script>
 			";
@@ -279,7 +279,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["login"]) && !isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('Masukkan EnrollmentKey Dahulu');
+				alert('Masukkan enrollment key terlebih dahulu');
 				document.location.href='../';
 			</script>
 			";
@@ -303,7 +303,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('login dahulu');
+				alert('Anda harus login terlebih dahulu');
 				document.location.href='../auth/login/admin';
 			</script>
 			";
@@ -324,7 +324,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('login dahulu');
+				alert('Anda harus login terlebih dahulu');
 				document.location.href='../auth/login/admin';
 			</script>
 			";
@@ -345,7 +345,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('login dahulu');
+				alert('Anda harus login terlebih dahulu');
 				document.location.href='../auth/login/admin';
 			</script>
 			";
@@ -366,7 +366,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('login dahulu');
+				alert('Anda harus login terlebih dahulu');
 				document.location.href='../auth/login/admin';
 			</script>
 			";
@@ -387,7 +387,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('login dahulu');
+				alert('Anda harus login terlebih dahulu');
 				document.location.href='../auth/login/admin';
 			</script>
 			";
@@ -430,7 +430,7 @@ class Welcome extends CI_Controller {
 			}else{
 				echo "
 					<script>
-						alert('Gagal menambah video');
+						alert('Gagal menambah mata kuliah');
 						document.location.href='../add/matakuliah/$kode_prodi';
 					</script>
 				";
@@ -478,14 +478,14 @@ class Welcome extends CI_Controller {
 			if($this->BSMI_model->tambahmateri()==true){
 				echo "
 					<script>
-						alert('berhasil menambah materi');
+						alert('Berhasil menambahkan materi');
 						document.location.href='../materi/$kode_matkul';
 					</script>
 					";
 				}else{
 					echo "
 						<script>
-							alert('gagal menamabah materi,file tidak boleh kosong');
+							alert('Gagal menambahkan materi,file tidak boleh kosong');
 							document.location.href='../add/materi/$kode_matkul';
 						</script>
 					";
@@ -511,14 +511,14 @@ class Welcome extends CI_Controller {
 			if($this->BSMI_model->tambahsoal()==true){
 				echo "
 					<script>
-						alert('berhasil menambah soal');
+						alert('Berhasil menambahkan soal');
 						document.location.href='../soal/$kode_matkul';
 					</script>
 					";
 			}else{
 				echo "
 					<script>
-						alert('gagal menamabah soal,file tidak boleh kosong');
+						alert('Gagal menambahkan soal,file tidak boleh kosong');
 						document.location.href='../add/soal/$kode_matkul';
 					</script>
 				";
@@ -542,14 +542,14 @@ class Welcome extends CI_Controller {
 			if($this->BSMI_model->tambahvideo()==true){
 				echo "
 					<script>
-						alert('berhasil menambah video');
+						alert('Berhasil menambahkan video');
 						document.location.href='../video/$kode_matkul';
 					</script>
 					";
 			}else{
 				echo "
 					<script>
-						alert('gagal menamabah video,link video harus diisi atau link tidak sesuai');
+						alert('Gagal menambahkan video,link video kosong atau tidak valid');
 						document.location.href='../add/video/$kode_matkul';
 					</script>
 				";
@@ -563,7 +563,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('login dahulu');
+				alert('Anda harus login terlebih dahulu');
 				document.location.href='../auth/login/admin';
 			</script>
 			";
@@ -580,7 +580,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('login dahulu');
+				alert('Anda harus login terlebih dahulu');
 				document.location.href='../auth/login/admin';
 			</script>
 			";
@@ -597,7 +597,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION["operator"]) && !isset($_SESSION["admin"])){
 			echo "
 			<script>
-				alert('login dahulu');
+				alert('Anda harus login terlebih dahulu');
 				document.location.href='../auth/login/admin';
 			</script>
 			";
