@@ -140,7 +140,7 @@ a{
     box-sizing: border-box;
 }
 
-.card {
+.card, .card-no-hover {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     overflow: hidden;
@@ -280,11 +280,69 @@ a{
     position: relative;
 }
 
-.checkbox-delete{
+.element-delete input[type="checkbox"]{
     position: absolute;
-    right: 4px;
+    left: 4px;
     top: 4px;
+    opacity: 0;
 }
+
+.checkbox-delete-cover{
+    position: absolute;
+    background-color: #00000000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    z-index: 10;
+}
+
+.checkbox-delete-cover:hover{
+    cursor: pointer;
+}
+
+.custom-checkbox{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 15px;
+    width: 15px;
+    border: 2px solid #CCCCCC;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+    z-index: 9;
+}
+
+.checkbox-delete-cover:hover ~ .custom-checkbox{
+    background-color: #CCCCCC;
+}
+
+.element-delete input[type="checkbox"]:checked ~ .custom-checkbox{
+    background-color: rgb(21, 148, 64);
+    border-color: #FFFFFF;
+}
+
+.custom-checkbox::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 4px;
+    top: 0px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.element-delete input[type="checkbox"]:checked ~ .custom-checkbox::after{
+    display: block;
+}
+
+.custom-checkbox
 
 .profile-section{
     height: 50px;

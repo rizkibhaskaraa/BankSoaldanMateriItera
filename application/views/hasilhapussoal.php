@@ -19,16 +19,20 @@
     
     <div style="clear: both;"></div>
     <div id="lp-1-prodi-matkul" class="flexbox-container wrap">
+        <?php $increment = 0; ?>    
         <?php foreach ($soal as $value) { ?>
-            <a class="card small-card element-delete" href="<?php echo base_url('assets/soal/'.$value["file"])?>">
+            <a class="card-no-hover small-card element-delete" href="<?php echo base_url('assets/soal/'.$value["file"])?>">
                 <div class="card-image">
                     <img src="<?php echo base_url('assets/img/card-bg/illustration_soal.jpg') ?>" alt="<?php echo $value["judul"] ?>">
                 </div>
                 <div class="card-title">
                     <h2><?php echo $value["judul"] ?></h2>
                 </div>
-                <input type="checkbox" class="checkbox-delete" name="pilih[]" value="<?php echo $value["kode_soal"];?>">
+                <input type="checkbox" id="checkbox<?php echo $increment; ?>" class="checkbox-delete" name="pilih[]" value="<?php echo $value["kode_soal"];?>">
+                <label class="checkbox-delete-cover" for="checkbox<?php echo $increment; ?>"></label>
+                <div class="custom-checkbox"></div>
             </a>
+            <?php $increment = $increment + 1; ?>
         <?php } ?>
     </div>      
 </div>
